@@ -78,12 +78,9 @@ class Page_Image_Resize_Index extends App_Page
         $this->_img->load($args['file']);
         // 縦、横どちらの幅に合わせるか自動判定し、プロポーションを維持してリサイズ
         if ($args['is_mobile'] !== false) {
-            FB::warn(__LINE__);
             // 携帯のエージェントに合わせてリサイズ
             $this->_img->resizeMobile();
         } else {
-            FB::warn(__LINE__);
-            FB::warn($args['size_x']);
             $this->_img->resize($args['size_x'], $args['size_y']);
         }
         // 保存
