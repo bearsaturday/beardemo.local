@@ -4,7 +4,7 @@
 # 0:Live >1:Debug
 SetEnv bearmode 1
 # include path project, PEAR
-php_value include_path ".:/usr/local/bear:/usr/local/app/bear.demo:/usr/share/php"
+php_value include_path "/usr/local/php/beardemo.local:/usr/share/php:."
 # </Change Here>
 
 # BEAR
