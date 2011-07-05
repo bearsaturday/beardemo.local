@@ -44,7 +44,10 @@ class Page_Image_Resize_Index extends App_Page
     {
         parent::onInject();
         $this->_img = BEAR::dependency('BEAR_Img', array('adapter' => BEAR_Img::ADAPTER_GD));
-        $this->_file = _BEAR_APP_HOME . '/htdocs/image/eye.png';
+        $this->injectGet('file', 'file', _BEAR_APP_HOME . '/htdocs/image/eye.png');
+        $this->injectGet('size_x', 'x', 300);
+        $this->injectGet('size_y', 'x', 300);
+        $this->injectGet('is_mobile', 'mobile', false);
     }
 
     /**
@@ -56,7 +59,10 @@ class Page_Image_Resize_Index extends App_Page
     {
         parent::onInject();
         $this->_img = BEAR::dependency('BEAR_Img', array('adapter' => BEAR_Img::ADAPTER_MAGICK));
-        $this->_file = 'http://upload.wikimedia.org/wikipedia/commons/f/f3/Hubble_Ultra_Deep_Field_part_d.jpg';
+        $this->injectGet('file', 'file', 'http://upload.wikimedia.org/wikipedia/commons/f/f3/Hubble_Ultra_Deep_Field_part_d.jpg');
+        $this->injectGet('size_x', 'x', 600);
+        $this->injectGet('size_y', 'x', 600);
+        $this->injectGet('is_mobile', 'mobile', false);
     }
 
     /**
@@ -69,11 +75,17 @@ class Page_Image_Resize_Index extends App_Page
     public function onInit(array $args)
     {
         //画像ライブラリ選択
-        $this->_img->load($this->_file);
+        $this->_img->load($args['file']);
         // 縦、横どちらの幅に合わせるか自動判定し、プロポーションを維持してリサイズ
-        $this->_img->resize(300, 500);
-        // 携帯のエージェントに合わせてリサイズ
-        //$this->_img->resizeMobile();
+        if ($args['is_mobile'] !== false) {
+            FB::warn(__LINE__);
+            // 携帯のエージェントに合わせてリサイズ
+            $this->_img->resizeMobile();
+        } else {
+            FB::warn(__LINE__);
+            FB::warn($args['size_x']);
+            $this->_img->resize($args['size_x'], $args['size_y']);
+        }
         // 保存
         //$img->save('/tmp/aaa.png', 'png');
     }
@@ -90,5 +102,5 @@ class Page_Image_Resize_Index extends App_Page
     }
 }
 
-$config = array('injector' => (isset($_GET['m']) ? 'onInjectMagick' : 'onInject'));
+$config = array('injector' => (isset($_GET['magick']) ? 'onInjectMagick' : 'onInject'));
 App_Main::run('Page_Image_Resize_Index', $config);
