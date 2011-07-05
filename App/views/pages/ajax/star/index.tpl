@@ -1,7 +1,7 @@
 <h2>Ajax Star Rating</h2>
 <p><a href="http://www.fyneworks.com/jquery/star-rating/">jQuery Star Rating Plugin</a>を利用したスターレーティングです。</p>
 {* サンプル YouTube動画 *}
-<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/o3WN2SeHLno&color1=0xb1b1b1&color2=0xcfcfcf&hl=en_US&feature=player_embedded&fs=1"></param><param name="allowFullScreen" value="true"></param><param name="allowScriptAccess" value="always"></param><embed src="http://www.youtube.com/v/o3WN2SeHLno&color1=0xb1b1b1&color2=0xcfcfcf&hl=en_US&feature=player_embedded&fs=1" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="425" height="344"></embed></object>
+<iframe width="425" height="349" src="http://www.youtube.com/embed/2YU5Yd0G-jw" frameborder="0" allowfullscreen></iframe>
 <form id="form1" class="rate">
   <input name="star" type="radio" class="star" value="1" title="星１つ"/>
   <input name="star" type="radio" class="star" value="2" title="星２つ"/>
