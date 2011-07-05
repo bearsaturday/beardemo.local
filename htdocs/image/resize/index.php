@@ -46,7 +46,7 @@ class Page_Image_Resize_Index extends App_Page
         $this->_img = BEAR::dependency('BEAR_Img', array('adapter' => BEAR_Img::ADAPTER_GD));
         $this->injectGet('file', 'file', _BEAR_APP_HOME . '/htdocs/image/eye.png');
         $this->injectGet('size_x', 'x', 300);
-        $this->injectGet('size_y', 'x', 300);
+        $this->injectGet('size_y', 'y', 300);
         $this->injectGet('is_mobile', 'mobile', false);
     }
 
@@ -61,7 +61,7 @@ class Page_Image_Resize_Index extends App_Page
         $this->_img = BEAR::dependency('BEAR_Img', array('adapter' => BEAR_Img::ADAPTER_MAGICK));
         $this->injectGet('file', 'file', 'http://upload.wikimedia.org/wikipedia/commons/f/f3/Hubble_Ultra_Deep_Field_part_d.jpg');
         $this->injectGet('size_x', 'x', 600);
-        $this->injectGet('size_y', 'x', 600);
+        $this->injectGet('size_y', 'y', 600);
         $this->injectGet('is_mobile', 'mobile', false);
     }
 
