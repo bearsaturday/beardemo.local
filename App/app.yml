@@ -1,0 +1,79 @@
+# 全クラス共通コアconfig
+core:
+  # 開発モード
+  debug: 1
+  # 基本情報
+  info:
+    id: beardemo
+    version: 0.0.2
+
+BEAR_Cache:
+  # int  キャッシュアダプター 0 なし | 1 PEAR::Cache_Lite | 2 MEMCACHE | 3 APC
+  adapter: 1
+  # path: dsn | file path | memcache host(s)
+  #   - localhost
+
+BEAR_Session:
+  # mixed アダプター 0 なし | 1 File | 2 DB | 3 memchache
+  adapter: 1
+  # string セッションキーにつけるプリフィックス
+  prefix: ''
+  # path: dsn | session file path | memcache host(s)
+  path: '/tmp/sess'
+  #int アイドル時間
+  idle  : 3600
+
+
+BEAR_Form:
+  # メソッド
+  method: 'post'
+  # アトリビュート
+  attributes: null
+  errors: 'errors'
+  
+BEAR_Ro:
+ # debug用リソースボーダー
+ show_box: true
+
+BEAR_Page_Ajax:
+  # double submit cookieチェック
+  security_check: false
+
+App_Main:
+  # UAコード
+  ua: 'Default'
+  # インジェクター
+  __injector: 'onInject'
+  # Page::onShutdown()有効化
+  enable_onshutdown: false
+  
+App_Db:
+  dsn:
+    default: 'mysql://root:@localhost/bear_demo'
+    slave:   'mysqli://root:@localhost/bear_demo'
+    test:    'mysql://root:@localhost/bear_demo'
+
+Panda:
+  http_tpl: 'App/views/pages/_panda/http.php'
+  
+BEAR_Agent_Adapter_Docomo:
+  content_type: 'text/html'
+
+BEAR_Emoji:
+  sumbit: 'entity'
+
+# フォーム
+App_Form_Blog_Entry:
+  label:
+    main: '投稿画面'
+    title: 'タイトル'
+    body: '本文'
+    submit: '記事を投稿'
+  error:
+    title_required: 'タイトルを入力してください'
+
+# インジェクタ指定によるUA対応フォーム
+App_Form_Simple:
+  __injector:
+   - BEAR_Agent_Injector
+   - inject

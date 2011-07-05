@@ -1,0 +1,3 @@
+default:
+  title:  DBセッションテスト
+layout:default.tpl

@@ -1,0 +1,1 @@
+{a click="get}fileセッション取得{/a}

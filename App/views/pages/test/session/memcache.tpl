@@ -1,0 +1,1 @@
+{a click="get}Memcacheセッション取得{/a}

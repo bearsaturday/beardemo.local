@@ -1,0 +1,4 @@
+default:
+  title: 投稿完了
+mobile:
+layout:default.tpl

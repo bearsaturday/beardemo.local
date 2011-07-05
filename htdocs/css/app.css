@@ -1,0 +1,59 @@
+@CHARSET "UTF-8";
+
+.loading {
+    position: absolute;
+    background-image: url('/bear/image/loading.gif');
+    background-repeat: no-repeat;
+    background-position: 0px center;
+    padding:15px 0px 15px 20px;
+    top: 0px;
+    left: 0px;
+    display: none;
+}
+
+.form_error {
+    border: 1px solid red;
+    padding: 5px;
+}
+
+.form_error_msg {
+	background-image: url('/bear/image/warning.gif');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+	border: 1px solid;
+    margin: 0px 0px;
+    padding:10px 10px 15px 40px;
+	color: #9F6000;
+	background-color: #FEEFB3;
+	position: absolute;
+    left: -2000px;
+}
+
+
+
+ul.entry li {
+    list-style-position: outside;
+    list-style-type: none;
+    list-style-image: none;
+    border-bottom: 1px dashed #D2DADA;
+    line-height: 1.1em;
+    padding: 0.7em 0 0.6em;
+}
+
+ul.entry li a.entry-title {
+    font-decoration: none;
+    font-color: blue;
+    padding: 0.7em 0.8em 0.6em;
+}
+
+ul.entry li span.entry-body {
+    color: gray;
+    font-decoration: italic;
+    font-color: grey;
+    padding: 0.7em 0.8em 0.6em;
+}
+
+div.sort {
+    text-align: right;
+}
+

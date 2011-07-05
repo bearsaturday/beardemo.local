@@ -1,0 +1,6 @@
+default:
+  js:
+    enable: 1
+    page: page.js
+  title:  BEAR Ajax - Form.
+layout:default.tpl

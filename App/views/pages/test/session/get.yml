@@ -1,0 +1,3 @@
+default:
+  title:  セッション取得
+layout:default.tpl

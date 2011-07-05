@@ -1,0 +1,3 @@
+default:
+  title: HTTPリソース
+layout:default.tpl

@@ -1,0 +1,4 @@
+default:
+  title: Wizardフォーム
+mobile:
+layout:default.tpl

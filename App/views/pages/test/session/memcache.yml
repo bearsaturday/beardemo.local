@@ -1,0 +1,3 @@
+default:
+  title:  Memcacheセッションテスト
+layout:default.tpl

@@ -1,0 +1,5 @@
+default:
+  js:
+    enable: 1
+  title: リソースセットオプション
+layout:default.tpl

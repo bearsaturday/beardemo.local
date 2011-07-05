@@ -1,0 +1,4 @@
+default:
+  title: DBインサート エラー
+mobile:
+layout:default.tpl

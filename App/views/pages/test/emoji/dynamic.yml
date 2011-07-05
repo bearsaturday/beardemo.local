@@ -1,0 +1,4 @@
+default:
+  title:ダイナミックク絵文字テスト
+mobile:
+layout:mobilecss.tpl

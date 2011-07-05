@@ -1,0 +1,3 @@
+default:
+  title: CSVリソース
+layout:default.tpl
