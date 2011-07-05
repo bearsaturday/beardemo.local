@@ -55,8 +55,8 @@ class App_Form_Wizard_Preview extends App_Form_Wizard_Three
     public function button()
     {
         //ボタン
-        $buttons[] = &HTML_QuickForm::createElement('submit', '_submit', '送信', '');
-        $buttons[] = &HTML_QuickForm::createElement('link', '_cancel', '/form/wizar', '',  'Cancel (最初に戻る)');
+        $buttons[] = HTML_QuickForm::createElement('submit', '_submit', '送信', '');
+        $buttons[] = HTML_QuickForm::createElement('link', '_cancel', '/form/wizar', '',  'Cancel (最初に戻る)');
         $this->_form->addGroup($buttons, null, null, '&nbsp;');
     }
 }

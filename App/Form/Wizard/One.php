@@ -79,8 +79,8 @@ class App_Form_Wizard_One extends BEAR_Base
     {
         // エレメント
         $this->_form->addElement('text', 'name', '名前', $this->_attr['name']);
-        $radio[] = &HTML_QuickForm::createElement('bradio', null, null, '男性', 'M');
-        $radio[] = &HTML_QuickForm::createElement('bradio', null, null, '女性', 'F');
+        $radio[] = HTML_QuickForm::createElement('bradio', null, null, '男性', 'M');
+        $radio[] = HTML_QuickForm::createElement('bradio', null, null, '女性', 'F');
         $this->_form->addGroup($radio, 'gender', '性別');
         // ルール
         $this->_form->addRule('name', '名前を入力してください', 'required');
