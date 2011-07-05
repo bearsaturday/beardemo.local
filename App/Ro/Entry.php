@@ -45,7 +45,7 @@ class App_Ro_Entry extends App_Ro
         $id = array('id', 'id', '+');
         $date = array('created_at', 'date', '-');
         $this->_queryConfig['sort'] = array($id, $date); // ソート
-        $this->_query = BEAR::dependency('BEAR_Query', $this->_queryConfig, false);
+        $this->_query = BEAR::factory('BEAR_Query', $this->_queryConfig, false);
     }
 
     /**
