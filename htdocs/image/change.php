@@ -75,7 +75,6 @@ class Page_Image_Change extends App_Page
         );
         $this->_img = BEAR_Img::changeAdapter(BEAR_Img::ADAPTER_MAGICK);
         $this->_img->adapter->polaroidImage(new ImagickDraw(), 10);
-        p('開発時はp()でFireBugコンソールにデバック情報を出力できます');
     }
 
     /**
