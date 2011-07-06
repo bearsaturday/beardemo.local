@@ -47,7 +47,8 @@ class Page_Image_Change extends App_Page
         $this->injectGet('file', 'file', _BEAR_APP_HOME . '/htdocs/image/eye.png');
         $this->injectGet('size_x', 'x', 400);
         $this->injectGet('size_y', 'y', 400);
-        $this->injectGet('is_mobile', 'mobile', false);
+        $this->injectGet('text', 'text', 'The eyes of God');
+        $this->injectGet('degree', 'degree', 10);
     }
 
     /**
@@ -62,7 +63,7 @@ class Page_Image_Change extends App_Page
         $this->_img->load($args['file']);
         $this->_img->resize($args['size_x'], $args['size_y']);
         $this->_img = BEAR_Img::changeAdapter(BEAR_Img::ADAPTER_CAIRO);
-        $this->_img->addText("The eyes of God",
+        $this->_img->addText($args['text'],
                              0,  // x
                              20, // y
                              45, // size
@@ -74,7 +75,7 @@ class Page_Image_Change extends App_Page
                              2
         );
         $this->_img = BEAR_Img::changeAdapter(BEAR_Img::ADAPTER_MAGICK);
-        $this->_img->adapter->polaroidImage(new ImagickDraw(), 10);
+        $this->_img->adapter->polaroidImage(new ImagickDraw(), $args['degree']);
     }
 
     /**
