@@ -92,6 +92,7 @@ abstract class App_Page extends BEAR_Page
         } catch (Exception $e) {
             // テスト確認のためにセット
             $this->set('e', (string)$e->getMessage());
+            throw $e;
         }
     }
 }
