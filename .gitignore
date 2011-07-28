@@ -5,4 +5,8 @@ build
 .buildpath
 .svn
 .htaccess
+^%%*
+__*
+logs/*
+htdocs/emoji/*
 
