@@ -5,4 +5,5 @@ build
 .buildpath
 .svn
 .htaccess
+htdocs/_*
 
