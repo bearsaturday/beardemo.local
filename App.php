@@ -18,7 +18,7 @@ require_once 'BEAR.php';
 
 $bearMode = isset($_SERVER['bearmode']) ? $_SERVER['bearmode'] : 0;
 // profile
-//include 'BEAR/Dev/Profile/script/start.php'; //xhprof
+//include 'BEAR/Dev/Profile/script/startxh.php'; //xhprof
 App::init($bearMode);
 
 /**
@@ -43,7 +43,7 @@ class App
      */
     public static function init($bearMode = 1)
     {
-        $app = BEAR::loadConfig(_BEAR_APP_HOME . '/App/app.yml');
+        $app = BEAR::loadConfig(_BEAR_APP_HOME . '/App/app.yml', true);
         switch ($bearMode) {
             case 1 :
                 //debug mode (cache disabled)
