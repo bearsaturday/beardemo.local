@@ -39,9 +39,11 @@ class Page_Db_Select_Index extends App_Page
         $params = array('uri' => 'Entry',
         				'values' => array(),
         				'options' => array(
-                            'template' => 'list/null',
-                            'cache' => array('life' => 10)
-                        )
+                            'template' => 'list/entry',
+                            'cache' => array('life' => 10,
+                                             'link' => true
+                             )
+                  )
         );
         $this->_resource->read($params)->set('entry');
     }
