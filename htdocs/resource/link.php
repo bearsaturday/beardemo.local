@@ -57,7 +57,7 @@ class Page_Resource_Link extends App_Page
             'values' => array('id' => $args['id']),
             'options' => array(
                 'template' => 'link/blog',
-                'cache' => array('life' => 10)
+                'cache' => array('life' => 10, 'link' => true)
             )
         );
         $this->_resource->read($params)->link(array('photo', 'blog'))->link('entry')->link(array('trackback', 'comment'))->link('thumb')->set('blog', 'object');
