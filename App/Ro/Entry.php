@@ -90,7 +90,7 @@ class App_Ro_Entry extends App_Ro
      *
      * @param array $values
      *
-     * @return array
+     * @return array 
      */
     public function onRead($values)
     {

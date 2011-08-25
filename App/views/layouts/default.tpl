@@ -24,15 +24,11 @@
 <script type="text/javascript" src="{$layout.js.page|default:'default.js'}"></script>
 {/if} {* /JavaScript *}
 
-{* meta linkタグ *}{$layout.links}
+{* meta linkタグ *}
 {* meta pager linkタグ *}{$pager.links.linktags|default:""}
 </head>
 <body>
-{* ヘッダー *}{include file="elements/header.tpl"} {* メッセージ *}{if $msg}
-<center>
-<div class="{$msg_css|default:"msg-ok"}">{$msg}</div>
-</center>
-{/if} {* ページ *}
+{* ヘッダー *}{include file="elements/header.tpl"}
 <div class="content">{$content_for_layout}</div>
 <br style="clear:both" />{* フッター *}{include file="elements/footer.tpl"}
 </body>

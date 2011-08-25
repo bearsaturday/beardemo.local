@@ -21,7 +21,7 @@ require_once 'App.php';
  * @category   BEAR
  * @package    bear.demo
  * @subpackage Page
- * @author     $Author:$ <username@example.com>
+ * @author     $Author:$ssss <username@example.com>
  * @license    @license@ http://@license_url@
  * @version    Release: @package_version@ $Id: nolink_cache.php 447 2011-06-01 00:31:53Z koriyama@bear-project.net $
  * @link       http://@link_url@
