@@ -34,8 +34,7 @@ class App_Ro_User_Blog_Entry_Trackback extends App_Ro
      */
     public function onRead($values)
     {
-        static $id = 150;
-
+        $id = 50 + $values['entry_id'];
         $title = "記事ID({$values['entry_id']})のトラックバック";
         $result = array();
         $result[] = array('id' => $id, 'title' => "{$title}$id");
