@@ -34,7 +34,7 @@ class Page_Resource_Html_Index extends App_Page
     public function onInject()
     {
         parent::onInject();
-        $this->injectArg('host', 'bear.demo');
+        $this->injectArg('host', 'beardemo.local');
         $this->injectArg('uri', 'http://news.google.com/news?ned=us&ie=UTF-8&oe=UTF-8&q=%E3%82%AF%E3%83%9E%E5%87%BA%E6%B2%A1&output=rss&num=50&hl=ja');
         $this->injectArg('cache_life', 300);
     }
@@ -53,7 +53,7 @@ class Page_Resource_Html_Index extends App_Page
         $options['template'] = 'list/rss';
         $options['cache'] = array('life' => $args['cache_life']);
         $params = array('uri' => $uri, 'values' => array(), 'options' => $options);
-        $this->_resource->read($params)->set('rss')->getBody();
+        $body = $this->_resource->read($params)->set('rss')->getBody();
         $uri = "http://{$args['host']}/resource/html/hello.html";
         $params = array('uri' => $uri);
         $this->_resource->read($params)->set('html');
