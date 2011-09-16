@@ -62,6 +62,10 @@ BEAR_Agent_Adapter_Docomo:
 BEAR_Emoji:
   sumbit: 'entity'
 
+BEAR_Resource_Request:
+  poe: false
+  csrf: false
+
 # フォーム
 App_Form_Blog_Entry:
   label:
