@@ -70,9 +70,6 @@ class Page_Form_Poe_Index extends App_Page
                                            BEAR_Resource::OPTION_CSRF => true
                          )
         );
-        $params1 = array('uri' => 'Test/Poe',
-                        'values' => array()
-        );
         $this->_resource->create($params)->request();
         $this->set('submit', print_r($submit, true));
         // テスト用でここで表示してますが通常はredirectさせて画面出力します。
