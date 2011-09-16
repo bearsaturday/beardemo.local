@@ -65,13 +65,13 @@ class Page_Form_Poe_Index extends App_Page
     public function onAction(array $submit)
     {
         $params = array('uri' => 'Test/Poe',
-        			    'values' => array(),
+                        'values' => array(),
                         'options' => array(BEAR_Resource::OPTION_POE => true,
                                            BEAR_Resource::OPTION_CSRF => true
                          )
         );
         $params1 = array('uri' => 'Test/Poe',
-        			    'values' => array()
+                        'values' => array()
         );
         $this->_resource->create($params)->request();
         $this->set('submit', print_r($submit, true));
