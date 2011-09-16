@@ -27,5 +27,5 @@
     </whitelist>
  <blacklist>
     <directory suffix=".php">App/views/</directory>
-  </blacklist>  </filter>
+  </blacklist>  </filter>aa
 </phpunit>
