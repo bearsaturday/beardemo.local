@@ -9,7 +9,7 @@ core:
 
 BEAR_Cache:
   # int  キャッシュアダプター 0 なし | 1 PEAR::Cache_Lite | 2 MEMCACHE | 3 APC
-  adapter: 3
+  adapter: 0
   # path: dsn | file path | memcache host(s)
   #   - localhost
 
@@ -61,6 +61,10 @@ BEAR_Agent_Adapter_Docomo:
 
 BEAR_Emoji:
   sumbit: 'entity'
+
+BEAR_Resource_Request:
+  poe: false
+  csrf: false
 
 # フォーム
 App_Form_Blog_Entry:
