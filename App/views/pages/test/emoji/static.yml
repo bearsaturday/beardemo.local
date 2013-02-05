@@ -2,4 +2,4 @@ default:
   title: スタティック絵文字テスト
 mobile:
 　　title: スタティック絵文字テスト
-layout:mobilecss.tpl
+layout: mobilecss.tpl
