@@ -1,3 +1,3 @@
 default:
   title:  セッションタイムアウト
-layout:default.tpl
+layout: default.tpl
