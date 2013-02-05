@@ -1,4 +1,4 @@
 default:
   title: DBインサート
 mobile:
-layout:default.tpl
+layout: default.tpl

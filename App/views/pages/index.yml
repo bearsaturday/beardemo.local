@@ -21,4 +21,4 @@ mobile:
       a:
         link:    00000ff
         visited: ff0000
-layout:default.tpl
+layout: default.tpl

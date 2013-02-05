@@ -6,4 +6,4 @@ default:
       <script>document.domain = document.domain</script>
       <script src="http://localhost:9000/static/Orbited.js"></script>
   title:  Orbited Realtime Web Demo
-layout:default.tpl
+layout: default.tpl

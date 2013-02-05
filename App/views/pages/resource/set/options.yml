@@ -2,4 +2,4 @@ default:
   js:
     enable: 1
   title: リソースセットオプション
-layout:default.tpl
+layout: default.tpl
