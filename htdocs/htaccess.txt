@@ -10,7 +10,7 @@ php_value include_path "/usr/local/php/beardemo.local:/usr/share/php:."
 # BEAR
 # error report level
 php_value display_errors 1
-php_value error_reporting 2047
+php_value error_reporting 22519
 php_value log_errors 1
 php_value ignore_repeated_errors 1
 php_value html_errors 0
