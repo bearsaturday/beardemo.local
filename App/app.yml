@@ -76,6 +76,9 @@ App_Form_Blog_Entry:
   error:
     title_required: 'タイトルを入力してください'
 
+BEAR_Agent:
+  ua_inject: 'App_Agent_Ua'
+
 # インジェクタ指定によるUA対応フォーム
 App_Form_Simple:
   __injector:
