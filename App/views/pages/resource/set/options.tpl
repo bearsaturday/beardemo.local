@@ -6,7 +6,7 @@
 <ul class="entry">
     {foreach item=item from=$entry1}
     <li>
-       <a href="/db/select/item.php?id={$item.id}" class="entry-title">{$item.title}</a><span class="entry-body">{$item.body|mb_truncate:120}</span>
+       <a href="/db/select/item.php?id={$item.id}" class="entry-title">{$item.title}</a><span class="entry-body">{$item.body|mb_strimwidth:0:120:'...'|escape}</span>
     </li>
     {/foreach}
 </ul>
@@ -21,7 +21,7 @@
 <ul class="entry">
     {foreach item=item from=$entry1}
     <li>
-       <a href="/db/select/item.php?id={$item.id}" class="entry-title">{$item.title}</a><span class="entry-body">{$item.body|mb_truncate:120}</span>
+       <a href="/db/select/item.php?id={$item.id}" class="entry-title">{$item.title}</a><span class="entry-body">{$item.body|mb_strimwidth:0:120:'...'|escape}</span>
     </li>
     {/foreach}
 </ul>
@@ -35,7 +35,7 @@
 <ul class="entry">
     {foreach item=item from=$entry5->getBody()}
     <li>
-       <a href="/db/select/item.php?id={$item.id}" class="entry-title">{$item.title}</a><span class="entry-body">{$item.body|mb_truncate:120}</span>
+       <a href="/db/select/item.php?id={$item.id}" class="entry-title">{$item.title}</a><span class="entry-body">{$item.body|mb_strimwidth:0:120:'...'|escape}</span>
     </li>
     {/foreach}
 </ul>
