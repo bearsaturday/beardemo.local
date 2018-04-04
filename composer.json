@@ -1,0 +1,46 @@
+{
+  "name": "bear.demo",
+  "description": "bear.demo for BEAR Saturday",
+  "keywords": [
+    "Framework",
+    "BEAR.Saturday"
+  ],
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Akihito Koriyama",
+      "email": "akihito.koriyama@gmail.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "pear",
+      "url": "http://pear.php.net"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/satomif/BEAR.Saturday"
+    }
+  ],
+  "include-path": [
+    "./"
+  ],
+  "require": {
+    "php": ">=5.4",
+    "bearsaturday/bearsaturday": "dev-php54_dev"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-develop-2": "0.9.x-dev"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.8",
+    "phpunit/dbunit": "^1.4.1"
+  },
+  "minimum-stability":"dev",
+  "prefer-stable": true,
+  "config":{
+    "secure-http" : false
+  }
+}
