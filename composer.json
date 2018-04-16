@@ -1,5 +1,5 @@
 {
-  "name": "bearsaturday/demo",
+  "name": "bearsaturday/demo.local",
   "description": "bear.demo for BEAR Saturday",
   "keywords": [
     "Framework",
@@ -11,20 +11,5 @@
       "name": "Akihito Koriyama",
       "email": "akihito.koriyama@gmail.com"
     }
-  ],
-  "repositories": [
-    {
-      "type": "pear",
-      "url": "http://pear.php.net"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/satomif/BEAR.Saturday"
-    }
-  ],
-  "minimum-stability":"dev",
-  "prefer-stable": true,
-  "config":{
-    "secure-http" : false
-  }
+  ]
 }
