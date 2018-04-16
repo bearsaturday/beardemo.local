@@ -1,0 +1,18 @@
+{
+  "name": "bearsaturday/beardemo.local",
+  "description": "BEAR.Saturday demo",
+  "keywords": [
+    "Framework",
+    "BEAR.Saturday"
+  ],
+  "license": "BSD-3-Closure",
+  "authors": [
+    {
+      "name": "Akihito Koriyama",
+      "email": "akihito.koriyama@gmail.com"
+    }
+  ],
+  "config":{
+    "secure-http" : false
+  }
+}
