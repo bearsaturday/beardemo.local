@@ -1,26 +1,13 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Ro
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 
 /**
  * Page
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Ro
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class App_Ro extends BEAR_Ro
 {
@@ -48,10 +35,6 @@ class App_Ro extends BEAR_Ro
      * 操作によってDBオブジェクトを変更します。
      * read操作はdsnをslaveに、DBページャーを利用可能に。
      * その他操作はdsnをdefaultに、トランザクション可能にしExtendedモジュール読み込みます。
-     *
-     * @return void
-     *
-     * @return void
      */
     public function onInject()
     {
@@ -86,8 +69,6 @@ class App_Ro extends BEAR_Ro
      * SELECTクエリーInject
      *
      * SELECTクエリーをCOUNTに変更します
-     *
-     * @return void
      */
     public function onInjectCount()
     {

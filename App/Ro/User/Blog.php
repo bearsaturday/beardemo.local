@@ -1,26 +1,13 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Ro
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 
 /**
  * ブログサービスリソース
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Ro
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class App_Ro_User_Blog extends App_Ro
 {
@@ -38,6 +25,7 @@ class App_Ro_User_Blog extends App_Ro
         $result[11] = array('id' => 11, 'name' => 'Athos Blog');
         $result[12] = array('id' => 12, 'name' => 'Aramis Blog');
         $result[13] = array('id' => 13, 'name' => 'Porthos Blog');
+
         return $result[$values['id']];
     }
 
@@ -52,6 +40,7 @@ class App_Ro_User_Blog extends App_Ro
         $links['new'] = array('uri' => 'User/Blog/New', 'values' => array('id' => $values['id']), 'options' => array());
         $links['entry'] = array('uri' => 'User/Blog/Entry', 'values' => array('blog_id' => $values['id']));
         $links['db_entry'] = array('uri' => 'Entry');
+
         return $links;
     }
 }

@@ -1,26 +1,13 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Form
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 
 /**
  * エントリーフォーム
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Form
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class App_Form_Blog_Entry extends BEAR_Base
 {
@@ -40,8 +27,6 @@ class App_Form_Blog_Entry extends BEAR_Base
 
     /**
      * Build form
-     *
-     * @return void
      */
     public function build()
     {
@@ -50,7 +35,7 @@ class App_Form_Blog_Entry extends BEAR_Base
         $form->addElement('header', 'main', $this->_config['label']['main']);
         // フィールド
         $form->addElement('text', 'title', $this->_config['label']['title'], $this->_attr['title']);
-        $form->addElement('textarea', 'body', $this->_config['label']['body'],  $this->_attr['body']);
+        $form->addElement('textarea', 'body', $this->_config['label']['body'], $this->_attr['body']);
         $form->addElement('submit', '_submit', $this->_config['label']['submit'], '');
         // フィルタと検証ルール
         $form->applyFilter('__ALL__', 'trim');

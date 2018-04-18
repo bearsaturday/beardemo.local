@@ -1,26 +1,13 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Aspect
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 
 /**
  * Advice
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Aspect
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class App_Aspect_Test_Before implements BEAR_Aspect_Before_Interface
 {
@@ -35,6 +22,7 @@ class App_Aspect_Test_Before implements BEAR_Aspect_Before_Interface
     public function before(array $values, BEAR_Aspect_JoinPoint $joinPoint)
     {
         $values['id'] = 2;
+
         return $values;
     }
 }

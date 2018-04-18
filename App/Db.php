@@ -1,30 +1,16 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Db
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 
 /**
  * Db
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Db
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class App_Db extends BEAR_Factory
 {
-
     /**
      * DBインスタンス取得
      *
@@ -44,10 +30,11 @@ class App_Db extends BEAR_Factory
         $config = array('dsn' => $this->_config['dsn']);
         $config['options'] = $options;
         $db = BEAR::factory('BEAR_Mdb2', $config);
-        /** @var $db BEAR_Mdb2 */
+        /* @var $db BEAR_Mdb2 */
         // すべてのフィールド識別子が SQL 文中で自動的にクォート
         $db->setOption('quote_identifier', true);
         $db->loadModule('Extended');
+
         return $db;
     }
 }

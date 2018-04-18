@@ -1,26 +1,13 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Ro
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 
 /**
  * rateリソース
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Ro
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class App_Ro_Rate extends App_Ro
 {
@@ -44,6 +31,7 @@ class App_Ro_Rate extends App_Ro
         $values['created_at'] = _BEAR_DATETIME; //現在時刻
         $where = 'id = ' . $this->_query->quote($values['id'], 'integer');
         $result = $this->_query->update($values, $where);
+
         return $result;
     }
 
@@ -60,6 +48,7 @@ class App_Ro_Rate extends App_Ro
 //        $sql = "SELECT * FROM {$this->_table}";
 //        $result = $this->_query->select($sql, array(), $values);
         $result = 4;
+
         return $result;
     }
 }

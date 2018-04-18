@@ -1,17 +1,14 @@
 <?php
-
+/**
+ * This file is part of the beardemo.local package.
+ *
+ * @license http://opensource.org/licenses/bsd-license.php BSD
+ */
 require _BEAR_APP_HOME . '/App/vendors/SmartyValidate.class.php';
 
 /**
  * App
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Form
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 
 /**
@@ -19,20 +16,11 @@ require _BEAR_APP_HOME . '/App/vendors/SmartyValidate.class.php';
  *
  * SmartyValidateを使ったフォーム例です。QuickFormを使用していません。
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Form
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class App_Form_SmartyValidate extends BEAR_Base implements App_Form_Interface
 {
     /**
      * Inject
-     *
-     * @return void
      */
     public function onInject()
     {
@@ -40,11 +28,8 @@ class App_Form_SmartyValidate extends BEAR_Base implements App_Form_Interface
         $this->_post = $_POST;
     }
 
-
     /**
      * Set rules
-     *
-     * @return void
      */
     public function build()
     {
@@ -57,7 +42,7 @@ class App_Form_SmartyValidate extends BEAR_Base implements App_Form_Interface
         SmartyValidate::register_validator('fullname', 'FullName', 'notEmpty', false, false, 'trim');
         SmartyValidate::register_validator('phone', 'Phone', 'isNumber', true, false, 'trim');
         SmartyValidate::register_validator('expdate', 'CCExpDate', 'notEmpty', false, false, 'trim');
-        SmartyValidate::register_validator('email', 'Email', 'isEmail', false,  false, 'trim');
+        SmartyValidate::register_validator('email', 'Email', 'isEmail', false, false, 'trim');
         SmartyValidate::register_validator('date', 'Date', 'isDate', true, false, 'trim');
         SmartyValidate::register_validator('password', 'password:password2', 'isEqual');
     }
@@ -65,22 +50,23 @@ class App_Form_SmartyValidate extends BEAR_Base implements App_Form_Interface
     /**
      * Is valid ?
      *
-     * @return boolean
+     * @return bool
      */
     public function validate()
     {
-        if (!$this->_post) {
+        if (! $this->_post) {
             return false;
         }
         SmartyValidate::connect($this->_smarty);
         $isValid = SmartyValidate::is_valid($this->_post);
-        if($isValid === true) {
+        if ($isValid === true) {
             // no errors, done with SmartyValidate
             SmartyValidate::disconnect();
         } else {
             // error, redraw the form
             $this->_smarty->assign($this->_post);
         }
+
         return $isValid;
     }
 
@@ -97,6 +83,7 @@ class App_Form_SmartyValidate extends BEAR_Base implements App_Form_Interface
                         'email' => $this->_post['Email'],
                         'date' => $this->_post['Date'],
                         'password' => $this->_post['password']);
+
         return $values;
     }
 }

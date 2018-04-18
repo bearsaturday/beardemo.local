@@ -1,26 +1,13 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Ro
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 
 /**
  * リソースエラーサンプル
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Ro
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class App_Ro_Sample_Error_More extends App_Ro
 {
@@ -46,7 +33,6 @@ class App_Ro_Sample_Error_More extends App_Ro
      *
      * @param array $values
      *
-     * @return void
      * @throws Panda_Exception 商品はありません例外
      */
     public function onCreate($values)
@@ -61,7 +47,6 @@ class App_Ro_Sample_Error_More extends App_Ro
      *
      * @param array $values
      *
-     * @return void
      * @throws App_Ro_Sample_Error_More_Exception 更新不可例外
      */
     public function onUpdate($values)
@@ -69,12 +54,12 @@ class App_Ro_Sample_Error_More extends App_Ro
         $msg = '現在一切の更新はできません';
         $info = array('date' => _BEAR_DATETIME);
         throw $this->_exception(
-            $msg, array(
+            $msg,
+            array(
             'code' => BEAR::CODE_ERROR,
             'info' => $info)
         );
     }
-
 
     /**
      * Delete - PEARエラー発生
@@ -90,6 +75,7 @@ class App_Ro_Sample_Error_More extends App_Ro
     {
         $array = $_SERVER;
         $ro = BEAR::factory('App_Ro')->setHeader('count', count($array))->setBody($array);
+
         return $ro;
     }
 }

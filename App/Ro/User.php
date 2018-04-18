@@ -1,26 +1,13 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Ro
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 
 /**
  * ユーザーリソース
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Ro
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class App_Ro_User extends App_Ro
 {
@@ -37,6 +24,7 @@ class App_Ro_User extends App_Ro
         $result[1] = array('id' => 1, 'name' => 'Athos', 'age' => 15, 'blog_id' => 11, 'photo_id' => 1);
         $result[2] = array('id' => 2, 'name' => 'Aramis', 'age' => 16, 'blog_id' => 12, 'photo_id' => 2);
         $result[3] = array('id' => 3, 'name' => 'Porthos', 'age' => 17, 'blog_id' => 13, 'photo_id' => 3);
+
         return $result[$values['id']];
     }
 

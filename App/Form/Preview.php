@@ -1,14 +1,8 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Form
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 
 /**
@@ -18,17 +12,9 @@
  *
  * 表示、確認、修正の３つの状態のある確認画面つきフォームです。
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Form
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class App_Form_Preview extends BEAR_Base
 {
-
     /**
      * テンプレート
      *
@@ -68,8 +54,6 @@ class App_Form_Preview extends BEAR_Base
 
     /**
      * Inject（最初の表示）
-     *
-     * @return void
      */
     public function onInject()
     {
@@ -77,8 +61,6 @@ class App_Form_Preview extends BEAR_Base
 
     /**
      * Inject（最初の表示）
-     *
-     * @return void
      */
     public function onInjectMobile()
     {
@@ -90,60 +72,9 @@ class App_Form_Preview extends BEAR_Base
     }
 
     /**
-     * Inject　- フリーズ
-     *
-     * @return void
-     */
-    private function _injectPreview()
-    {
-        $this->_form = array('formName' => 'form', 'callback' => array(__CLASS__, 'onRenderFreeze'));
-        $this->_separator = '&nbsp;';
-    }
-
-
-    /**
-     * Inject - 修正
-     *
-     * @return void
-     */
-    private function _injectModify()
-    {
-        $this->_defaults = $_POST;
-    }
-
-    /**
-     * フォームの状態をセット
-     *
-     * フォームの状態を通常、確認（フリーズ）、修正にセットします
-     *
-     * @param string $formMode
-     *
-     * @return void
-     */
-    private function _injectFormMode($formMode)
-    {
-        switch ($formMode) {
-            case 'default':
-                break;
-            case 'preview':
-                $this->_separator = '&nbsp;';
-                $this->_injectPreview();
-                break;
-            case 'modify':
-                $this->_defaults = $_POST;
-                $this->_injectModify();
-                break;
-            default:
-                break;
-        }
-    }
-
-    /**
      * build form
      *
      * @param string $formMode
-     *
-     * @return void
      */
     public function build($formMode)
     {
@@ -165,7 +96,9 @@ class App_Form_Preview extends BEAR_Base
         $checkbox[] = HTML_QuickForm::createElement('bcheckbox', 'music', null, '音楽');
         $checkbox[] = HTML_QuickForm::createElement('bcheckbox', 'movie', null, '映画');
         $this->_form->addGroup(
-            $checkbox, 'hobby', array('趣味:', '最低２つ入力してください'),
+            $checkbox,
+            'hobby',
+            array('趣味:', '最低２つ入力してください'),
             $this->_separator
         );
         // ラジオボタン
@@ -184,8 +117,6 @@ class App_Form_Preview extends BEAR_Base
 
     /**
      * 最初の画面のボタン
-     *
-     * @return void
      */
     public function buildConfirmButton()
     {
@@ -194,8 +125,6 @@ class App_Form_Preview extends BEAR_Base
 
     /**
      * 確認画面のボタン
-     *
-     * @return void
      */
     public function buildSendButton()
     {
@@ -206,16 +135,55 @@ class App_Form_Preview extends BEAR_Base
         $this->_form->freeze();
     }
 
-
     /**
      * カスタムテンプレート
      *
      * @param HTML_QuickForm_Renderer_Tableless $render
-     *
-     * @return void
      */
     public static function onRenderFreeze(HTML_QuickForm_Renderer_Tableless $render)
     {
         $render->setElementTemplate(self::$_elementTemplateFreeze);
+    }
+
+    /**
+     * Inject　- フリーズ
+     */
+    private function _injectPreview()
+    {
+        $this->_form = array('formName' => 'form', 'callback' => array(__CLASS__, 'onRenderFreeze'));
+        $this->_separator = '&nbsp;';
+    }
+
+    /**
+     * Inject - 修正
+     */
+    private function _injectModify()
+    {
+        $this->_defaults = $_POST;
+    }
+
+    /**
+     * フォームの状態をセット
+     *
+     * フォームの状態を通常、確認（フリーズ）、修正にセットします
+     *
+     * @param string $formMode
+     */
+    private function _injectFormMode($formMode)
+    {
+        switch ($formMode) {
+            case 'default':
+                break;
+            case 'preview':
+                $this->_separator = '&nbsp;';
+                $this->_injectPreview();
+                break;
+            case 'modify':
+                $this->_defaults = $_POST;
+                $this->_injectModify();
+                break;
+            default:
+                break;
+        }
     }
 }

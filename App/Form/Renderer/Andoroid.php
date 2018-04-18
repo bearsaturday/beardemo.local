@@ -1,27 +1,14 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    Bear.demo
- * @subpackage Form
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id: Andoroid.php 475 2011-06-27 07:00:40Z koriyama@bear-project.net $
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 
 /**
  * App custom form
  *
- * @category   BEAR
- * @package    Bear.demo
- * @subpackage Form
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id: Andoroid.php 475 2011-06-27 07:00:40Z koriyama@bear-project.net $
- * @link       http://@link_url@
- * @see       http://pear.php.net/package/HTML_QuickForm_Renderer_Tableless
+ * @see http://pear.php.net/package/HTML_QuickForm_Renderer_Tableless
  */
 class App_Form_Renderer_Iphone extends HTML_QuickForm_Renderer_Tableless
 {

@@ -1,30 +1,16 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Aspect
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 
 /**
  * Advice
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Aspect
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class App_Aspect_Transaction implements BEAR_Aspect_Around_Interface
 {
-
     /**
      * トランザクションアドバイス
      *
@@ -44,11 +30,12 @@ class App_Aspect_Transaction implements BEAR_Aspect_Around_Interface
         //　オリジナルのメソッドを実行
         $result = $joinPoint->proceed($values);
         // 後処理
-        if (!MDB2::isError($result)) {
+        if (! MDB2::isError($result)) {
             $db->commit();
         } else {
             $db->rollback();
         }
+
         return $result;
     }
 }

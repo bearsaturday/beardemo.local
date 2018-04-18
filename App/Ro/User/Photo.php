@@ -1,26 +1,13 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Ro
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 
 /**
  * 写真サービスリソース
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Ro
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class App_Ro_User_Photo extends App_Ro
 {
@@ -38,6 +25,7 @@ class App_Ro_User_Photo extends App_Ro
         $result[1] = array('id' => 11, 'name' => 'Athos Photo');
         $result[2] = array('id' => 12, 'name' => 'Aramis Photo');
         $result[3] = array('id' => 13, 'name' => 'Porthos Photo');
+
         return $result[$values['id']];
     }
 
@@ -50,6 +38,7 @@ class App_Ro_User_Photo extends App_Ro
     {
         $links = array();
         $links['album'] = array('uri' => 'User/Photo/Album', 'values' => array('photo_id' => $values['id']));
+
         return $links;
     }
 }

@@ -1,14 +1,8 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Ro
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 
 /**
@@ -21,13 +15,6 @@
  * 400 (BEAR::CODE_BAD_REQUEST)
  * 500 (BEAR::CODE_ERROR)
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Ro
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class App_Ro_Sample_Error extends App_Ro
 {
@@ -56,7 +43,6 @@ class App_Ro_Sample_Error extends App_Ro
      *
      * @param array $values
      *
-     * @return void
      * @throws Exception テスト例外
      */
     public function onCreate($values)
@@ -71,7 +57,6 @@ class App_Ro_Sample_Error extends App_Ro
      *
      * @param array $values
      *
-     * @return void
      * @throws App_Ro_Sample_Error_Exception 更新不可例外
      */
     public function onUpdate($values)
@@ -79,7 +64,8 @@ class App_Ro_Sample_Error extends App_Ro
         $msg = '現在一切の更新はできません';
         $info = array('date' => _BEAR_DATETIME);
         throw $this->_exception(
-            $msg, array(
+            $msg,
+            array(
             'code' => BEAR::CODE_ERROR,
             'info' => $info)
         );

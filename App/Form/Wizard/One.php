@@ -1,14 +1,8 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Form
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id: One.php 447 2011-06-01 00:31:53Z koriyama@bear-project.net $
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 
 /**
@@ -24,17 +18,9 @@
  * "bradio"にしています。
  * </pre>
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Form
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id: One.php 447 2011-06-01 00:31:53Z koriyama@bear-project.net $
- * @link       http://@link_url@
  */
 class App_Form_Wizard_One extends BEAR_Base
 {
-
     /**
      * フォーム
      *
@@ -60,8 +46,6 @@ class App_Form_Wizard_One extends BEAR_Base
 
     /**
      * Inject
-     *
-     * @return void
      */
     public function onInject()
     {
@@ -85,25 +69,24 @@ class App_Form_Wizard_One extends BEAR_Base
         // ルール
         $this->_form->addRule('name', '名前を入力してください', 'required');
         $this->_form->addRule('gender', '性別を入力してください', 'required');
+
         return $this;
     }
 
     /**
      * ボタン
-     *
-     * @return void
      */
     public function button()
     {
         //ボタン
         $this->_form->addElement('submit', '_submit', '次へ', '');
     }
+
     /**
      * カスタムテンプレート
      *
      * @param HTML_QuickForm_Renderer_Tableless $render
      *
-     * @return void
      * @see    http://pear.php.net/manual/ja/package.html.html-quickform-renderer-tableless.php
      */
     public static function onRenderFreeze(HTML_QuickForm_Renderer_Tableless $render)

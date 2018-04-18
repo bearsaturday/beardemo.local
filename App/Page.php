@@ -1,30 +1,16 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 
 /**
  * Page
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 abstract class App_Page extends BEAR_Page
 {
-
     /**
      *  セッション
      *
@@ -51,8 +37,6 @@ abstract class App_Page extends BEAR_Page
 
     /**
      * Inject
-     *
-     * @return void
      */
     public function onInject()
     {
@@ -63,8 +47,6 @@ abstract class App_Page extends BEAR_Page
 
     /**
      * Output
-     *
-     * @return void
      */
     public function onOutput()
     {
@@ -76,7 +58,6 @@ abstract class App_Page extends BEAR_Page
      *
      * @param Exception $e
      *
-     * @return void
      * @throws Exception 受け取った例外
      */
     public function onException(Exception $e)
@@ -91,7 +72,7 @@ abstract class App_Page extends BEAR_Page
             $this->end();
         } catch (Exception $e) {
             // テスト確認のためにセット
-            $this->set('e', (string)$e->getMessage());
+            $this->set('e', (string) $e->getMessage());
             throw $e;
         }
     }

@@ -10,9 +10,6 @@
  * @link      http://@link_url@
  */
 
-/**
- * App root path
- */
 if (!defined('_BEAR_APP_HOME')) {
     define('_BEAR_APP_HOME', realpath(dirname(__FILE__)));
 }
@@ -24,17 +21,6 @@ $bearMode = isset($_SERVER['bearmode']) ? $_SERVER['bearmode'] : 0;
 //include 'BEAR/Dev/Profile/script/startxh.php'; //xhprof
 App::init($bearMode);
 
-/**
- * App
- *
- * @category   BEAR
- * @package    bear.app
- * @subpackage Db
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
- */
 class App
 {
     /**

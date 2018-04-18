@@ -1,30 +1,16 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Session
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 
 /**
  * Session
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Session
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class App_Session extends BEAR_Base
 {
-
     /**
      * セッション延長
      *
@@ -51,8 +37,6 @@ class App_Session extends BEAR_Base
 
     /**
      * Injectー
-     *
-     * @return void
      */
     public function onInject()
     {
@@ -60,11 +44,11 @@ class App_Session extends BEAR_Base
         $this->_session = BEAR::dependency('BEAR_Session');
         $this->_header = BEAR::dependency('BEAR_Page_Header');
         switch (true) {
-            case (isset($_GET['extend'])):
+            case isset($_GET['extend']):
                 // セッション延長
                 $this->_mode = self::EXTEND;
                 break;
-            case (isset($_GET['logout'])):
+            case isset($_GET['logout']):
                 // セッション破棄
                 $this->_mode = self::LOGOUT;
                 break;
@@ -77,18 +61,17 @@ class App_Session extends BEAR_Base
     /**
      * セッションタイムアウト
      *
-     * @return void
      * @throws App_Ro_Test_Aop_Throwing2_Exception セッションタイムアウト例外
      */
     public function onSessionTimeOut()
     {
         switch (true) {
-            case ($this->_mode === self::EXTEND):
+            case $this->_mode === self::EXTEND:
                 $this->_session->updateIdle();
                 $uri = $this->_session->get('url');
                 $this->_header->redirect($uri);
                 break;
-            case ($this->_mode === self::LOGOUT):
+            case $this->_mode === self::LOGOUT:
                 $this->_session->destroy();
                 $this->_header->redirect('.');
                 break;
@@ -96,6 +79,5 @@ class App_Session extends BEAR_Base
                 //セッションタイムアウト画面
                 throw $this->_exception('Session Timeout');
         }
-        return;
     }
 }

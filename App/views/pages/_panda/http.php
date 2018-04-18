@@ -2,12 +2,8 @@
 /**
  * App
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Resource
- * @author     $Author:$ <username@example.com>
  * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
+ *
  * @link       http://@link_url@
  */?><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 
@@ -19,7 +15,7 @@
 <body text="#000000" bgcolor="#FFFFFF">
 <table border="0" cellpadding="2" cellspacing="0" width="100%">
     <tr>
-        <td bgcolor="<?php echo $error['color'] ?>"><font face="arial,sans-serif" color="#FFFFFF"><b><?php echo $error['serverProtocol']. '&nbsp;' . $error['code'] .'&nbsp;(' . $error['id']. ')';?></b></font>
+        <td bgcolor="<?php echo $error['color'] ?>"><font face="arial,sans-serif" color="#FFFFFF"><b><?php echo $error['serverProtocol'] . '&nbsp;' . $error['code'] . '&nbsp;(' . $error['id'] . ')'; ?></b></font>
         </td>
     </tr>
     <tr>
@@ -30,8 +26,8 @@
 <h2><?php echo $error['code']; ?> <?php echo $error['codeMsg']; ?></h2>
 <p>
 <?php
- if ($error['code'] >= 500 && !$error['body']) {
-    echo "The server encountered temporary error.";
+ if ($error['code'] >= 500 && ! $error['body']) {
+     echo 'The server encountered temporary error.';
  } else {
      echo $error['body'];
  }

@@ -1,33 +1,18 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Main
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 
 /**
  * Main
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Main
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class App_Main extends BEAR_Main
 {
     /**
      * Inject
-     *
-     * @return void
      */
     public function onInject()
     {
@@ -40,8 +25,6 @@ class App_Main extends BEAR_Main
      * アプリケーション共通の例外処理
      *
      * @param Exception $e
-     *
-     * @return void
      */
     public function onException(Exception $e)
     {

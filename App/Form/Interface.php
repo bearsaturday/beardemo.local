@@ -1,7 +1,11 @@
 <?php
-
-interface App_Form_Interface {
-
+/**
+ * This file is part of the beardemo.local package.
+ *
+ * @license http://opensource.org/licenses/bsd-license.php BSD
+ */
+interface App_Form_Interface
+{
     /**
      * Is valid submit ?
      *
@@ -11,8 +15,6 @@ interface App_Form_Interface {
 
     /**
      * Get validated submit value
-     *
-     * @return void
      */
     public function exportValues();
 }

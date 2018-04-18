@@ -1,14 +1,8 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Form
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 
 /**
@@ -17,17 +11,9 @@
  * モバイル用のフォームのためにonInjectMobile()が用意されています。
  * フォームのレンダリングのコールバックオプションを指定しています。
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Form
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class App_Form_Simple extends BEAR_Base
 {
-
     /**
      * テンプレート
      *
@@ -51,8 +37,6 @@ class App_Form_Simple extends BEAR_Base
 
     /**
      * Inject
-     *
-     * @return void
      */
     public function onInject()
     {
@@ -60,8 +44,6 @@ class App_Form_Simple extends BEAR_Base
 
     /**
      * モバイルインジェクト
-     *
-     * @return void
      */
     public function onInjectMobile()
     {
@@ -71,20 +53,18 @@ class App_Form_Simple extends BEAR_Base
 
     /**
      * フォーム
-     *
-     * @return void
      */
     public function build()
     {
         $form = BEAR::factory('BEAR_Form', $this->_form);
         // デフォルト
-        $form->setDefaults(array('name' => 'Kuma' . (string)rand(1, 10), 'email' => 'kuma@example.com'));
+        $form->setDefaults(array('name' => 'Kuma' . (string) mt_rand(1, 10), 'email' => 'kuma@example.com'));
         // ヘッダー
         $form->addElement('header', 'main', 'Simple Form');
         // フィールド
         $form->addElement('text', 'name', '名前', $this->_attr['name']);
-        $form->addElement('text', 'email', 'メールアドレス',  $this->_attr['email']);
-        $form->addElement('textarea', 'body', '本文',  $this->_attr['body']);
+        $form->addElement('text', 'email', 'メールアドレス', $this->_attr['email']);
+        $form->addElement('textarea', 'body', '本文', $this->_attr['body']);
         $form->addElement('submit', '_submit', '送信', '');
         // フィルタと検証ルール
         $form->applyFilter('__ALL__', 'trim');
@@ -99,7 +79,6 @@ class App_Form_Simple extends BEAR_Base
      *
      * @param HTML_QuickForm_Renderer_Tableless $render
      *
-     * @return void
      * @see    http://pear.php.net/manual/ja/package.html.html-quickform-renderer-tableless.php
      */
     public static function onRender(HTML_QuickForm_Renderer_Tableless $render)

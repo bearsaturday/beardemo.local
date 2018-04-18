@@ -1,14 +1,8 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Form
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 
 /**
@@ -17,13 +11,6 @@
  * ID/Passwordが必要なログインフォームとパスワード通知用のメールアドレスを
  * 入力する２つのフォームを作成します。
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Form
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class App_Form_Multi extends BEAR_Base
 {
@@ -43,8 +30,6 @@ class App_Form_Multi extends BEAR_Base
 
     /**
      * Inject
-     *
-     * @return void
      */
     public function onInject()
     {
@@ -54,8 +39,6 @@ class App_Form_Multi extends BEAR_Base
 
     /**
      * build form
-     *
-     * @return void
      */
     public function build()
     {

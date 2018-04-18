@@ -1,30 +1,16 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Form
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 
 /**
  * Ajax Forms
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Form
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class App_Form_Ajax extends BEAR_Base
 {
-
     /**
      * アトリビュート
      *
@@ -38,8 +24,6 @@ class App_Form_Ajax extends BEAR_Base
 
     /**
      * Inject
-     *
-     * @return void
      */
     public function onInject()
     {
@@ -67,7 +51,9 @@ class App_Form_Ajax extends BEAR_Base
         $form->addElement('textarea', 'body', '本文', $this->_attr['body']);
         $form->addElement('submit', '_submit', 'AJAX送信');
         $form->addElement(
-                   'static', '_ajax', array('リンクサブミット',
+                   'static',
+            '_ajax',
+            array('リンクサブミット',
                    'このリンクはサブミットボタンと同じように機能します'),
                    '<a href="#" title="サブミット" rel="form">AJAX送信</a>'
         );
@@ -83,8 +69,6 @@ class App_Form_Ajax extends BEAR_Base
      * カスタムテンプレート
      *
      * @param HTML_QuickForm_Renderer_Tableless $render
-     *
-     * @return void
      */
     public static function onRender(HTML_QuickForm_Renderer_Tableless $render)
     {
