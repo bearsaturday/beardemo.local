@@ -9,7 +9,7 @@ core:
 
 BEAR_Cache:
   # int  キャッシュアダプター 0 なし | 1 PEAR::Cache_Lite | 2 MEMCACHE | 3 APC
-  adapter: 0
+  adapter: 1
   # path: dsn | file path | memcache host(s)
   #   - localhost
 
@@ -49,9 +49,9 @@ App_Main:
   
 App_Db:
   dsn:
-    default: 'mysql://root:@localhost/bear_demo'
-    slave:   'mysql://root:@localhost/bear_demo'
-    test:    'mysql://root:@localhost/bear_demo'
+    default: 'mysqli://root:@localhost/bear_demo'
+    slave:   'mysqli://root:@localhost/bear_demo'
+    test:    'mysqli://root:@localhost/bear_demo'
 
 Panda:
   http_tpl: 'App/views/pages/_panda/http.php'

@@ -78,7 +78,7 @@ class App_Form_Simple extends BEAR_Base
     {
         $form = BEAR::factory('BEAR_Form', $this->_form);
         // デフォルト
-        $form->setDefaults(array('name' => 'Kuma', 'email' => 'kuma@example.com'));
+        $form->setDefaults(array('name' => 'Kuma' . (string)rand(1, 10), 'email' => 'kuma@example.com'));
         // ヘッダー
         $form->addElement('header', 'main', 'Simple Form');
         // フィールド
