@@ -6,7 +6,7 @@
         "BEAR.Saturday",
         "demo"
     ],
-    "require": {
+    "require-dev": {
         "bearsaturday/bearsaturday": "^0.9"
     },
     "autoload": {
