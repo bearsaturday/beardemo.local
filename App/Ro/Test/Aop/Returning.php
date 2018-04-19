@@ -7,7 +7,6 @@
 
 /**
  * Returning test resource
- *
  */
 class App_Ro_Test_Aop_Returning extends App_Ro_Test_Aop
 {

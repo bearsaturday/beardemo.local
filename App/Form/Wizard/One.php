@@ -17,7 +17,6 @@
  * ボタンのレンダリングを変えるため標準の"radio"からBEARオリジナルの
  * "bradio"にしています。
  * </pre>
- *
  */
 class App_Form_Wizard_One extends BEAR_Base
 {

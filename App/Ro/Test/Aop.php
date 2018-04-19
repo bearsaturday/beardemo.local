@@ -7,7 +7,6 @@
 
 /**
  * AOPリソース
- *
  */
 class App_Ro_Test_Aop extends BEAR_Ro
 {

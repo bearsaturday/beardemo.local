@@ -7,7 +7,6 @@
 
 /**
  * Page
- *
  */
 abstract class App_Page extends BEAR_Page
 {

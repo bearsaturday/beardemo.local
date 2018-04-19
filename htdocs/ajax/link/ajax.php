@@ -1,39 +1,23 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
-
 require_once 'App.php';
 
 /**
  * AJAXサービス
  *
  * clickイベントに応じて、返すbear.jsコマンド(JSON)を変えています。
- *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class Page_Ajax_Link_Ajax extends App_Page
 {
-
     /**
-     * Inject
-     *
-     * @return void
+     * @var BEAR_Page_Ajax
      */
+    private $_ajax;
+    
     public function onInject()
     {
         parent::onInject();
@@ -41,11 +25,6 @@ class Page_Ajax_Link_Ajax extends App_Page
         $this->injectAjaxRequest();
     }
 
-    /**
-     * Init
-     *
-     * @return void
-     */
     public function onInit(array $args)
     {
     }
@@ -54,13 +33,12 @@ class Page_Ajax_Link_Ajax extends App_Page
      * Run 1 - HTML
      *
      * @param array $args
-     *
-     * @return void
      */
     public function onClickHtml(array $args)
     {
         $this->_ajax->addAjax(
-            'html',array('msg' => 'AJAXリクエスト成功!'),
+            'html',
+            array('msg' => 'AJAXリクエスト成功!'),
             array('effect' => 'show')
         );
     }
@@ -69,8 +47,6 @@ class Page_Ajax_Link_Ajax extends App_Page
      * Run 3 - Val
      *
      * @param array $args
-     *
-     * @return void
      */
     public function onClickVal(array $args)
     {
@@ -88,8 +64,6 @@ class Page_Ajax_Link_Ajax extends App_Page
      * Run 4 - 値を読む
      *
      * @param array $args
-     *
-     * @return void
      */
     public function onClickRead(array $args)
     {
@@ -112,8 +86,6 @@ class Page_Ajax_Link_Ajax extends App_Page
      * Run 5 - JSをコール
      *
      * @param array $args
-     *
-     * @return void
      */
     public function onClickJs(array $args)
     {
@@ -127,12 +99,10 @@ class Page_Ajax_Link_Ajax extends App_Page
      * Aタグ意外にはりつけ
      *
      * @param array $args
-     *
-     * @return void
      */
     public function onClickImg(array $args)
     {
-         $this->_ajax->addAjax(
+        $this->_ajax->addAjax(
              'html',
              array('img_msg' => 'AJAX OK!'),
              array('effect' => 'show')
@@ -141,8 +111,6 @@ class Page_Ajax_Link_Ajax extends App_Page
 
     /**
      * Output
-     *
-     * @return void
      */
     public function onOutput()
     {

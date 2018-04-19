@@ -1,38 +1,18 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
-
 require_once 'App.php';
 
 /**
  * 記事表示ページ
  *
  * $_GET['id']で与えられたidの記事を表示します
- *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class Page_Db_Select_Item extends App_Page
 {
-    /**
-     * Inject
-     *
-     * @return void
-     */
     public function onInject()
     {
         parent::onInject();
@@ -40,11 +20,7 @@ class Page_Db_Select_Item extends App_Page
     }
 
     /**
-     * Init
-     *
      * @required id
-     *
-     * @return void
      */
     public function onInit(array $args)
     {
@@ -53,11 +29,6 @@ class Page_Db_Select_Item extends App_Page
         $this->_resource->read($params)->set('entry');
     }
 
-    /**
-     * Output
-     *
-     * @return void
-     */
     public function onOutput()
     {
         $this->display();

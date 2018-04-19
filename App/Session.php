@@ -7,7 +7,6 @@
 
 /**
  * Session
- *
  */
 class App_Session extends BEAR_Base
 {

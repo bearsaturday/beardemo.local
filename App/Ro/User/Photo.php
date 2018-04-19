@@ -7,7 +7,6 @@
 
 /**
  * 写真サービスリソース
- *
  */
 class App_Ro_User_Photo extends App_Ro
 {

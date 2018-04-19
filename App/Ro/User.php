@@ -7,7 +7,6 @@
 
 /**
  * ユーザーリソース
- *
  */
 class App_Ro_User extends App_Ro
 {

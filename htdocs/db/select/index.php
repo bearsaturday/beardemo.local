@@ -1,4 +1,9 @@
 <?php
+/**
+ * This file is part of the beardemo.local package.
+ *
+ * @license http://opensource.org/licenses/bsd-license.php BSD
+ */
 require_once 'App.php';
 
 /**
@@ -6,22 +11,9 @@ require_once 'App.php';
  *
  * DBからデータをSELECTし、ページングして表示しています。
  * ソートはリソースのクエリーツールの設定で許可されたキーが有効になります。ページでハンドリングする必要はありません。
- *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class Page_Db_Select_Index extends App_Page
 {
-    /**
-     * Init
-     *
-     * @return void
-     */
     public function onInit(array $args)
     {
         $params = array('uri' => 'Entry',
@@ -36,11 +28,6 @@ class Page_Db_Select_Index extends App_Page
         $this->_resource->read($params)->set('entry');
     }
 
-    /**
-     * Output
-     *
-     * @return void
-     */
     public function onOutput()
     {
         $this->display();

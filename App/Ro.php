@@ -7,7 +7,6 @@
 
 /**
  * Page
- *
  */
 class App_Ro extends BEAR_Ro
 {

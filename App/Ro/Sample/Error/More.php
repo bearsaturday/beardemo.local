@@ -7,7 +7,6 @@
 
 /**
  * リソースエラーサンプル
- *
  */
 class App_Ro_Sample_Error_More extends App_Ro
 {

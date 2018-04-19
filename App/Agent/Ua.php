@@ -7,7 +7,6 @@
 
 /**
  * UAインジェクト
- *
  */
 class App_Agent_Ua implements BEAR_Injector_Interface
 {

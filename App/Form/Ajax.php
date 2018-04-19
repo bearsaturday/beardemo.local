@@ -7,7 +7,6 @@
 
 /**
  * Ajax Forms
- *
  */
 class App_Form_Ajax extends BEAR_Base
 {

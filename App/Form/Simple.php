@@ -10,7 +10,6 @@
  *
  * モバイル用のフォームのためにonInjectMobile()が用意されています。
  * フォームのレンダリングのコールバックオプションを指定しています。
- *
  */
 class App_Form_Simple extends BEAR_Base
 {

@@ -10,7 +10,6 @@
  *
  * ID/Passwordが必要なログインフォームとパスワード通知用のメールアドレスを
  * 入力する２つのフォームを作成します。
- *
  */
 class App_Form_Multi extends BEAR_Base
 {

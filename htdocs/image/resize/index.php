@@ -1,16 +1,9 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
-
 require_once 'App.php';
 
 /**
@@ -18,12 +11,8 @@ require_once 'App.php';
  *
  * リモート or ローカル画像ファイルを取得、リサイズ、GIFフォーマット変換して表示します。
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
  * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
+ *
  * @link       http://@link_url@
  */
 class Page_Image_Resize_Index extends App_Page
@@ -37,8 +26,6 @@ class Page_Image_Resize_Index extends App_Page
 
     /**
      * GDアダプターとローカルファイルをインジェクト
-     *
-     * @return void
      */
     public function onInject()
     {
@@ -52,8 +39,6 @@ class Page_Image_Resize_Index extends App_Page
 
     /**
      * iMagcikアダプターとリモートファイルをインジェクト
-     *
-     * @return void
      */
     public function onInjectMagick()
     {
@@ -69,8 +54,6 @@ class Page_Image_Resize_Index extends App_Page
      * Init
      *
      * @param array $args
-     *
-     * @return void
      */
     public function onInit(array $args)
     {
@@ -89,8 +72,6 @@ class Page_Image_Resize_Index extends App_Page
 
     /**
      * Output
-     *
-     * @return void
      */
     public function onOutput()
     {

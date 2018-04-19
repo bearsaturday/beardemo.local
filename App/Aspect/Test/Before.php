@@ -7,7 +7,6 @@
 
 /**
  * Advice
- *
  */
 class App_Aspect_Test_Before implements BEAR_Aspect_Before_Interface
 {

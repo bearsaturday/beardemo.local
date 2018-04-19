@@ -9,7 +9,6 @@
  * Wizardフォーム 2
  *
  * 2番目のフォームです。
- *
  */
 class App_Form_Wizard_Two extends App_Form_Wizard_One
 {

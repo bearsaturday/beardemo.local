@@ -1,36 +1,14 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id: exception2.php 470 2011-06-26 17:21:47Z koriyama@bear-project.net $
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
-
 $_SERVER['bearmode'] = 0;
 require_once 'App.php';
 
-/**
- *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id: exception2.php 470 2011-06-26 17:21:47Z koriyama@bear-project.net $
- * @link       http://@link_url@
- */
 class Page_Test_Error_Exception2 extends App_Page
 {
-    /**
-     * Init
-     *
-     * @return void
-     */
     public function onInit(array $args)
     {
         throw new Expection();
@@ -38,7 +16,7 @@ class Page_Test_Error_Exception2 extends App_Page
 
     public function onOutput()
     {
-        echo "Expection in onInitリソーステスト終了";
+        echo 'Expection in onInitリソーステスト終了';
     }
 }
 

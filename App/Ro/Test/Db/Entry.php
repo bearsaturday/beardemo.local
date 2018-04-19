@@ -7,7 +7,6 @@
 
 /**
  * Thorowing test resource
- *
  */
 class App_Ro_Test_Db_Entry extends App_Ro
 {

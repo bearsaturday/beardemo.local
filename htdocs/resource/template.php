@@ -1,39 +1,18 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id: nolink_cache.php 447 2011-06-01 00:31:53Z koriyama@bear-project.net $
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
-
 require_once 'App.php';
 
 /**
  * リソースリンクページ
  *
  * リソースリクエストにリソーステンプレートオプションを指定しています。
- *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ssss <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id: nolink_cache.php 447 2011-06-01 00:31:53Z koriyama@bear-project.net $
- * @link       http://@link_url@
  */
 class Page_Resource_Template extends App_Page
 {
-
-    /**
-     * Inject
-     *
-     * @return void
-     */
     public function onInject()
     {
         parent::onInject();
@@ -41,11 +20,7 @@ class Page_Resource_Template extends App_Page
     }
 
     /**
-     * Init
-     *
      * @requied id
-     *
-     * @return void
      */
     public function onInit(array $args)
     {
@@ -57,11 +32,6 @@ class Page_Resource_Template extends App_Page
         $this->_resource->read($params)->set('user', 'value');
     }
 
-    /**
-     * Output
-     *
-     * @return void
-     */
     public function onOutput()
     {
         $this->display('/resource/template.tpl');

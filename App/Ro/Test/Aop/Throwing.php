@@ -7,7 +7,6 @@
 
 /**
  * Thorowing test resource
- *
  */
 class App_Ro_Test_Aop_Throwing extends App_Ro_Test_Aop
 {

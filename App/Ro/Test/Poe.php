@@ -7,7 +7,6 @@
 
 /**
  * POEテスト用リソース
- *
  */
 class App_Ro_Test_Poe extends BEAR_Ro
 {

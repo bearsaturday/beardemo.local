@@ -7,7 +7,6 @@
 
 /**
  * Around resource
- *
  */
 class App_Ro_Test_Aop_Around extends App_Ro_Test_Aop
 {

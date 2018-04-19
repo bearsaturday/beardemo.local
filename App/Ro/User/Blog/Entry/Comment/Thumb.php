@@ -7,7 +7,6 @@
 
 /**
  * コメント評価リソース
- *
  */
 class App_Ro_User_Blog_Entry_Comment_Thumb extends App_Ro
 {

@@ -7,7 +7,6 @@
 
 /**
  * エントリーリソース
- *
  */
 class App_Ro_Entry extends App_Ro
 {

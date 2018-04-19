@@ -7,7 +7,6 @@
 
 /**
  * Main
- *
  */
 class App_Main extends BEAR_Main
 {

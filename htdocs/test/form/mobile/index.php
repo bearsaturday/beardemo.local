@@ -1,41 +1,24 @@
 <?php
 /**
- * bear.demo
+ * This file is part of the beardemo.local package.
  *
- * @package Page
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 require_once 'App.php';
 
 /**
  * Simpleフォーム
  *
- * <pre>
  * フォームをサブミット後フリーズさせています。
  * フォームオブジェクトをonActionでfreezeするために一旦プロパティにいれています。
- * </pre>
- *
- * @package Page
- * @author  $Author:$
- * @version SVN: Release: $Id:$
  */
 class Page_Test_Form_Mobile_Index extends App_Page
 {
-
-    /**
-     * Inject
-     *
-     * @return void
-     */
     public function onInject()
     {
         parent::onInject();
     }
 
-    /**
-     * Init
-     *
-     * @return void
-     */
     public function onInit(array $args)
     {
         $this->_form = BEAR::dependency('App_Form_Simple')->build();
@@ -47,24 +30,14 @@ class Page_Test_Form_Mobile_Index extends App_Page
         $this->set('dsun', $dsun);
     }
 
-    /**
-     * Output
-     *
-     * @return void
-     */
     public function onOutput()
     {
-    	$this->display();
+        $this->display();
     }
 
-    /**
-     * Action
-     *
-     * @return
-     */
     public function onAction(array $submit)
     {
-    	$this->set('sumit_name', $submit['name']);
+        $this->set('sumit_name', $submit['name']);
         $this->_form->freeze();
         $this->display();
     }
@@ -73,10 +46,10 @@ $sun[BEAR_Agent::UA_DOCOMO] = pack('H*', 'F89F');
 $sun[BEAR_Agent::UA_EZWEB] = pack('H*', 'F660');
 $sun[BEAR_Agent::UA_SOFTBANK] = '$Gj';
 $ua = $_GET['ua'];
-if (!$ua) {
-	echo '<a href="?ua=Docomo">try again</a>';
-	exit();
+if (! $ua) {
+    echo '<a href="?ua=Docomo">try again</a>';
+    exit();
 }
 $msg = mb_convert_encoding('こんにちは', 'SJIS-win', 'UTF-8') . $sun[$ua];
-$_POST = array('name' => $msg, '_token' => 1, "_qf__form"=> '');
+$_POST = array('name' => $msg, '_token' => 1, '_qf__form' => '');
 App_Main::run('Page_Test_Form_Mobile_Index', array('ua' => $ua));

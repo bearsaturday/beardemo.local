@@ -7,7 +7,6 @@
 
 /**
  * Docomo 絵文字リソース
- *
  */
 class App_Ro_Emoji_Docomo extends App_Ro
 {

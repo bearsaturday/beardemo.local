@@ -1,35 +1,21 @@
 <?php
 /**
- * bear.demo
+ * This file is part of the beardemo.local package.
  *
- * @package Page
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 require_once 'App.php';
 
 /**
  * AOPテスト
- *
- * @package Page
- * @author  $Author:$
- * @version SVN: Release: $Id:$
  */
 class Page_Test_Aop extends App_Page
 {
-    /**
-     * Inject
-     *
-     * @return void
-     */
     public function onInject()
     {
         parent::onInject();
     }
 
-    /**
-     * Init
-     *
-     * @return void
-     */
     public function onInit(array $args)
     {
         $values = array('id' => 1);
@@ -61,7 +47,6 @@ class Page_Test_Aop extends App_Page
         $values = array('id' => 3);
         $params = array('uri' => 'Test/Aop/Around2', 'values' => $values);
         $this->_resource->read($params)->set('around2');
-
     }
 }
 

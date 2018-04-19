@@ -7,7 +7,6 @@
 
 /**
  * Advice
- *
  */
 class App_Aspect_Test_Throwing implements BEAR_Aspect_Throwing_Interface
 {

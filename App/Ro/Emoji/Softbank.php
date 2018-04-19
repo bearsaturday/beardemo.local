@@ -7,7 +7,6 @@
 
 /**
  * Softbank 絵文字リソース
- *
  */
 class App_Ro_Emoji_Softbank extends App_Ro
 {

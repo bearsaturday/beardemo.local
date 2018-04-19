@@ -1,16 +1,9 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
-
 require_once 'App.php';
 
 /**
@@ -18,27 +11,19 @@ require_once 'App.php';
  *
  * GDで読み込みリサイズし、Cairoでアウトライン付文字を追加して、iMagickで画像を傾けPNGで表示しています
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
  * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
+ *
  * @link       http://@link_url@
  */
 class Page_Image_Change extends App_Page
 {
     /**
-     *
      * @var BEAR_Img_Adapter_Gd
      */
     private $_img;
 
-
     /**
      * GDアダプターとローカルファイルをインジェクト
-     *
-     * @return void
      */
     public function onInject()
     {
@@ -55,21 +40,20 @@ class Page_Image_Change extends App_Page
      * Init
      *
      * @param array $args
-     *
-     * @return void
      */
     public function onInit(array $args)
     {
         $this->_img->load($args['file']);
         $this->_img->resize($args['size_x'], $args['size_y']);
         $this->_img = BEAR_Img::changeAdapter(BEAR_Img::ADAPTER_CAIRO);
-        $this->_img->addText($args['text'],
+        $this->_img->addText(
+            $args['text'],
                              0,  // x
                              20, // y
                              45, // size
                              BEAR_Img::CENTER,
-                             array(200,200,200),
-                             array(150,100,100),
+                             array(200, 200, 200),
+                             array(150, 100, 100),
                              'Arial',
                              0.75,
                              2
@@ -80,8 +64,6 @@ class Page_Image_Change extends App_Page
 
     /**
      * Output
-     *
-     * @return void
      */
     public function onOutput()
     {

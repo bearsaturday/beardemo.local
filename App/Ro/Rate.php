@@ -7,7 +7,6 @@
 
 /**
  * rateリソース
- *
  */
 class App_Ro_Rate extends App_Ro
 {

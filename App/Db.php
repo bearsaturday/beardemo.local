@@ -7,7 +7,6 @@
 
 /**
  * Db
- *
  */
 class App_Db extends BEAR_Factory
 {

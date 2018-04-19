@@ -1,35 +1,18 @@
 <?php
 /**
- * bear.demo
+ * This file is part of the beardemo.local package.
  *
- * @package Page
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 require_once 'App.php';
 
-/**
- * HTTP404
- *
- * @package Page
- * @author  $Author:$
- * @version SVN: Release: $Id:$
- */
 class Page_Http_404 extends App_Page
 {
-    /**
-     * Inject
-     *
-     * @return void
-     */
     public function onInject()
     {
         parent::onInject();
     }
 
-    /**
-     * Init
-     *
-     * @return void
-     */
     public function onInit(array $args)
     {
         throw new Panda_Exception('Not found', 404);

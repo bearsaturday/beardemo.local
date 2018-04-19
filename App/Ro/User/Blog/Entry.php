@@ -7,7 +7,6 @@
 
 /**
  * ブログエントリーリソース
- *
  */
 class App_Ro_User_Blog_Entry extends App_Ro
 {

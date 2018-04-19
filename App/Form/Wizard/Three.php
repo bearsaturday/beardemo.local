@@ -11,7 +11,6 @@
  * Wizardフォーム 3
  *
  * 3番目のフォームです。
- *
  */
 class App_Form_Wizard_Three extends App_Form_Wizard_Two
 {

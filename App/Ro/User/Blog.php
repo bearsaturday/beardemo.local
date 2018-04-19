@@ -7,7 +7,6 @@
 
 /**
  * ブログサービスリソース
- *
  */
 class App_Ro_User_Blog extends App_Ro
 {

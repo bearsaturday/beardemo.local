@@ -7,7 +7,6 @@
 
 /**
  * 最新記事リソース
- *
  */
 class App_Ro_User_Blog_New extends App_Ro
 {

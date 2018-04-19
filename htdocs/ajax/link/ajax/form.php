@@ -1,55 +1,27 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
-
 require_once 'App.php';
 
 /**
  * Ajax Form
  *
- * <pre>QuickFormでつくったフォームをAJAXで利用します。
+ * QuickFormでつくったフォームをAJAXで利用します。
  * QuickFormでレンダーされたフォームを、jqeruy.bear.jsのajaxForm()でAJAX化します。
  * エラーはJSONで返され、jqeruy.bear.jsによって解析されerrorのCSSとエラー内容のバルーンチップが付加されます。
  * バリデーションOKの場合は通常の動作をしonActionがコールされます。
- * </pre>
- *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class Page_Ajax_Basic_Ajax_Form extends App_Page
 {
-    /**
-     * Inject
-     *
-     * @return void
-     */
     public function onInject()
     {
         parent::onInject();
         $this->_ajax = BEAR::dependency('BEAR_Page_Ajax');
     }
 
-    /**
-     * Init
-     *
-     * @param array $args
-     *
-     * @return void
-     */
     public function onInit(array $args)
     {
         $this->_buildForm();
@@ -58,8 +30,7 @@ class Page_Ajax_Basic_Ajax_Form extends App_Page
     /**
      * フォーム作成
      *
-     * @return void
-     * @deprecated Pageではなく別クラスにするべきです
+     * @todo Pageではなく別クラスに
      */
     public function _buildForm()
     {
@@ -81,16 +52,9 @@ class Page_Ajax_Basic_Ajax_Form extends App_Page
         $form->addRule('email', 'emailの形式で入力してください', 'email', null, 'client');
     }
 
-    /**
-     * Action
-     *
-     * @param array $submit サブミット値
-     *
-     * @return void
-     */
     public function onAction(array $submit)
     {
-        $this->_ajax->addAjax('html', array('msg' => "okです!"));
+        $this->_ajax->addAjax('html', array('msg' => 'okです!'));
         $this->output('ajax');
         exit();
     }

@@ -7,7 +7,6 @@
 
 /**
  * Advice
- *
  */
 class App_Aspect_Test_Returning implements BEAR_Aspect_Returning_Interface
 {

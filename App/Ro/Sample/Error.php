@@ -14,7 +14,6 @@
  *
  * 400 (BEAR::CODE_BAD_REQUEST)
  * 500 (BEAR::CODE_ERROR)
- *
  */
 class App_Ro_Sample_Error extends App_Ro
 {

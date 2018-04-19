@@ -7,7 +7,6 @@
 
 /**
  * エントリーフォーム
- *
  */
 class App_Form_Blog_Entry extends BEAR_Base
 {

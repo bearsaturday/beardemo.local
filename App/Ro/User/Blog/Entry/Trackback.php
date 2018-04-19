@@ -7,7 +7,6 @@
 
 /**
  * トラックバックリソース
- *
  */
 class App_Ro_User_Blog_Entry_Trackback extends App_Ro
 {

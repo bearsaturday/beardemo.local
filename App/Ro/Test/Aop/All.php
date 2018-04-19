@@ -7,7 +7,6 @@
 
 /**
  *  Before, after, around, and ret test resource
- *
  */
 class App_Ro_Test_Aop_All extends App_Ro_Test_Aop
 {

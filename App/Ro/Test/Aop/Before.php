@@ -7,7 +7,6 @@
 
 /**
  * Before test resource
- *
  */
 class App_Ro_Test_Aop_Before extends App_Ro_Test_Aop
 {

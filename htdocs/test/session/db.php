@@ -1,9 +1,8 @@
 <?php
-
 /**
- * bear.demo
+ * This file is part of the beardemo.local package.
  *
- * @package Page
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
 
 // DB Sessionに
@@ -14,18 +13,9 @@ BEAR_Main::includePage('test/session/file.php');
 
 /**
  * DBセッション
- *
- * @package Page
- * @author  $Author:$
- * @version SVN: Release: $Id:$
  */
 class Page_Test_Session_Memcache extends Page_Test_Session_File
 {
-    /**
-     * Output
-     *
-     * @return void
-     */
     public function onOutput()
     {
         $this->display('db.tpl');

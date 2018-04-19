@@ -1,49 +1,29 @@
 <?php
 /**
- * App
+ * This file is part of the beardemo.local package.
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
+ * @license http://opensource.org/licenses/bsd-license.php BSD
  */
-
 $_SERVER['bearmode'] = 1;
 require_once 'App.php';
 
 /**
  * リソースエラー
- *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class Page_Test_Error_Resource extends App_Page
 {
     public function onClickRead()
     {
         // リソース内で例外発生
-        $result = $this->_resource->read(array('uri' =>"Sample/Error"))->getRo();
+        $this->_resource->read(array('uri' => 'Sample/Error'))->getRo();
     }
 
     public function onClickCreate()
     {
         // リソース内で例外発生
-        $result = $this->_resource->create(array('uri' =>"Sample/Error"))->getRo();
+        $result = $this->_resource->create(array('uri' => 'Sample/Error'))->getRo();
     }
 
-    /**
-     * Init
-     *
-     * @return void
-     */
     public function onInit(array $args)
     {
     }

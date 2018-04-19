@@ -9,7 +9,6 @@
  * Wizardフォーム プレビュー
  *
  * 確認用フォームです。エレメントはfreezeしてて入力はできません。
- *
  */
 class App_Form_Wizard_Preview extends App_Form_Wizard_Three
 {

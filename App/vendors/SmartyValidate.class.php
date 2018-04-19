@@ -649,6 +649,7 @@ class SmartyValidate
             if (isset($_objects[$name])) {
                 return $_objects[$name];
             }
+
             return $return;
         }
         $_objects[$name] = &$object;

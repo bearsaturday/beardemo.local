@@ -7,7 +7,6 @@
 
 /**
  * Advice
- *
  */
 class App_Aspect_Transaction implements BEAR_Aspect_Around_Interface
 {
