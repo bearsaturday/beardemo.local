@@ -3,16 +3,7 @@
  * App
  *
  * レートリソースを取得してJSファイルで利用しています。
- *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage JS
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
-
 require 'App.php';
 // レートリソースを取得
 $rate = BEAR::dependency('BEAR_Resource')->read(array('uri' => 'Rate'))->getBody() - 1;

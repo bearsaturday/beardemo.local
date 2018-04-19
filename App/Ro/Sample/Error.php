@@ -1,9 +1,5 @@
 <?php
-/**
- * This file is part of the beardemo.local package.
- *
- * @license http://opensource.org/licenses/bsd-license.php BSD
- */
+
 
 /**
  * エラーリソース
@@ -14,7 +10,6 @@
  *
  * 400 (BEAR::CODE_BAD_REQUEST)
  * 500 (BEAR::CODE_ERROR)
- *
  */
 class App_Ro_Sample_Error extends App_Ro
 {

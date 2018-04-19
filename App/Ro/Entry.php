@@ -1,13 +1,8 @@
 <?php
-/**
- * This file is part of the beardemo.local package.
- *
- * @license http://opensource.org/licenses/bsd-license.php BSD
- */
+
 
 /**
  * エントリーリソース
- *
  */
 class App_Ro_Entry extends App_Ro
 {

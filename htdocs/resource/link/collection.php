@@ -1,15 +1,4 @@
 <?php
-/**
- * App
- *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
- */
 
 require_once 'App.php';
 
@@ -19,21 +8,14 @@ require_once 'App.php';
  * ユーザー -> （写真、ブログ ）-> 記事　->　（トラックバック、コメント）->　コメント評価リソースとリンクされています。
  * 括弧内は並列でリンクされているリソースですが以降のリンクは最後のリソースからリンクされます。
  *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
  * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
+ *
  * @link       http://@link_url@
  */
 class Page_Resource_Link_Collection extends App_Page
 {
-
     /**
      * Inject
-     *
-     * @return void
      */
     public function onInject()
     {
@@ -45,8 +27,6 @@ class Page_Resource_Link_Collection extends App_Page
      * Init
      *
      * @requied id
-     *
-     * @return void
      */
     public function onInit(array $args)
     {
@@ -56,8 +36,6 @@ class Page_Resource_Link_Collection extends App_Page
 
     /**
      * Output
-     *
-     * @return void
      */
     public function onOutput()
     {

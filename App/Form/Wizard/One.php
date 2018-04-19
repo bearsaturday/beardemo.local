@@ -1,9 +1,5 @@
 <?php
-/**
- * This file is part of the beardemo.local package.
- *
- * @license http://opensource.org/licenses/bsd-license.php BSD
- */
+
 
 /**
  * エントリーフォーム
@@ -17,7 +13,6 @@
  * ボタンのレンダリングを変えるため標準の"radio"からBEARオリジナルの
  * "bradio"にしています。
  * </pre>
- *
  */
 class App_Form_Wizard_One extends BEAR_Base
 {

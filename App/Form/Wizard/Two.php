@@ -1,15 +1,10 @@
 <?php
-/**
- * This file is part of the beardemo.local package.
- *
- * @license http://opensource.org/licenses/bsd-license.php BSD
- */
+
 
 /**
  * Wizardフォーム 2
  *
  * 2番目のフォームです。
- *
  */
 class App_Form_Wizard_Two extends App_Form_Wizard_One
 {

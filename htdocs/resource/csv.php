@@ -1,15 +1,4 @@
 <?php
-/**
- * App
- *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
- */
 
 require_once 'App.php';
 
@@ -17,22 +6,9 @@ require_once 'App.php';
  * スタティックリソース
  *
  * csvファイルをリソースとして使用しています。
- *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id:$
- * @link       http://@link_url@
  */
 class Page_Resource_Csv extends App_Page
 {
-    /**
-     * Init
-     *
-     * @return void
-     */
     public function onInit(array $config)
     {
         $params = array(

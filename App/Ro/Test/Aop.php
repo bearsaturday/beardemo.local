@@ -1,13 +1,8 @@
 <?php
-/**
- * This file is part of the beardemo.local package.
- *
- * @license http://opensource.org/licenses/bsd-license.php BSD
- */
+
 
 /**
  * AOPリソース
- *
  */
 class App_Ro_Test_Aop extends BEAR_Ro
 {

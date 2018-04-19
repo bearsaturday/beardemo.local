@@ -1,13 +1,8 @@
 <?php
-/**
- * This file is part of the beardemo.local package.
- *
- * @license http://opensource.org/licenses/bsd-license.php BSD
- */
+
 
 /**
  * UAインジェクト
- *
  */
 class App_Agent_Ua implements BEAR_Injector_Interface
 {

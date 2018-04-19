@@ -1,47 +1,17 @@
 <?php
-/**
- * App
- *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id: page.php 481 2011-07-04 09:41:51Z koriyama@bear-project.net $
- * @link       http://@link_url@
- */
 
 require_once 'App.php';
 
 /**
  * htdocs/db/select/item.phpのページクラスをリソースとして利用しています
- *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id: page.php 481 2011-07-04 09:41:51Z koriyama@bear-project.net $
- * @link       http://@link_url@
  */
 class Page_Resource_Page extends App_Page
 {
-
-    /**
-     * Inject
-     *
-     * @return void
-     */
     public function onInject()
     {
         parent::onInject();
     }
 
-    /**
-     * Init
-     *
-     * @return void
-     */
     public function onInit(array $config)
     {
         $uri = 'page://self/db/select/item';
@@ -68,15 +38,9 @@ class Page_Resource_Page extends App_Page
         $this->set('docomo_body', $docomoBody);
     }
 
-    /**
-     * Output
-     *
-     * @return void
-     */
     public function onOutput()
     {
         $this->display();
     }
-
 }
 App_Main::run('Page_Resource_Page');

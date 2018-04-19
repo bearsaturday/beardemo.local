@@ -1,13 +1,8 @@
 <?php
-/**
- * This file is part of the beardemo.local package.
- *
- * @license http://opensource.org/licenses/bsd-license.php BSD
- */
+
 
 /**
  * リソースエラーサンプル
- *
  */
 class App_Ro_Sample_Error_More extends App_Ro
 {

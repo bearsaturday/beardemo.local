@@ -1,9 +1,5 @@
 <?php
-/**
- * This file is part of the beardemo.local package.
- *
- * @license http://opensource.org/licenses/bsd-license.php BSD
- */
+
 if (! defined('SMARTY_VALIDATE_DEFAULT_FORM')) {
     define('SMARTY_VALIDATE_DEFAULT_FORM', 'default');
 }
@@ -649,6 +645,7 @@ class SmartyValidate
             if (isset($_objects[$name])) {
                 return $_objects[$name];
             }
+
             return $return;
         }
         $_objects[$name] = &$object;

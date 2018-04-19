@@ -1,13 +1,8 @@
 <?php
-/**
- * This file is part of the beardemo.local package.
- *
- * @license http://opensource.org/licenses/bsd-license.php BSD
- */
+
 
 /**
  * Docomo 絵文字リソース
- *
  */
 class App_Ro_Emoji_Docomo extends App_Ro
 {

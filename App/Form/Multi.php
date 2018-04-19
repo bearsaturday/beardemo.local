@@ -1,16 +1,11 @@
 <?php
-/**
- * This file is part of the beardemo.local package.
- *
- * @license http://opensource.org/licenses/bsd-license.php BSD
- */
+
 
 /**
  * Multi form
  *
  * ID/Passwordが必要なログインフォームとパスワード通知用のメールアドレスを
  * 入力する２つのフォームを作成します。
- *
  */
 class App_Form_Multi extends BEAR_Base
 {

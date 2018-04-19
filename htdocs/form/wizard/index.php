@@ -1,42 +1,29 @@
 <?php
-/**
- * App
- *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id: index.php 447 2011-06-01 00:31:53Z koriyama@bear-project.net $
- * @link       http://@link_url@
- */
 
 require_once 'App.php';
 
 /**
- * Page Title
- *
  * 確認画面つきフォーム
  *
  * 初期表示フォーム、確認表示フォーム、修正フォームの３種類のフォームの状態をそれぞれの種類のインジェクターでフォームの状態を変えています。
  * 画面は初期（修正）画面、確認画面、送信後画面と３つあります。
- *
- * @category   BEAR
- * @package    bear.demo
- * @subpackage Page
- * @author     $Author:$ <username@example.com>
- * @license    @license@ http://@license_url@
- * @version    Release: @package_version@ $Id: index.php 447 2011-06-01 00:31:53Z koriyama@bear-project.net $
- * @link       http://@link_url@
  */
 class Page_Form_Wizard_Index extends App_Page
 {
     /**
+     * @var BEAR_Page_Header
+     */
+    private $_header;
+
+    /**
+     * @var array
+     */
+    private $_defaults;
+
+    /**
      * 最初のフォーム
      *
      * @param array $args
-     *
-     * @return void
      */
     public function onClickNone(array $args)
     {
@@ -47,8 +34,6 @@ class Page_Form_Wizard_Index extends App_Page
      * ２番目のフォーム
      *
      * @param array $args
-     *
-     * @return void
      */
     public function onClickTwo(array $args)
     {
@@ -59,8 +44,6 @@ class Page_Form_Wizard_Index extends App_Page
      * ３番目のフォーム
      *
      * @param array $args
-     *
-     * @return void
      */
     public function onClickThree(array $args)
     {
@@ -71,8 +54,6 @@ class Page_Form_Wizard_Index extends App_Page
      * 確認フォームでは３つのフォームをbuildしfreezeします。
      *
      * @param array $args
-     *
-     * @return void
      */
     public function onClickPreview(array $args)
     {
@@ -85,8 +66,6 @@ class Page_Form_Wizard_Index extends App_Page
      * 画面出力はありませんが、最終的にもう一度フォームのバリデーションを行うためにbuildします
      *
      * @param array $args
-     *
-     * @return void
      */
     public function onClickAction(array $args)
     {
@@ -95,8 +74,6 @@ class Page_Form_Wizard_Index extends App_Page
 
     /**
      * Inject
-     *
-     * @return void
      */
     public function onInject()
     {
@@ -107,8 +84,6 @@ class Page_Form_Wizard_Index extends App_Page
 
     /**
      * Init
-     *
-     * @return void
      */
     public function onInit(array $args)
     {
@@ -117,8 +92,6 @@ class Page_Form_Wizard_Index extends App_Page
 
     /**
      * Output
-     *
-     * @return void
      */
     public function onOutput()
     {
@@ -130,8 +103,6 @@ class Page_Form_Wizard_Index extends App_Page
      *
      * フォームの値を次に引き継ぐためにセッションをつかっています。
      * hiddenの'_click'という値を次のどのフォームに行くかに利用しています。
-     *
-     * @return void
      */
     public function onAction(array $submit)
     {
@@ -143,6 +114,7 @@ class Page_Form_Wizard_Index extends App_Page
             //確認画面から送信ボタンでアクション実行
             $this->set('submit', print_r($submit, true));
             $this->display('action.tpl');
+
             return;
             //$this->end();
         }

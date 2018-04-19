@@ -1,21 +1,15 @@
 <?php
-/**
- * This file is part of the beardemo.local package.
- *
- * @license http://opensource.org/licenses/bsd-license.php BSD
- */
+
 require _BEAR_APP_HOME . '/App/vendors/SmartyValidate.class.php';
 
 /**
  * App
- *
  */
 
 /**
  * SmartyValidateフォーム
  *
  * SmartyValidateを使ったフォーム例です。QuickFormを使用していません。
- *
  */
 class App_Form_SmartyValidate extends BEAR_Base implements App_Form_Interface
 {

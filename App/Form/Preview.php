@@ -1,9 +1,5 @@
 <?php
-/**
- * This file is part of the beardemo.local package.
- *
- * @license http://opensource.org/licenses/bsd-license.php BSD
- */
+
 
 /**
  * Multi form
@@ -11,7 +7,6 @@
  * 確認画面つきフォーム
  *
  * 表示、確認、修正の３つの状態のある確認画面つきフォームです。
- *
  */
 class App_Form_Preview extends BEAR_Base
 {

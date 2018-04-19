@@ -1,5 +1,5 @@
 <?php
-header("Content-Type: application/xml; charset=UTF-8");
+header('Content-Type: application/xml; charset=UTF-8');
 ?><rss version="2.0">
 <channel>
 <title>BEAR RSS test</title>

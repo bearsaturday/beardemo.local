@@ -1,15 +1,10 @@
 <?php
-/**
- * This file is part of the beardemo.local package.
- *
- * @license http://opensource.org/licenses/bsd-license.php BSD
- */
+
 
 /**
  * Wizardフォーム プレビュー
  *
  * 確認用フォームです。エレメントはfreezeしてて入力はできません。
- *
  */
 class App_Form_Wizard_Preview extends App_Form_Wizard_Three
 {

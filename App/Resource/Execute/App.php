@@ -1,9 +1,5 @@
 <?php
-/**
- * This file is part of the beardemo.local package.
- *
- * @license http://opensource.org/licenses/bsd-license.php BSD
- */
+
 
 /**
  * スタティクファイルリソース
@@ -11,7 +7,6 @@
  * アプリケーション作製のリソースサンプルです。
  * app://self/path/to/fileと指定されたファイルの中身をリソースbodyとして扱います。
  * ML, YAML, CSV, INIファイルをサポートしています。
- *
  */
 class App_Resource_Execute_App extends BEAR_Resource_Execute_Adapter
 {

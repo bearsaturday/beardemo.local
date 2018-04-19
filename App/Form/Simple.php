@@ -1,16 +1,11 @@
 <?php
-/**
- * This file is part of the beardemo.local package.
- *
- * @license http://opensource.org/licenses/bsd-license.php BSD
- */
+
 
 /**
  * Simpleフォーム
  *
  * モバイル用のフォームのためにonInjectMobile()が用意されています。
  * フォームのレンダリングのコールバックオプションを指定しています。
- *
  */
 class App_Form_Simple extends BEAR_Base
 {
