@@ -1,4 +1,4 @@
-# HTMLリソース
+# RSS/HTMLリソース
 
 [RSSリソースライブデモ](http://127.0.0.1:8080/resource/html/index.php)
 
