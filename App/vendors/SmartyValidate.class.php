@@ -1,9 +1,5 @@
 <?php
-/**
- * This file is part of the beardemo.local package.
- *
- * @license http://opensource.org/licenses/bsd-license.php BSD
- */
+
 if (! defined('SMARTY_VALIDATE_DEFAULT_FORM')) {
     define('SMARTY_VALIDATE_DEFAULT_FORM', 'default');
 }
