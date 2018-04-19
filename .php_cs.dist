@@ -124,6 +124,7 @@ return \PhpCsFixer\Config::create()
     ->setFinder(
         PhpCsFixer\Finder::create()
             ->exclude('smarty')
+            ->exclude('thrift')
             ->in(__DIR__ . '/App')
             ->in(__DIR__ . '/htdocs')
     );
