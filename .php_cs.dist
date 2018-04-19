@@ -125,4 +125,5 @@ return \PhpCsFixer\Config::create()
         PhpCsFixer\Finder::create()
             ->exclude('smarty')
             ->in(__DIR__ . '/App')
+            ->in(__DIR__ . '/htdocs')
     );
