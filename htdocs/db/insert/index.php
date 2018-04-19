@@ -18,7 +18,7 @@ class Page_Db_Insert_Index extends App_Page
      * @var BEAR_Page_Header
      */
     private $_header;
-    
+
     public function onInject()
     {
         parent::onInject();

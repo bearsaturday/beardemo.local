@@ -8,7 +8,6 @@ require_once 'App.php';
 
 /**
  * htdocs/db/select/item.phpのページクラスをリソースとして利用しています
- *
  */
 class Page_Resource_Page extends App_Page
 {

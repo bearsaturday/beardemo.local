@@ -8,7 +8,6 @@ require_once 'App.php';
 
 /**
  * HelloWorld with no view
- *
  */
 class Page_HelloWorld_NoView extends App_Page
 {

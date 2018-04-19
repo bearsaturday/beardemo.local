@@ -8,7 +8,6 @@ require_once 'App.php';
 
 /**
  * Pamda エラーテスト
- *
  */
 class Page_Test_Error_Panda extends App_Page
 {

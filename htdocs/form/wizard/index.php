@@ -18,12 +18,12 @@ class Page_Form_Wizard_Index extends App_Page
      * @var BEAR_Page_Header
      */
     private $_header;
-    
+
     /**
      * @var array
      */
     private $_defaults;
-    
+
     /**
      * 最初のフォーム
      *

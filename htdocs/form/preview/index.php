@@ -11,7 +11,6 @@ require_once 'App.php';
  *
  * 初期表示フォーム、確認表示フォーム、修正フォームの３種類のフォームの状態をそれぞれの種類のインジェクターでフォームの状態を変えています。
  * 画面は初期（修正）画面、確認画面、送信後画面と３つあります。
- *
  */
 class Page_Form_Preview_Index extends App_Page
 {
@@ -19,7 +18,7 @@ class Page_Form_Preview_Index extends App_Page
      * @var App_Form_Preview
      */
     private $_form;
-    
+
     public function onInject()
     {
         parent::onInject();

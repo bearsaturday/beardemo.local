@@ -15,7 +15,7 @@ class Page_Form_SmartyValidate extends App_Page
      * @var App_Form_SmartyValidate
      */
     private $_form;
-    
+
     public function onInject()
     {
         $this->_form = BEAR::dependency('App_Form_SmartyValidate');
