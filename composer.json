@@ -6,13 +6,6 @@
         "BEAR.Saturday",
         "demo"
     ],
-    "require-dev": {
-        "bearsaturday/bearsaturday": "^0.9"
-    },
-    "autoload": {
-        "classmap": ["App"],
-        "files": ["App.php"]
-    },
     "license": "BSD-3-Clause",
     "authors": [
         {
@@ -20,14 +13,32 @@
             "email": "akihito.koriyama@gmail.com"
         }
     ],
-    "scripts": {
-        "test": ["vendor/bin/phpunit"],
-        "tests": [
-            "@cs",
-            "phpmd src text ./phpmd.xml",
-            "phpstan analyse src App -c phpstan.neon --no-progress",
-            "@test"
+    "require": {
+        "bearsaturday/bearsaturday": "0.10.x-dev"
+    },
+    "config": {
+        "secure-http": false
+    },
+    "autoload": {
+        "classmap": [
+            "App"
         ],
+        "files": [
+            "App.php"
+        ]
+    },
+    "repositories": [
+        {
+            "type": "pear",
+            "url": "https://pear.php.net"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "include-path": [
+        "./"
+    ],
+    "scripts": {
         "cs": [
             "php-cs-fixer fix -v --dry-run",
             "phpcs --standard=phpcs.xml src;"
@@ -35,6 +46,15 @@
         "cs-fix": [
             "php-cs-fixer fix -v",
             "phpcbf src tests"
+        ],
+        "test": [
+            "vendor/bin/phpunit"
+        ],
+        "tests": [
+            "@cs",
+            "phpmd src text ./phpmd.xml",
+            "phpstan analyse src App -c phpstan.neon --no-progress",
+            "@test"
         ]
     }
 }
