@@ -40,8 +40,8 @@ class App_Ro_Rate extends App_Ro
      */
     public function onRead($values)
     {
-//        $sql = "SELECT * FROM {$this->_table}";
-//        $result = $this->_query->select($sql, array(), $values);
+        // $sql = "SELECT * FROM {$this->_table}";
+        // $result = $this->_query->select($sql, array(), $values);
         $result = 4;
 
         return $result;
