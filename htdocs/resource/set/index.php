@@ -6,24 +6,15 @@ require_once 'App.php';
  * リソースセットオプション
  *
  * ページセットオプションを変えてリソースをページにsetしています。
- *
- * @license    @license@ http://@license_url@
- *
- * @link       http://@link_url@
  */
 class Page_Resource_Set_Index extends App_Page
 {
-    /**
-     * Inject
-     */
     public function onInject()
     {
         parent::onInject();
     }
 
     /**
-     * Init
-     *
      * @requied id
      */
     public function onInit(array $args)
@@ -52,9 +43,6 @@ class Page_Resource_Set_Index extends App_Page
         $this->set('data', $data);
     }
 
-    /**
-     * Output
-     */
     public function onOutput()
     {
         $this->display();

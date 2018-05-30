@@ -122,8 +122,10 @@ class Page_Form_Wizard_Index extends App_Page
         $wizardSubmit = $this->_session->get('wizard_submit');
         $wizardSubmit = is_array($wizardSubmit) ? $wizardSubmit : [];
         $this->_session->set('wizard_submit', array_merge($wizardSubmit, $submit));
-        $options['click'] = $click;
-        $options['value'] = $submit;
+        $options = [
+            'click' => $click,
+            'value' => $submit
+        ];
         $this->_header->redirect('.', $options);
     }
 }

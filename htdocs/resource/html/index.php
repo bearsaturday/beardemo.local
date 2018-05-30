@@ -4,16 +4,9 @@ require_once 'App.php';
 
 /**
  * RSSリソース
- *
- * @license    @license@ http://@license_url@
- *
- * @link       http://@link_url@
  */
 class Page_Resource_Html_Index extends App_Page
 {
-    /**
-     * Inject
-     */
     public function onInject()
     {
         parent::onInject();
@@ -22,9 +15,6 @@ class Page_Resource_Html_Index extends App_Page
         $this->injectArg('cache_life', 300);
     }
 
-    /**
-     * Init
-     */
     public function onInit(array $args)
     {
         // RSS resource
@@ -41,9 +31,6 @@ class Page_Resource_Html_Index extends App_Page
         $this->set('time', date('n/j H:i'));
     }
 
-    /**
-     * Output
-     */
     public function onOutput()
     {
         $this->display('index.tpl');

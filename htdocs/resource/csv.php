@@ -16,7 +16,7 @@ class Page_Resource_Csv extends App_Page
             'values' => [],
             'options' => ['pager' => 25]
         ];
-        $ro = $this->_resource->read($params)->set('post');
+        $this->_resource->read($params)->set('post');
     }
 
     public function onOntput()
@@ -24,4 +24,5 @@ class Page_Resource_Csv extends App_Page
         $this->display('csv.tpl');
     }
 }
+
 BEAR_Main::run('Page_Resource_Csv');

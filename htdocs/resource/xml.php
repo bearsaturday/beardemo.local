@@ -21,4 +21,5 @@ class Page_Resource_Xml extends App_Page
         $this->_resource->read($params)->set('entry');
     }
 }
+
 BEAR_Main::run('Page_Resource_Xml');

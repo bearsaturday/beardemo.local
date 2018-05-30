@@ -25,7 +25,7 @@ class Page_Resource_File extends App_Page
             'values' => $values,
             'options' => $options
         ];
-        $body = $this->_resource->read($params2)->set('cat');
+        $this->_resource->read($params2)->set('cat');
     }
 }
 

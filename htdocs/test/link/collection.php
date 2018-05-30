@@ -33,7 +33,7 @@ class Page_Test_Resource_Link_Collection extends App_Page
         $ro = $this->_resource->read($params)->link(['photo', 'blog'])->link('entry')->link(['trackback', 'comment'])->link('thumb')->p()->set()->getRo();
         $values = [];
         $params = ['uri' => 'User/Blog/Entry', 'values' => $values];
-        $ro = $this->_resource->read($params)->link('comment')->p()->set();
+        $this->_resource->read($params)->link('comment')->p()->set();
     }
 
     public function onOutput()

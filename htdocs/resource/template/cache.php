@@ -6,16 +6,9 @@ require_once 'App.php';
  * リソーステンプレートページ
  *
  * リソーステンプレートにキャッシュオプションを指定しています。
- *
- * @license    @license@ http://@license_url@
- *
- * @link       http://@link_url@
  */
 class Page_Resource_Template_Cache extends App_Page
 {
-    /**
-     * Inject
-     */
     public function onInject()
     {
         parent::onInject();
@@ -23,8 +16,6 @@ class Page_Resource_Template_Cache extends App_Page
     }
 
     /**
-     * Init
-     *
      * @requied id
      */
     public function onInit(array $args)
@@ -40,9 +31,6 @@ class Page_Resource_Template_Cache extends App_Page
         $this->_resource->read($params)->set('user', 'value');
     }
 
-    /**
-     * Output
-     */
     public function onOutput()
     {
         $this->display('/resource/template.tpl');
