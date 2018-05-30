@@ -27,10 +27,10 @@ class Page_Resource_Set_Shutdown extends App_Page
     public function onInit(array $args)
     {
         // bodyをeagerでset
-        $params = array('uri' => 'Entry',
-            'values' => array('title' => 'set', 'body' => 'requestOnShutdown'),
-            'options' => array()
-        );
+        $params = ['uri' => 'Entry',
+            'values' => ['title' => 'set', 'body' => 'requestOnShutdown'],
+            'options' => []
+        ];
         $this->_resource->create($params)->requestOnShutdown();
     }
 

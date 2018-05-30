@@ -39,7 +39,7 @@ class App_Resource_Execute_App extends BEAR_Resource_Execute_Adapter
             $file = str_replace('app:/', '', $this->_config['uri']);
             $result = file_get_contents($file);
         } else {
-            $config = array('info' => compact('method'), 'code' => 400);
+            $config = ['info' => compact('method'), 'code' => 400];
             throw new BEAR_Resource_Exception('Method not allowed', $config);
         }
 

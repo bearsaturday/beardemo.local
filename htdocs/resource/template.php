@@ -20,11 +20,11 @@ class Page_Resource_Template extends App_Page
      */
     public function onInit(array $args)
     {
-        $params = array(
+        $params = [
             'uri' => 'User',
-            'values' => array('id' => $args['id']),
-            'options' => array('template' => 'user')
-        );
+            'values' => ['id' => $args['id']],
+            'options' => ['template' => 'user']
+        ];
         $this->_resource->read($params)->set('user', 'value');
     }
 

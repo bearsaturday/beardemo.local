@@ -6,7 +6,7 @@
  */
 class App_Ro_Test_Aop extends BEAR_Ro
 {
-    protected $_result = array();
+    protected $_result = [];
 
     /**
      * Inject
@@ -14,9 +14,9 @@ class App_Ro_Test_Aop extends BEAR_Ro
     public function onInject()
     {
         parent::onInject();
-        $this->_result[1] = array('id' => 1, 'name' => 'BEAR');
-        $this->_result[2] = array('id' => 2, 'name' => 'Kuma');
-        $this->_result[3] = array('id' => 3, 'name' => 'クマ');
+        $this->_result[1] = ['id' => 1, 'name' => 'BEAR'];
+        $this->_result[2] = ['id' => 2, 'name' => 'Kuma'];
+        $this->_result[3] = ['id' => 3, 'name' => 'クマ'];
     }
 
     /**

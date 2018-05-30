@@ -29,14 +29,14 @@ class Page_Resource_Template_Cache extends App_Page
      */
     public function onInit(array $args)
     {
-        $params = array(
+        $params = [
             'uri' => 'User',
-            'values' => array('id' => $args['id']),
-            'options' => array(
+            'values' => ['id' => $args['id']],
+            'options' => [
                 'template' => 'user',
-                'cache' => array('life' => 100)
-            )
-        );
+                'cache' => ['life' => 100]
+            ]
+        ];
         $this->_resource->read($params)->set('user', 'value');
     }
 

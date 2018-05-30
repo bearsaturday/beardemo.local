@@ -6,7 +6,7 @@
  */
 require 'App.php';
 // レートリソースを取得
-$rate = BEAR::dependency('BEAR_Resource')->read(array('uri' => 'Rate'))->getBody() - 1;
+$rate = BEAR::dependency('BEAR_Resource')->read(['uri' => 'Rate'])->getBody() - 1;
 ?>
 $.fn.rating.options.cancelValue = '0';
 $.fn.rating.options.callback = function (value) {

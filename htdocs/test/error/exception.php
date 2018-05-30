@@ -10,7 +10,7 @@ class Page_Test_Error_Exception extends App_Page
      */
     public function onInit(array $args)
     {
-        $result = $this->_resource->read(array('uri' => 'Sample/Error'))->getRo();
+        $result = $this->_resource->read(['uri' => 'Sample/Error'])->getRo();
     }
 
     public function onOutput()

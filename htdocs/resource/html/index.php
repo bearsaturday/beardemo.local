@@ -29,14 +29,14 @@ class Page_Resource_Html_Index extends App_Page
     {
         // RSS resource
         $uri = $args['uri'];
-        $options = array();
+        $options = [];
         $options['pager'] = 5;
         $options['template'] = 'list/rss';
-        $options['cache'] = array('life' => $args['cache_life']);
-        $params = array('uri' => $uri, 'values' => array(), 'options' => $options);
+        $options['cache'] = ['life' => $args['cache_life']];
+        $params = ['uri' => $uri, 'values' => [], 'options' => $options];
         $body = $this->_resource->read($params)->set('rss')->getBody();
         $uri = "http://{$args['host']}/resource/html/hello.html";
-        $params = array('uri' => $uri);
+        $params = ['uri' => $uri];
         $this->_resource->read($params)->set('html');
         $this->set('time', date('n/j H:i'));
     }
@@ -50,5 +50,5 @@ class Page_Resource_Html_Index extends App_Page
     }
 }
 
-$config = array('cache' => array('type' => 'init', 'life' => 15));
+$config = ['cache' => ['type' => 'init', 'life' => 15]];
 App_Main::run('Page_Resource_Html_Index', $config);

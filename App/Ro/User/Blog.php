@@ -16,10 +16,10 @@ class App_Ro_User_Blog extends App_Ro
      */
     public function onRead($values)
     {
-        $result = array();
-        $result[11] = array('id' => 11, 'name' => 'Athos Blog');
-        $result[12] = array('id' => 12, 'name' => 'Aramis Blog');
-        $result[13] = array('id' => 13, 'name' => 'Porthos Blog');
+        $result = [];
+        $result[11] = ['id' => 11, 'name' => 'Athos Blog'];
+        $result[12] = ['id' => 12, 'name' => 'Aramis Blog'];
+        $result[13] = ['id' => 13, 'name' => 'Porthos Blog'];
 
         return $result[$values['id']];
     }
@@ -31,10 +31,10 @@ class App_Ro_User_Blog extends App_Ro
      */
     public function onLink($values)
     {
-        $links = array();
-        $links['new'] = array('uri' => 'User/Blog/New', 'values' => array('id' => $values['id']), 'options' => array());
-        $links['entry'] = array('uri' => 'User/Blog/Entry', 'values' => array('blog_id' => $values['id']));
-        $links['db_entry'] = array('uri' => 'Entry');
+        $links = [];
+        $links['new'] = ['uri' => 'User/Blog/New', 'values' => ['id' => $values['id']], 'options' => []];
+        $links['entry'] = ['uri' => 'User/Blog/Entry', 'values' => ['blog_id' => $values['id']]];
+        $links['db_entry'] = ['uri' => 'Entry'];
 
         return $links;
     }

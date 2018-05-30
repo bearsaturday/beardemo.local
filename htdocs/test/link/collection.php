@@ -20,19 +20,19 @@ class Page_Test_Resource_Link_Collection extends App_Page
      */
     public function onInit(array $args)
     {
-        $params = array('uri' => 'User', 'values' => array('id' => $args['id']));
+        $params = ['uri' => 'User', 'values' => ['id' => $args['id']]];
         $ro = $this->_resource->read($params)->p();
         $ro = $this->_resource->read($params)->link('photo')->p();
         $ro = $this->_resource->read($params)->link('blog')->p();
         $ro = $this->_resource->read($params)->link('blog')->link('entry')->link('comment')->link('thumb')->p();
-        $ro = $this->_resource->read($params)->link(array('photo', 'blog'))->p();
-        $ro = $this->_resource->read($params)->link(array('photo', 'blog'))->link('entry')->p();
-        $ro = $this->_resource->read($params)->link(array('photo', 'blog'))->link('entry')->link('comment')->p();
-        $ro = $this->_resource->read($params)->link(array('photo', 'blog'))->link('entry')->link(array('trackback', 'comment'))->p();
-        $ro = $this->_resource->read($params)->link(array('photo', 'blog'))->link('entry')->link(array('trackback', 'comment'))->link('thumb')->set();
-        $ro = $this->_resource->read($params)->link(array('photo', 'blog'))->link('entry')->link(array('trackback', 'comment'))->link('thumb')->p()->set()->getRo();
-        $values = array();
-        $params = array('uri' => 'User/Blog/Entry', 'values' => $values);
+        $ro = $this->_resource->read($params)->link(['photo', 'blog'])->p();
+        $ro = $this->_resource->read($params)->link(['photo', 'blog'])->link('entry')->p();
+        $ro = $this->_resource->read($params)->link(['photo', 'blog'])->link('entry')->link('comment')->p();
+        $ro = $this->_resource->read($params)->link(['photo', 'blog'])->link('entry')->link(['trackback', 'comment'])->p();
+        $ro = $this->_resource->read($params)->link(['photo', 'blog'])->link('entry')->link(['trackback', 'comment'])->link('thumb')->set();
+        $ro = $this->_resource->read($params)->link(['photo', 'blog'])->link('entry')->link(['trackback', 'comment'])->link('thumb')->p()->set()->getRo();
+        $values = [];
+        $params = ['uri' => 'User/Blog/Entry', 'values' => $values];
         $ro = $this->_resource->read($params)->link('comment')->p()->set();
     }
 

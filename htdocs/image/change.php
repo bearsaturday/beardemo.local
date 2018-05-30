@@ -24,7 +24,7 @@ class Page_Image_Change extends App_Page
     public function onInject()
     {
         parent::onInject();
-        $this->_img = BEAR::dependency('BEAR_Img', array('adapter' => BEAR_Img::ADAPTER_GD));
+        $this->_img = BEAR::dependency('BEAR_Img', ['adapter' => BEAR_Img::ADAPTER_GD]);
         $this->injectGet('file', 'file', _BEAR_APP_HOME . '/htdocs/image/eye.png');
         $this->injectGet('size_x', 'x', 400);
         $this->injectGet('size_y', 'y', 400);
@@ -48,8 +48,8 @@ class Page_Image_Change extends App_Page
                              20, // y
                              45, // size
                              BEAR_Img::CENTER,
-                             array(200, 200, 200),
-                             array(150, 100, 100),
+                             [200, 200, 200],
+                             [150, 100, 100],
                              'Arial',
                              0.75,
                              2

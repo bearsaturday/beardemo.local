@@ -6,7 +6,7 @@
  */
 class App_Ro_Test_Poe extends BEAR_Ro
 {
-    protected $_result = array();
+    protected $_result = [];
 
     /**
      * Inject

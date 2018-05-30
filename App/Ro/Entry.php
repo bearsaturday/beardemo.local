@@ -22,9 +22,9 @@ class App_Ro_Entry extends App_Ro
         $this->_queryConfig['pager'] = 1; // DBページャー利用
         $this->_queryConfig['perPage'] = 5; // １ページ毎のアイテム数
         $this->_queryConfig['deleted_at'] = true; // SELECTで論理削除の使用
-        $id = array('id', 'id', '+');
-        $date = array('created_at', 'date', '-');
-        $this->_queryConfig['sort'] = array($id, $date); // ソート
+        $id = ['id', 'id', '+'];
+        $date = ['created_at', 'date', '-'];
+        $this->_queryConfig['sort'] = [$id, $date]; // ソート
         $this->_query = BEAR::factory('BEAR_Query', $this->_queryConfig);
     }
 
@@ -76,7 +76,7 @@ class App_Ro_Entry extends App_Ro
     public function onRead($values)
     {
         $sql = "SELECT * FROM {$this->_table}";
-        $result = $this->_query->select($sql, array(), $values);
+        $result = $this->_query->select($sql, [], $values);
 
         return $result;
     }
@@ -106,8 +106,8 @@ class App_Ro_Entry extends App_Ro
      */
     public function onLink($values)
     {
-        $links = array();
-        $links['info'] = array('uri' => 'Entry/Info', 'values' => $values);
+        $links = [];
+        $links['info'] = ['uri' => 'Entry/Info', 'values' => $values];
 
         return $links;
     }

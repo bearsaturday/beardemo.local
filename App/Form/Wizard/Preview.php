@@ -15,7 +15,7 @@ class App_Form_Wizard_Preview extends App_Form_Wizard_Three
      */
     public function onInject()
     {
-        $this->_form = array('formName' => 'form', 'callback' => array(__CLASS__, 'onRenderFreeze'));
+        $this->_form = ['formName' => 'form', 'callback' => [__CLASS__, 'onRenderFreeze']];
         $this->_form = BEAR::factory('BEAR_Form', $this->_form);
         $this->_form->addElement('header', 'main', '確認画面');
         $this->_form->addElement('hidden', '_click', 'action');

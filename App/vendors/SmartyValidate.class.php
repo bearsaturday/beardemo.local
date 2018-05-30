@@ -61,10 +61,10 @@ class SmartyValidate
         if (self::is_registered_form($form) && ! $reset) {
             return false;
         }
-        $_SESSION['SmartyValidate'][$form] = array();
-        $_SESSION['SmartyValidate'][$form]['registered_funcs']['criteria'] = array();
-        $_SESSION['SmartyValidate'][$form]['registered_funcs']['transform'] = array();
-        $_SESSION['SmartyValidate'][$form]['validators'] = array();
+        $_SESSION['SmartyValidate'][$form] = [];
+        $_SESSION['SmartyValidate'][$form]['registered_funcs']['criteria'] = [];
+        $_SESSION['SmartyValidate'][$form]['registered_funcs']['transform'] = [];
+        $_SESSION['SmartyValidate'][$form]['validators'] = [];
         $_SESSION['SmartyValidate'][$form]['is_error'] = false;
         $_SESSION['SmartyValidate'][$form]['is_init'] = true;
         self::_smarty_assign();
@@ -95,7 +95,7 @@ class SmartyValidate
     public function _failed_fields(&$formvars, $form = SMARTY_VALIDATE_DEFAULT_FORM, $revalidate = false)
     {
         // keep track of failed fields
-        static $_failed_fields = array();
+        static $_failed_fields = [];
 
         if (isset($_failed_fields[$form]) && ! $revalidate) {
             // already validated the form
@@ -103,7 +103,7 @@ class SmartyValidate
         }
 
         // failed fields for current pass
-        $_ret = array();
+        $_ret = [];
 
         $_sess = &$_SESSION['SmartyValidate'][$form]['validators'];
 
@@ -239,7 +239,7 @@ class SmartyValidate
      */
     public function is_valid(&$formvars, $form = SMARTY_VALIDATE_DEFAULT_FORM)
     {
-        static $_is_valid = array();
+        static $_is_valid = [];
 
         if (isset($_is_valid[$form])) {
             // already validated the form
@@ -377,7 +377,7 @@ class SmartyValidate
         self::unregister_validator($id, $form);
 
         $_field = explode(':', $field);
-        $_validator = array();
+        $_validator = [];
 
         foreach ($_field as $_key => $_val) {
             if ($_key == 0) {
@@ -542,7 +542,7 @@ class SmartyValidate
         } elseif (strpos($func_name, '::') !== false) {
             // static method
             preg_match('!(\w+)::(\w+)!', $func_name, $_match);
-            if (! is_callable(array($_match[1], $_match[2]))) {
+            if (! is_callable([$_match[1], $_match[2]])) {
                 trigger_error("SmartyValidate: [register_$type] static method '$func_name' does not exist.");
 
                 return false;
@@ -578,7 +578,7 @@ class SmartyValidate
      */
     public function _booleanize($var)
     {
-        if (in_array(strtolower($var), array(true, 1, 'true', 'on', 'yes', 'y'), true)) {
+        if (in_array(strtolower($var), [true, 1, 'true', 'on', 'yes', 'y'], true)) {
             return true;
         }
 
@@ -636,10 +636,10 @@ class SmartyValidate
     public function &_object_instance($name, &$object)
     {
         $return = false;
-        static $_objects = array();
+        static $_objects = [];
         if ($name == '-') {
             unset($_objects);
-            static $_objects = array();
+            static $_objects = [];
         }
         if (! is_object($object)) {
             if (isset($_objects[$name])) {
@@ -658,7 +658,7 @@ class SmartyValidate
      *
      * @param string $value the value being tested
      */
-    public function _smarty_assign($vars = array())
+    public function _smarty_assign($vars = [])
     {
         $_smarty_obj = &self::_object_instance('Smarty', $_dummy);
 

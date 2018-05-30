@@ -11,21 +11,21 @@ class App_Form_Ajax extends BEAR_Base
      *
      * @var array
      */
-    private $_attr = array(
+    private $_attr = [
         'name' => 'size="30" maxlength="30"',
            'email' => 'size="30" maxlength="30"',
            'body' => 'rows="8" cols="40"'
-    );
+    ];
 
     /**
      * Inject
      */
     public function onInject()
     {
-        $this->_form = array(
+        $this->_form = [
             'formName' => 'form',
-            'attributes' => array('rel' => 'ajax')
-        );
+            'attributes' => ['rel' => 'ajax']
+        ];
     }
 
     /**
@@ -37,7 +37,7 @@ class App_Form_Ajax extends BEAR_Base
     {
         $form = BEAR::factory('BEAR_Form', $this->_form);
         // デフォルト
-        $form->setDefaults(array('name' => 'Kuma', 'email' => 'kuma@example.com'));
+        $form->setDefaults(['name' => 'Kuma', 'email' => 'kuma@example.com']);
         // ヘッダー
         $form->addElement('header', 'main', 'Simple Form');
         // フィールド
@@ -48,8 +48,8 @@ class App_Form_Ajax extends BEAR_Base
         $form->addElement(
                    'static',
             '_ajax',
-            array('リンクサブミット',
-                   'このリンクはサブミットボタンと同じように機能します'),
+            ['リンクサブミット',
+                   'このリンクはサブミットボタンと同じように機能します'],
                    '<a href="#" title="サブミット" rel="form">AJAX送信</a>'
         );
         // フィルタと検証ルール

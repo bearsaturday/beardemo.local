@@ -18,10 +18,10 @@ class Page_Ajax_Basic_Ajax_Resource extends App_Page
     public function onInit(array $config)
     {
         $options['mock']['name'] = 'test';
-        $options['mock']['x'] = array('name', 'age', 'gender');
+        $options['mock']['x'] = ['name', 'age', 'gender'];
         $options['mock']['y'] = 2;
         $options['template'] = 'person';
-        $params = array('uri' => 'person', 'options' => $options);
+        $params = ['uri' => 'person', 'options' => $options];
         $this->_resource->read($params)->set();
     }
 
@@ -29,13 +29,13 @@ class Page_Ajax_Basic_Ajax_Resource extends App_Page
     {
         $this->_ajax->addAjax(
             'resource',
-            array('person1' => 'person'),
-            array('effect' => 'slide')
+            ['person1' => 'person'],
+            ['effect' => 'slide']
         );
         $this->_ajax->addAjax(
             'html',
-            array('msg' => 'AJAXリソース取得'),
-            array('effect' => 'show')
+            ['msg' => 'AJAXリソース取得'],
+            ['effect' => 'show']
         );
         $this->output('ajax');
     }

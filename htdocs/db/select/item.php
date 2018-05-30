@@ -21,7 +21,7 @@ class Page_Db_Select_Item extends App_Page
     public function onInit(array $args)
     {
         $uri = 'Entry';
-        $params = array('uri' => $uri, 'values' => $args, 'options' => array());
+        $params = ['uri' => $uri, 'values' => $args, 'options' => []];
         $this->_resource->read($params)->set('entry');
     }
 

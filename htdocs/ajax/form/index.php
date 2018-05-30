@@ -27,7 +27,7 @@ class Page_Ajax_Form_Index extends App_Page
     {
         $this->_ajax->addAjax(
             'html',
-            array('msg' => 'okです!')
+            ['msg' => 'okです!']
         );
         $this->output('ajax');
         exit();

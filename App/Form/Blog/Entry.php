@@ -11,14 +11,14 @@ class App_Form_Blog_Entry extends BEAR_Base
      *
      * @var array
      */
-    private $_form = array('formName' => 'form');
+    private $_form = ['formName' => 'form'];
 
     /**
      * Form attribute
      *
      * @var array
      */
-    private $_attr = array('title' => 'size="30" maxlength="30"', 'body' => 'rows="8" cols="40"');
+    private $_attr = ['title' => 'size="30" maxlength="30"', 'body' => 'rows="8" cols="40"'];
 
     /**
      * Build form

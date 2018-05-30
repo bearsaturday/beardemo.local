@@ -50,7 +50,7 @@ class Page_Ajax_Basic_Ajax_Form extends App_Page
 
     public function onAction(array $submit)
     {
-        $this->_ajax->addAjax('html', array('msg' => 'okです!'));
+        $this->_ajax->addAjax('html', ['msg' => 'okです!']);
         $this->output('ajax');
         exit();
     }

@@ -16,8 +16,8 @@ class Page_Resource_Xml extends App_Page
 
     public function onInit(array $config)
     {
-        $options = array('pager' => 25, 'template' => 'list/xml');
-        $params = array('uri' => 'file:///Users/kooriyama/www/bear.demo/data/entries.xml', 'values' => array(), 'options' => $options);
+        $options = ['pager' => 25, 'template' => 'list/xml'];
+        $params = ['uri' => 'file:///Users/kooriyama/www/bear.demo/data/entries.xml', 'values' => [], 'options' => $options];
         $this->_resource->read($params)->set('entry');
     }
 }

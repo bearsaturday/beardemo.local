@@ -71,12 +71,12 @@ class App_Form_SmartyValidate extends BEAR_Base implements App_Form_Interface
      */
     public function exportValues()
     {
-        $values = array('fullname' => $this->_post['FullName'],
+        $values = ['fullname' => $this->_post['FullName'],
                         'phone' => $this->_post['Phone'],
                         'expdate' => $this->_post['CCExpDate'],
                         'email' => $this->_post['Email'],
                         'date' => $this->_post['Date'],
-                        'password' => $this->_post['password']);
+                        'password' => $this->_post['password']];
 
         return $values;
     }

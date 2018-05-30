@@ -11,13 +11,13 @@ class Page_Test_Error_Resource extends App_Page
     public function onClickRead()
     {
         // リソース内で例外発生
-        $this->_resource->read(array('uri' => 'Sample/Error'))->getRo();
+        $this->_resource->read(['uri' => 'Sample/Error'])->getRo();
     }
 
     public function onClickCreate()
     {
         // リソース内で例外発生
-        $result = $this->_resource->create(array('uri' => 'Sample/Error'))->getRo();
+        $result = $this->_resource->create(['uri' => 'Sample/Error'])->getRo();
     }
 
     public function onInit(array $args)

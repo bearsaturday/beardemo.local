@@ -20,7 +20,7 @@ class Page_Test_Emoji_Dynamic extends App_Page
     public function onInit(array $args)
     {
         $options['pager'] = $args['pager'];
-        $emoji = $this->_resource->read(array('uri' => "Emoji/{$args['ua']}", 'options' => $options))->set('emoji');
+        $emoji = $this->_resource->read(['uri' => "Emoji/{$args['ua']}", 'options' => $options])->set('emoji');
         $this->set('ua', $args['ua']);
     }
 }

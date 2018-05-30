@@ -26,7 +26,7 @@ class Page_Image_Resize_Index extends App_Page
     public function onInject()
     {
         parent::onInject();
-        $this->_img = BEAR::dependency('BEAR_Img', array('adapter' => BEAR_Img::ADAPTER_GD));
+        $this->_img = BEAR::dependency('BEAR_Img', ['adapter' => BEAR_Img::ADAPTER_GD]);
         $this->injectGet('file', 'file', _BEAR_APP_HOME . '/htdocs/image/eye.png');
         $this->injectGet('size_x', 'x', 300);
         $this->injectGet('size_y', 'y', 300);
@@ -39,7 +39,7 @@ class Page_Image_Resize_Index extends App_Page
     public function onInjectMagick()
     {
         parent::onInject();
-        $this->_img = BEAR::dependency('BEAR_Img', array('adapter' => BEAR_Img::ADAPTER_MAGICK));
+        $this->_img = BEAR::dependency('BEAR_Img', ['adapter' => BEAR_Img::ADAPTER_MAGICK]);
         $this->injectGet('file', 'file', 'http://upload.wikimedia.org/wikipedia/commons/f/f3/Hubble_Ultra_Deep_Field_part_d.jpg');
         $this->injectGet('size_x', 'x', 600);
         $this->injectGet('size_y', 'y', 600);
@@ -76,5 +76,5 @@ class Page_Image_Resize_Index extends App_Page
     }
 }
 
-$config = array('injector' => (isset($_GET['magick']) ? 'onInjectMagick' : 'onInject'));
+$config = ['injector' => (isset($_GET['magick']) ? 'onInjectMagick' : 'onInject')];
 App_Main::run('Page_Image_Resize_Index', $config);

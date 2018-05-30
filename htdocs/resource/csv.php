@@ -11,11 +11,11 @@ class Page_Resource_Csv extends App_Page
 {
     public function onInit(array $config)
     {
-        $params = array(
+        $params = [
             'uri' => 'Post/tokyo.csv',
-            'values' => array(),
-            'options' => array('pager' => 25)
-        );
+            'values' => [],
+            'options' => ['pager' => 25]
+        ];
         $ro = $this->_resource->read($params)->set('post');
     }
 

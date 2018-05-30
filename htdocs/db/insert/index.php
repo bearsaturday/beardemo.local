@@ -34,16 +34,16 @@ class Page_Db_Insert_Index extends App_Page
     public function onAction(array $submit)
     {
         // POE(Post Once Exactly)で一度しか実行しない
-        $params = array('uri' => 'Entry', 'values' => $submit, 'options' => array('poe' => true));
+        $params = ['uri' => 'Entry', 'values' => $submit, 'options' => ['poe' => true]];
         $this->_resource->create($params)->request();
         $this->set('submit', $submit);
-        $options = array('click' => 'done');
+        $options = ['click' => 'done'];
         $this->_header->redirect('.', $options);
     }
 
     public function onException(Exception $e)
     {
-        $options = array('click' => 'error', 'val' => array());
+        $options = ['click' => 'error', 'val' => []];
         $this->_header->redirect('.', $options);
     }
 

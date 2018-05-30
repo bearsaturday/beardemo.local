@@ -22,23 +22,23 @@ class App_Form_Preview extends BEAR_Base
      *
      * @var array
      */
-    private $_form = array('formName' => 'form');
+    private $_form = ['formName' => 'form'];
 
     /**
      * アトリビュート
      *
      * @var array
      */
-    private $_attr = array('name' => 'size="30" maxlength="30"',
+    private $_attr = ['name' => 'size="30" maxlength="30"',
         'email' => 'size="30" maxlength="30"', 'body' => 'rows="8" cols="40"'
-    );
+    ];
 
     /**
      * セレクトボックスセパレータ （フリーズしたときに変更
      *
      * @var mixed
      */
-    private $_separator = array('&nbsp;', '<br />');
+    private $_separator = ['&nbsp;', '<br />'];
 
     /*
      * デフォルト
@@ -59,11 +59,11 @@ class App_Form_Preview extends BEAR_Base
      */
     public function onInjectMobile()
     {
-        $this->_attr = array(
+        $this->_attr = [
             'name' => 'size="12" maxlength="30"',
             'email' => 'size="12" maxlength="30"',
             'body' => 'rows="8" cols="20"'
-        );
+        ];
     }
 
     /**
@@ -93,7 +93,7 @@ class App_Form_Preview extends BEAR_Base
         $this->_form->addGroup(
             $checkbox,
             'hobby',
-            array('趣味:', '最低２つ入力してください'),
+            ['趣味:', '最低２つ入力してください'],
             $this->_separator
         );
         // ラジオボタン
@@ -123,7 +123,7 @@ class App_Form_Preview extends BEAR_Base
      */
     public function buildSendButton()
     {
-        $buttons = array();
+        $buttons = [];
         $buttons[] = $this->_form->createElement('submit', '_action', '送信', '');
         $buttons[] = $this->_form->createElement('submit', '_modify', '修正', '');
         $this->_form->addGroup($buttons);
@@ -145,7 +145,7 @@ class App_Form_Preview extends BEAR_Base
      */
     private function _injectPreview()
     {
-        $this->_form = array('formName' => 'form', 'callback' => array(__CLASS__, 'onRenderFreeze'));
+        $this->_form = ['formName' => 'form', 'callback' => [__CLASS__, 'onRenderFreeze']];
         $this->_separator = '&nbsp;';
     }
 

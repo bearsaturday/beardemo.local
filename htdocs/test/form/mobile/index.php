@@ -19,7 +19,7 @@ class Page_Test_Form_Mobile_Index extends App_Page
     {
         $this->_form = BEAR::dependency('App_Form_Simple')->build();
         // 太陽　($submitで得られる10進数エンティティ)
-        $dsun = array();
+        $dsun = [];
         $dsun[BEAR_Agent::UA_DOCOMO] = '&#63647;';
         $dsun[BEAR_Agent::UA_EZWEB] = '&#63072;';
         $dsun[BEAR_Agent::UA_SOFTBANK] = '&#57418;';
@@ -47,5 +47,5 @@ if (! $ua) {
     exit();
 }
 $msg = mb_convert_encoding('こんにちは', 'SJIS-win', 'UTF-8') . $sun[$ua];
-$_POST = array('name' => $msg, '_token' => 1, '_qf__form' => '');
-App_Main::run('Page_Test_Form_Mobile_Index', array('ua' => $ua));
+$_POST = ['name' => $msg, '_token' => 1, '_qf__form' => ''];
+App_Main::run('Page_Test_Form_Mobile_Index', ['ua' => $ua]);

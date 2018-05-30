@@ -14,22 +14,22 @@ class App_Form_Multi extends BEAR_Base
      *
      * @var array
      */
-    private $_login = array();
+    private $_login = [];
 
     /**
      * リマインダーフォーム
      *
      * @var array
      */
-    private $_reminder = array();
+    private $_reminder = [];
 
     /**
      * Inject
      */
     public function onInject()
     {
-        $this->_login = array('formName' => 'login');
-        $this->_reminder = array('formName' => 'reminder');
+        $this->_login = ['formName' => 'login'];
+        $this->_reminder = ['formName' => 'reminder'];
     }
 
     /**

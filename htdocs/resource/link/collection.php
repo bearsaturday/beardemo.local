@@ -30,8 +30,8 @@ class Page_Resource_Link_Collection extends App_Page
      */
     public function onInit(array $args)
     {
-        $params = array('uri' => 'User', 'values' => array('id' => $args['id']));
-        $this->_resource->read($params)->link(array('photo', 'blog'))->link('entry')->link(array('trackback', 'comment'))->link('thumb')->p()->set();
+        $params = ['uri' => 'User', 'values' => ['id' => $args['id']]];
+        $this->_resource->read($params)->link(['photo', 'blog'])->link('entry')->link(['trackback', 'comment'])->link('thumb')->p()->set();
     }
 
     /**

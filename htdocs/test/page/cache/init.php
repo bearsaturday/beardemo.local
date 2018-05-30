@@ -28,5 +28,5 @@ class Page_Test_Page_Cache_Init extends Page_Resource_Set_Options
     }
 }
 
-$config = array('cache' => array('type' => 'init', 'life' => 1));
+$config = ['cache' => ['type' => 'init', 'life' => 1]];
 App_Main::run('Page_Test_Page_Cache_Init', $config);

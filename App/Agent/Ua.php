@@ -19,7 +19,7 @@ class App_Agent_Ua implements BEAR_Injector_Interface
 
             return;
         }
-        $agentMobile = BEAR::dependency('BEAR_Agent_Mobile', array('user_agent' => $config['user_agent']));
+        $agentMobile = BEAR::dependency('BEAR_Agent_Mobile', ['user_agent' => $config['user_agent']]);
         if ($agentMobile->isNonMobile()) {
             if (strpos($config['user_agent'], 'iPhone') !== false) {
                 // iPhoneの場合

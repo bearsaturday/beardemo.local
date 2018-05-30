@@ -57,12 +57,12 @@ class App_Ro_Sample_Error extends App_Ro
     public function onUpdate($values)
     {
         $msg = '現在一切の更新はできません';
-        $info = array('date' => _BEAR_DATETIME);
+        $info = ['date' => _BEAR_DATETIME];
         throw $this->_exception(
             $msg,
-            array(
+            [
             'code' => BEAR::CODE_ERROR,
-            'info' => $info)
+            'info' => $info]
         );
     }
 

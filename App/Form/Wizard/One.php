@@ -21,15 +21,15 @@ class App_Form_Wizard_One extends BEAR_Base
      *
      * @var unknown_type
      */
-    protected $_form = array('formName' => 'form', 'callback' => array('App_Form_Wizard_One', 'onRenderFreeze'));
+    protected $_form = ['formName' => 'form', 'callback' => ['App_Form_Wizard_One', 'onRenderFreeze']];
 
     /**
      * アトリビュート
      *
      * @var array
      */
-    protected $_attr = array('name' => 'size="30" maxlength="30"',
-    'email' => 'size="30" maxlength="30"', 'comment' => 'rows="20" cols="40"');
+    protected $_attr = ['name' => 'size="30" maxlength="30"',
+    'email' => 'size="30" maxlength="30"', 'comment' => 'rows="20" cols="40"'];
 
     /**
      * テンプレート
