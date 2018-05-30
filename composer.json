@@ -14,6 +14,7 @@
         }
     ],
     "require": {
+        "php": ">=7.1.0",
         "bearsaturday/bearsaturday": "0.10.x-dev"
     },
     "config": {
