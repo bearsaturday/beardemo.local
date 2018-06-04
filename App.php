@@ -18,7 +18,7 @@ require_once 'BEAR.php';
 
 error_reporting(E_ALL ^ E_DEPRECATED);
 
-$bearMode = isset($_SERVER['bearmode']) ? $_SERVER['bearmode'] : 0;
+$bearMode = isset($_SERVER['bearmode']) ? $_SERVER['bearmode'] : 1;
 // profile
 //include 'BEAR/Dev/Profile/script/startxh.php'; //xhprof
 App::init($bearMode);
