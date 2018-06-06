@@ -11,8 +11,8 @@ class Page_Db_Select_Item extends App_Page
 {
     public function onInject()
     {
-        parent::onInject();
         $this->injectGet('id');
+        parent::onInject();
     }
 
     /**
