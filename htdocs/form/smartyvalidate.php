@@ -2,9 +2,6 @@
 
 require_once 'App.php';
 
-/**
- * Form without BEAR_Form(Quickform)
- */
 class Page_Form_SmartyValidate extends App_Page
 {
     /**
