@@ -21,6 +21,8 @@
         "secure-http": false
     },
     "autoload": {
+        "classmap": ["vendor/bearsaturday/bearsaturday/BEAR", "vendor/openpsa/quickform/lib"],
+        "files": ["vendor/bearsaturday/bearsaturday/BEAR.php"]
     },
     "repositories": [
         {
