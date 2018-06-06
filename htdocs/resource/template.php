@@ -11,8 +11,8 @@ class Page_Resource_Template extends App_Page
 {
     public function onInject()
     {
-        parent::onInject();
         $this->injectGet('id', 'id', 1);
+        parent::onInject();
     }
 
     /**
