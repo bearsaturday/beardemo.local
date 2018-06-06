@@ -27,8 +27,6 @@ class Page_Ajax_Link_Ajax extends App_Page
 
     /**
      * Run 1 - HTML
-     *
-     * @param array $args
      */
     public function onClickHtml(array $args)
     {
@@ -41,8 +39,6 @@ class Page_Ajax_Link_Ajax extends App_Page
 
     /**
      * Run 3 - Val
-     *
-     * @param array $args
      */
     public function onClickVal(array $args)
     {
@@ -58,8 +54,6 @@ class Page_Ajax_Link_Ajax extends App_Page
 
     /**
      * Run 4 - 値を読む
-     *
-     * @param array $args
      */
     public function onClickRead(array $args)
     {
@@ -80,8 +74,6 @@ class Page_Ajax_Link_Ajax extends App_Page
 
     /**
      * Run 5 - JSをコール
-     *
-     * @param array $args
      */
     public function onClickJs(array $args)
     {
@@ -92,9 +84,7 @@ class Page_Ajax_Link_Ajax extends App_Page
     }
 
     /**
-     * Aタグ意外にはりつけ
-     *
-     * @param array $args
+     * imgタグをAJAXリンクに
      */
     public function onClickImg(array $args)
     {
@@ -105,9 +95,6 @@ class Page_Ajax_Link_Ajax extends App_Page
          );
     }
 
-    /**
-     * Output
-     */
     public function onOutput()
     {
         $this->output('ajax');
