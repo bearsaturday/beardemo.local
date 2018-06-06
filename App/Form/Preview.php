@@ -11,7 +11,7 @@
 class App_Form_Preview extends BEAR_Base
 {
     /**
-     * テンプレート
+     * フォームテンプレート
      *
      * @var string
      */
@@ -20,23 +20,25 @@ class App_Form_Preview extends BEAR_Base
     /**
      * フォーム
      *
-     * @var array
+     * @var HTML_QuickForm
      */
-    private $_form = ['formName' => 'form'];
+    private $_form ;
 
     /**
      * アトリビュート
      *
      * @var array
      */
-    private $_attr = ['name' => 'size="30" maxlength="30"',
-        'email' => 'size="30" maxlength="30"', 'body' => 'rows="8" cols="40"'
+    private $_attr = [
+        'name' => 'size="30" maxlength="30"',
+        'email' => 'size="30" maxlength="30"',
+        'body' => 'rows="8" cols="40"'
     ];
 
     /**
-     * セレクトボックスセパレータ （フリーズしたときに変更
+     * フリーズしたときに変更するセレクトボックスセパレータ
      *
-     * @var mixed
+     * @var array
      */
     private $_separator = ['&nbsp;', '<br />'];
 
@@ -48,14 +50,14 @@ class App_Form_Preview extends BEAR_Base
     private $_defaults = null;
 
     /**
-     * Inject（最初の表示）
+     * Inject（PC）
      */
     public function onInject()
     {
     }
 
     /**
-     * Inject（最初の表示）
+     * Inject（携帯）
      */
     public function onInjectMobile()
     {
@@ -66,15 +68,10 @@ class App_Form_Preview extends BEAR_Base
         ];
     }
 
-    /**
-     * build form
-     *
-     * @param string $formMode
-     */
-    public function build($formMode)
+    public function build(string $formMode)
     {
         $this->_injectFormMode($formMode);
-        $this->_form = BEAR::factory('BEAR_Form', $this->_form);
+        $this->_form = BEAR::factory('BEAR_Form');
         // デフォルト
         if ($this->_defaults) {
             $this->_form->setDefaults($this->_defaults);
@@ -108,7 +105,7 @@ class App_Form_Preview extends BEAR_Base
         $this->_form->addRule('name', '名前を入力してください', 'required', null);
         $this->_form->addRule('email', 'emailを入力してください', 'required', null);
         $this->_form->addRule('email', 'emailの形式で入力してください', 'email', null);
-        //         グループルール
+        // グループルール
         $this->_form->addGroupRule('hobby', '趣味を最低２つ入力してください', 'required', null, 2);
     }
 
@@ -134,8 +131,6 @@ class App_Form_Preview extends BEAR_Base
 
     /**
      * カスタムテンプレート
-     *
-     * @param HTML_QuickForm_Renderer_Tableless $render
      */
     public static function onRenderFreeze(HTML_QuickForm_Renderer_Tableless $render)
     {
