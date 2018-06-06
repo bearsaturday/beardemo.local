@@ -50,6 +50,7 @@ class Page_Form_Multi_Index extends App_Page
 
     public function onAction(array $submit)
     {
+        $this->display();
         echo '<p>onActionがコールされました　$submitは' . var_export($submit, true) . '</p>';
     }
 }
