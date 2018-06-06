@@ -36,12 +36,13 @@ class App_Ro_Entry extends App_Ro
      * @aspect around App_Aspect_Transaction
      * @required title
      * @required body
-     *
-     * @throws App_Ro_Entry_Exception 投稿できない例外
+     * @throws Exception
      */
     public function onCreate($values)
     {
         $values = [
+            'title' => $values['title'],
+            'body' => $values['body'],
             'created_at' => _BEAR_DATETIME
         ];
         $result = $this->_query->insert($values);
