@@ -9,11 +9,16 @@ require_once 'App.php';
  */
 class Page_Ajax_Link_Ajax extends App_Page
 {
+    /**
+     * @var BEAR_Page_Ajax
+     */
+    private $_ajax;
+
     public function onInject()
     {
-        parent::onInject();
         $this->_ajax = BEAR::dependency('BEAR_Page_Ajax');
         $this->injectAjaxRequest();
+        parent::onInject();
     }
 
     public function onInit(array $args)
