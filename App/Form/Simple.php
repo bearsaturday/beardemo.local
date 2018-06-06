@@ -26,16 +26,9 @@ class App_Form_Simple extends BEAR_Base
     /**
      * フォーム
      *
-     * @var unknown_type
+     * @var array
      */
-    private $_form = ['formName' => 'form', 'callback' => [__CLASS__, 'onRender']];
-
-    /**
-     * Inject
-     */
-    public function onInject()
-    {
-    }
+    private $_formConfig = ['formName' => 'form', 'callback' => [__CLASS__, 'onRender']];
 
     /**
      * モバイルインジェクト
@@ -51,7 +44,8 @@ class App_Form_Simple extends BEAR_Base
      */
     public function build()
     {
-        $form = BEAR::factory('BEAR_Form', $this->_form);
+        /** @var HTML_QuickForm $form */
+        $form = BEAR::factory('BEAR_Form', $this->_formConfig);
         // デフォルト
         $form->setDefaults(['name' => 'Kuma' . (string) mt_rand(1, 10), 'email' => 'kuma@example.com']);
         // ヘッダー
@@ -74,7 +68,7 @@ class App_Form_Simple extends BEAR_Base
      *
      * @param HTML_QuickForm_Renderer_Tableless $render
      *
-     * @see    http://pear.php.net/manual/ja/package.html.html-quickform-renderer-tableless.php
+     * @see http://pear.php.net/manual/ja/package.html.html-quickform-renderer-tableless.php
      */
     public static function onRender(HTML_QuickForm_Renderer_Tableless $render)
     {
