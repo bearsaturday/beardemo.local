@@ -7,14 +7,20 @@ require_once 'App.php';
  */
 class Page_Form_Poe_Index extends App_Page
 {
+    /**
+     * @var App_Form_Simple
+     */
+    private $_form;
+
     public function onInject()
     {
+        $this->_form =  BEAR::dependency('App_Form_Simple');
         parent::onInject();
     }
 
     public function onInit(array $args)
     {
-        BEAR::dependency('App_Form_Simple')->build();
+        $this->_form->build();
     }
 
     public function onOutput()
@@ -34,8 +40,7 @@ class Page_Form_Poe_Index extends App_Page
         ];
         $this->_resource->create($params)->request();
         $this->set('submit', print_r($submit, true));
-        // テスト用でここで表示してますが通常はredirectさせて画面出力します。
-        $this->display('/form/simple/action.tpl');
+        $this->display('/form/simple/action.tpl');  // 通常はredirectさせて画面出力します。
     }
 }
 
