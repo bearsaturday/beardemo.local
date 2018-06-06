@@ -41,10 +41,12 @@ class App_Ro_Entry extends App_Ro
      */
     public function onCreate($values)
     {
-        $values['created_at'] = _BEAR_DATETIME; //現在時刻
+        $values = [
+            'created_at' => _BEAR_DATETIME
+        ];
         $result = $this->_query->insert($values);
         if ($this->_query->isError($result)) {
-            throw $this->_exception('投稿できませんでした');
+            throw $this->_exception('投稿できませんでした', []);
         }
     }
 
