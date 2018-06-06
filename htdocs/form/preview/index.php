@@ -30,6 +30,7 @@ class Page_Form_Preview_Index extends App_Page
         }
         $this->injectArg('form_mode', $formMode);
         $this->_form = BEAR::dependency('App_Form_Preview');
+        parent::onInject();
     }
 
     public function onInit(array $args)
