@@ -86,10 +86,11 @@ class App_Form_Preview extends BEAR_Base
         $this->_form->addElement('text', 'email', 'メールアドレス', $this->_attr['email']);
         $this->_form->addElement('textarea', 'body', '本文', $this->_attr['body']);
         // Creates a checkboxes group using an array of separators
-        $checkbox[] = HTML_QuickForm::createElement('bcheckbox', 'travel', null, '旅行');
-        $checkbox[] = HTML_QuickForm::createElement('bcheckbox', 'photo', null, '写真');
-        $checkbox[] = HTML_QuickForm::createElement('bcheckbox', 'music', null, '音楽');
-        $checkbox[] = HTML_QuickForm::createElement('bcheckbox', 'movie', null, '映画');
+        $checkbox = [];
+        $checkbox[] = (new HTML_QuickForm)->createElement('bcheckbox', 'travel', null, '旅行');
+        $checkbox[] = (new HTML_QuickForm)->createElement('bcheckbox', 'photo', null, '写真');
+        $checkbox[] = (new HTML_QuickForm)->createElement('bcheckbox', 'music', null, '音楽');
+        $checkbox[] = (new HTML_QuickForm)->createElement('bcheckbox', 'movie', null, '映画');
         $this->_form->addGroup(
             $checkbox,
             'hobby',
@@ -97,8 +98,9 @@ class App_Form_Preview extends BEAR_Base
             $this->_separator
         );
         // ラジオボタン
-        $radio[] = HTML_QuickForm::createElement('bradio', null, null, 'Yes', 'y');
-        $radio[] = HTML_QuickForm::createElement('bradio', null, null, 'No', 'n');
+        $radio = [];
+        $radio[] =  (new HTML_QuickForm)->createElement('bradio', null, null, 'Yes', 'y');
+        $radio[] =  (new HTML_QuickForm)->createElement('bradio', null, null, 'No', 'n');
         $this->_form->addGroup($radio, 'yesorno', 'Yes/No:');
         // フィルタと検証ルール
         $this->_form->applyFilter('__ALL__', 'trim');
