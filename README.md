@@ -1,5 +1,13 @@
 # beardemo.local
 
+# Run
+
+```bash
+composer install
+composer setup
+composer run serve --timeout=0
+```
+
 フォーム
  * [シンプルフォーム](/docs/simpleform.md)
  * [認画面つきフォーム](/docs/preview.md)
@@ -33,10 +41,3 @@ AJAX
 
 その他
  * [セッション](/docs/session.md)
-
-# Run
-
-```bash
-composer install
-php -d include_path=`pwd` -S 127.0.0.1:8081 -t htdocs/
-```
