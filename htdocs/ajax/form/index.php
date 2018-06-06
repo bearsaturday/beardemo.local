@@ -2,20 +2,24 @@
 
 require_once 'App.php';
 
-/**
- * AJAX Formページ
- */
 class Page_Ajax_Form_Index extends App_Page
 {
+    /**
+     * @var BEAR_Page_Ajax
+     */
+    private $_ajax;
+
     public function onInject()
     {
-        parent::onInject();
         $this->_ajax = BEAR::dependency('BEAR_Page_Ajax');
+        parent::onInject();
     }
 
     public function onInit(array $args)
     {
-        BEAR::dependency('App_Form_Ajax')->build();
+        /** @var App_Form_Ajax $form */
+        $form = BEAR::dependency('App_Form_Ajax');
+        $form->build();
     }
 
     public function onOutput()
