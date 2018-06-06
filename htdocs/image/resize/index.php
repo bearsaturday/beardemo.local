@@ -14,11 +14,9 @@ require_once 'App.php';
 class Page_Image_Resize_Index extends App_Page
 {
     /**
-     * 画像ファイル
-     *
-     * @var string
+     * @var BEAR_Img_Adapter_GD|BEAR_Img_Adapter_Magick
      */
-    private $_file;
+    private $_img;
 
     /**
      * GDアダプターとローカルファイルをインジェクト
@@ -41,16 +39,11 @@ class Page_Image_Resize_Index extends App_Page
         parent::onInject();
         $this->_img = BEAR::dependency('BEAR_Img', ['adapter' => BEAR_Img::ADAPTER_MAGICK]);
         $this->injectGet('file', 'file', 'http://upload.wikimedia.org/wikipedia/commons/f/f3/Hubble_Ultra_Deep_Field_part_d.jpg');
-        $this->injectGet('size_x', 'x', 600);
-        $this->injectGet('size_y', 'y', 600);
+        $this->injectGet('size_x', 'x', 1200);
+        $this->injectGet('size_y', 'y', 1200);
         $this->injectGet('is_mobile', 'mobile', false);
     }
 
-    /**
-     * Init
-     *
-     * @param array $args
-     */
     public function onInit(array $args)
     {
         //画像ライブラリ選択
@@ -58,7 +51,7 @@ class Page_Image_Resize_Index extends App_Page
         // 縦、横どちらの幅に合わせるか自動判定し、プロポーションを維持してリサイズ
         if ($args['is_mobile'] !== false) {
             // 携帯のエージェントに合わせてリサイズ
-            $this->_img->resizeMobile();
+//            $this->_img->resizeMobile();
         } else {
             $this->_img->resize($args['size_x'], $args['size_y']);
         }
@@ -66,9 +59,6 @@ class Page_Image_Resize_Index extends App_Page
         //$img->save('/tmp/aaa.png', 'png');
     }
 
-    /**
-     * Output
-     */
     public function onOutput()
     {
         $this->_img->show('gif');

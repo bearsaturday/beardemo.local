@@ -23,20 +23,15 @@ class Page_Image_Change extends App_Page
      */
     public function onInject()
     {
-        parent::onInject();
         $this->_img = BEAR::dependency('BEAR_Img', ['adapter' => BEAR_Img::ADAPTER_GD]);
         $this->injectGet('file', 'file', _BEAR_APP_HOME . '/htdocs/image/eye.png');
         $this->injectGet('size_x', 'x', 400);
         $this->injectGet('size_y', 'y', 400);
         $this->injectGet('text', 'text', 'The eyes of God');
         $this->injectGet('degree', 'degree', 10);
+        parent::onInject();
     }
 
-    /**
-     * Init
-     *
-     * @param array $args
-     */
     public function onInit(array $args)
     {
         $this->_img->load($args['file']);
@@ -58,9 +53,6 @@ class Page_Image_Change extends App_Page
         $this->_img->adapter->polaroidImage(new ImagickDraw(), $args['degree']);
     }
 
-    /**
-     * Output
-     */
     public function onOutput()
     {
         $this->_img->show('png');
