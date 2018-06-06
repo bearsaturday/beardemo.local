@@ -1,26 +1,15 @@
 <?php
 /**
- * bear.demo for BEAR v0.9(saturday)
- *
- * @category  BEAR
- * @package   bear.emo
- * @author    $Author:$ <username@example.com>
- * @license   @license@ http://@license_url@
- * @version   Release: @package_version@ $Id:$
- * @link      http://@link_url@
+ * beardemo.local for BEAR.Satuday 0.10.x (PHP7+)
  */
 
+error_reporting(E_ALL ^ E_DEPRECATED);
 if (!defined('_BEAR_APP_HOME')) {
     define('_BEAR_APP_HOME', realpath(dirname(__FILE__)));
 }
-require_once 'vendor/autoload.php';
-require_once 'BEAR.php';
-
-error_reporting(E_ALL ^ E_DEPRECATED);
+require_once __DIR__ . '/vendor/autoload.php';
 
 $bearMode = isset($_SERVER['bearmode']) ? $_SERVER['bearmode'] : 1;
-// profile
-//include 'BEAR/Dev/Profile/script/startxh.php'; //xhprof
 App::init($bearMode);
 
 class App
