@@ -8,22 +8,19 @@
  */
 class App_Form_Wizard_Two extends App_Form_Wizard_One
 {
-    /**
-     * Inject
-     */
     public function onInject()
     {
-        $this->_form = BEAR::factory('BEAR_Form', $this->_form);
-        $this->_form->addElement('header', 'main', 'Wizard Two');
-        $this->_form->addElement('hidden', '_click', 'three');
+        /** @var HTML_QuickForm $form */
+        $form = BEAR::factory('BEAR_Form', $this->_formConfig);
+        $form->addElement('header', 'main', 'Wizard Two');
+        $form->addElement('hidden', '_click', 'three');
+        $this->_form = $form;
     }
 
     /**
      * フォーム
-     *
-     * @return App_Form_Wizard_Two
      */
-    public function buildTwo()
+    public function buildTwo() : self
     {
         // エレメント
         $this->_form->addElement('text', 'email', 'メールアドレス', $this->_attr['email']);
@@ -38,12 +35,8 @@ class App_Form_Wizard_Two extends App_Form_Wizard_One
         return $this;
     }
 
-    /**
-     * ボタン
-     */
     public function button()
     {
-        //ボタン
         $this->_form->addElement('submit', '_submit', '次へ', '');
     }
 }
