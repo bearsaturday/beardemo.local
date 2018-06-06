@@ -1,1 +1,1 @@
-<div style="text-align:center;">BEAR Demo</div>
+<div style="text-align:center;"><a href="/">BEAR Demo</a></div>
