@@ -52,6 +52,7 @@ class App_Form_Preview extends BEAR_Base
      */
     public function onInject()
     {
+        $this->_form = BEAR::factory('BEAR_Form');
     }
 
     /**
@@ -69,7 +70,6 @@ class App_Form_Preview extends BEAR_Base
     public function build(string $formMode)
     {
         $this->_injectFormMode($formMode);
-        $this->_form = BEAR::factory('BEAR_Form');
         // デフォルト
         if ($this->_defaults) {
             $this->_form->setDefaults($this->_defaults);

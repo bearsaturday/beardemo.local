@@ -17,7 +17,6 @@ class Page_Form_Preview_Index extends App_Page
 
     public function onInject()
     {
-        parent::onInject();
         // 押されたボタンでに応じたインジェクターを用意
         if (isset($_POST['_freeze'])) {
             //確認インジェクト
