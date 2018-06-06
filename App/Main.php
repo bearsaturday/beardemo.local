@@ -12,7 +12,7 @@ class App_Main extends BEAR_Main
     public function onInject()
     {
         // エージェントスニッフィング
-//        BEAR_Main_Ua_Injector::inject($this, $this->_config);
+        BEAR_Main_Ua_Injector::inject($this, $this->_config);
         parent::onInject();
     }
 
