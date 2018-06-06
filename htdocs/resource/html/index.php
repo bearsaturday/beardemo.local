@@ -10,7 +10,7 @@ class Page_Resource_Html_Index extends App_Page
     public function onInject()
     {
         parent::onInject();
-        $this->injectArg('host', 'beardemo.local');
+        $this->injectArg('host', '127.0.0.1:8080');
         $this->injectArg('uri', 'http://news.google.com/news?ned=us&ie=UTF-8&oe=UTF-8&q=%E3%82%AF%E3%83%9E%E5%87%BA%E6%B2%A1&output=rss&num=50&hl=ja');
         $this->injectArg('cache_life', 300);
     }
