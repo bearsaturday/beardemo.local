@@ -3,7 +3,7 @@
 require_once 'App.php';
 
 /**
- * Pamda エラーテスト
+ * Panda エラーテスト
  */
 class Page_Test_Error_Panda extends App_Page
 {
@@ -16,11 +16,6 @@ class Page_Test_Error_Panda extends App_Page
     public function onOutput()
     {
         echo '<hr><h1>Pandaエラーテスト終了</h1>';
-        echo '<p>FireBug + FirePHPでnoticeとwarningが出てるか確認してください。</p>';
-    }
-
-    private function nonStaticFunction()
-    {
     }
 }
 

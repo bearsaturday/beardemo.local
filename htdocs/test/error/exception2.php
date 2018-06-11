@@ -9,11 +9,6 @@ class Page_Test_Error_Exception2 extends App_Page
     {
         throw new Expection();
     }
-
-    public function onOutput()
-    {
-        echo 'Expection in onInitリソーステスト終了';
-    }
 }
 
 App_Main::run('Page_Test_Error_Exception2');
