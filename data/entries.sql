@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `entries`;
 CREATE TABLE `entries` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(64) NOT NULL ,
-  `body` varchar(256) NOT NULL ,
+  `body` varchar(256),
   `created_at` datetime NOT NULL,
   `deleted_at` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
