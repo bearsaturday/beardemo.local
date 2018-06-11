@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Ajaxフォーム
  */
@@ -18,15 +17,14 @@ class App_Form_Ajax extends BEAR_Base
     ];
 
     /**
-     * Inject
+     * フォーム設定
+     *
+     * @var array
      */
-    public function onInject()
-    {
-        $this->_form = [
-            'formName' => 'form',
-            'attributes' => ['rel' => 'ajax']
-        ];
-    }
+    private $_form = [
+        'formName' => 'form',
+        'attributes' => ['rel' => 'ajax']
+    ];
 
     /**
      * Build form
@@ -35,6 +33,7 @@ class App_Form_Ajax extends BEAR_Base
      */
     public function build()
     {
+        /** @var HTML_QuickForm $form */
         $form = BEAR::factory('BEAR_Form', $this->_form);
         // デフォルト
         $form->setDefaults(['name' => 'Kuma', 'email' => 'kuma@example.com']);
@@ -58,15 +57,5 @@ class App_Form_Ajax extends BEAR_Base
         $form->addRule('name', '名前を入力してください', 'required');
         $form->addRule('email', 'emailを入力してください', 'required');
         $form->addRule('email', 'emailの形式で入力してください', 'email');
-    }
-
-    /**
-     * カスタムテンプレート
-     *
-     * @param HTML_QuickForm_Renderer_Tableless $render
-     */
-    public static function onRender(HTML_QuickForm_Renderer_Tableless $render)
-    {
-        $render->setElementTemplate(self::$_elementTemplate);
     }
 }

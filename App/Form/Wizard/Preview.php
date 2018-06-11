@@ -8,6 +8,8 @@
 class App_Form_Wizard_Preview extends App_Form_Wizard_Three
 {
     /**
+     * フォーム設定
+     *
      * @var array
      */
     protected $_formConfig = [

@@ -1,11 +1,4 @@
-    <?php
-/**
- * App
- *
- * @license    @license@ http://@license_url@
- *
- * @link       http://@link_url@
- */
+<?php
 
 /**
  * Wizardフォーム 3

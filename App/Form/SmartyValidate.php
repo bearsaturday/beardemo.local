@@ -3,10 +3,6 @@
 require _BEAR_APP_HOME . '/App/vendors/SmartyValidate.class.php';
 
 /**
- * App
- */
-
-/**
  * SmartyValidateフォーム
  *
  * SmartyValidateを使ったフォーム例です。QuickFormを使用していません。
@@ -14,17 +10,21 @@ require _BEAR_APP_HOME . '/App/vendors/SmartyValidate.class.php';
 class App_Form_SmartyValidate extends BEAR_Base implements App_Form_Interface
 {
     /**
-     * Inject
+     * @var Smarty
      */
+    private $_smarty;
+
+    /**
+     * @var array
+     */
+    private $_post;
+
     public function onInject()
     {
         $this->_smarty = BEAR::dependency('BEAR_Smarty');
         $this->_post = $_POST;
     }
 
-    /**
-     * Set rules
-     */
     public function build()
     {
         if ($this->_post) {
@@ -43,10 +43,8 @@ class App_Form_SmartyValidate extends BEAR_Base implements App_Form_Interface
 
     /**
      * Is valid ?
-     *
-     * @return bool
      */
-    public function validate()
+    public function validate() : bool
     {
         if (! $this->_post) {
             return false;
@@ -66,17 +64,17 @@ class App_Form_SmartyValidate extends BEAR_Base implements App_Form_Interface
 
     /**
      * Export only registered values
-     *
-     * @return array
      */
-    public function exportValues()
+    public function exportValues() : array
     {
-        $values = ['fullname' => $this->_post['FullName'],
-                        'phone' => $this->_post['Phone'],
-                        'expdate' => $this->_post['CCExpDate'],
-                        'email' => $this->_post['Email'],
-                        'date' => $this->_post['Date'],
-                        'password' => $this->_post['password']];
+        $values = [
+            'fullname' => $this->_post['FullName'],
+            'phone' => $this->_post['Phone'],
+            'expdate' => $this->_post['CCExpDate'],
+            'email' => $this->_post['Email'],
+            'date' => $this->_post['Date'],
+            'password' => $this->_post['password']
+        ];
 
         return $values;
     }

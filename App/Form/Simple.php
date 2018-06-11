@@ -21,14 +21,21 @@ class App_Form_Simple extends BEAR_Base
      *
      * @var array
      */
-    private $_attr = ['name' => 'size="30" maxlength="30"',  'email' => 'size="30" maxlength="30"', 'body' => 'rows="8" cols="40"'];
+    private $_attr = [
+        'name' => 'size="30" maxlength="30"',
+        'email' => 'size="30" maxlength="30"',
+        'body' => 'rows="8" cols="40"'
+    ];
 
     /**
-     * フォーム
+     * フォーム設定
      *
      * @var array
      */
-    private $_formConfig = ['formName' => 'form', 'callback' => [__CLASS__, 'onRender']];
+    private $_form = [
+        'formName' => 'form',
+        'callback' => [__CLASS__, 'onRender']
+    ];
 
     /**
      * モバイルインジェクト
@@ -45,7 +52,7 @@ class App_Form_Simple extends BEAR_Base
     public function build()
     {
         /** @var HTML_QuickForm $form */
-        $form = BEAR::factory('BEAR_Form', $this->_formConfig);
+        $form = BEAR::factory('BEAR_Form', $this->_form);
         // デフォルト
         $form->setDefaults(['name' => 'Kuma' . (string) mt_rand(1, 10), 'email' => 'kuma@example.com']);
         // ヘッダー

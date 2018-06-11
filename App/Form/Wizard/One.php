@@ -13,7 +13,7 @@
 class App_Form_Wizard_One extends BEAR_Base
 {
     /**
-     * フォームConfig
+     * フォーム設定
      *
      * @var array
      */
