@@ -37,7 +37,7 @@
         ]
     },
     "scripts": {
-        "setup": "mysql -u root bear_demo < data/entries.sql",
+        "setup": "mysql -u root < data/entries.sql",
         "serve": "php -dzend_extension=xdebug.so -d include_path=`pwd` -S 127.0.0.1:8080 -t htdocs/",
         "cs": [
             "php-cs-fixer fix -v --dry-run",

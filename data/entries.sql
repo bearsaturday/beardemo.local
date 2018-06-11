@@ -19,6 +19,8 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 --  Table structure for `entriessss`
 -- ----------------------------
+CREATE DATABASE IF NOT EXISTS `bear_demo`;
+USE `bear_demo`;
 DROP TABLE IF EXISTS `entries`;
 CREATE TABLE `entries` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
