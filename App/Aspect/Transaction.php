@@ -1,9 +1,5 @@
 <?php
 
-
-/**
- * Advice
- */
 class App_Aspect_Transaction implements BEAR_Aspect_Around_Interface
 {
     /**
@@ -19,7 +15,9 @@ class App_Aspect_Transaction implements BEAR_Aspect_Around_Interface
     public function around(array $values, BEAR_Aspect_JoinPoint $joinPoint)
     {
         // 前処理
+        /** @var App_Ro $obj */
         $obj = $joinPoint->getObject();
+        /** @var MDB2 $db */
         $db = $obj->getDb();
         $db->beginTransaction();
         //　オリジナルのメソッドを実行

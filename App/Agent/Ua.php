@@ -1,18 +1,11 @@
 <?php
 
-
-/**
- * UAインジェクト
- */
 class App_Agent_Ua implements BEAR_Injector_Interface
 {
     /**
      * UAインジェクト
-     *
-     * @param BEAR_Main &$object App_Mainオブジェクト
-     * @param array     $config  設定
      */
-    public static function inject($object, $config)
+    public static function inject(BEAR_Main $object, array $config)
     {
         if (! isset($config['user_agent'])) {
             $object->setService('_ua', BEAR_Agent::UA_DEFAULT);
