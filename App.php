@@ -34,12 +34,6 @@ class App
                 $app['App_Db']['dsn']['default'] = $app['App_Db']['dsn']['slave'] = $app['App_Db']['dsn']['test'];
                 $app['BEAR_Ro_Prototype']['__class'] = 'BEAR_Ro_Prototype_Debug';
                 break;
-            case 100:
-                // for HTTP access UNIT test
-                $app['core']['debug'] = false;
-                $app['BEAR_Log']['__class'] = 'BEAR_Log_Test';
-                $app['BEAR_Resource_Request']['__class'] = 'BEAR_Resource_Request_Test';
-                break;
             case 3 :
                 echo 'dbセッションテスト';
                 // dbセッションテスト
