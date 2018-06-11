@@ -35,7 +35,6 @@ class App
                 $app['BEAR_Ro_Prototype']['__class'] = 'BEAR_Ro_Prototype_Debug';
                 break;
             case 3 :
-                echo 'dbセッションテスト';
                 // dbセッションテスト
                 $app['BEAR_Session']['adapter'] = 2;
                 $app['BEAR_Session']['path'] = 'mysql://bear_demo:bear@localhost/bear_demo';
