@@ -31,4 +31,4 @@ class Page_Test_Page_Db_Rw extends App_Page
     }
 }
 
-App_Main::run('Page_Test_Page_Db_Rw', $config);
+App_Main::run('Page_Test_Page_Db_Rw', []);
