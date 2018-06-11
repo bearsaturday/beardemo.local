@@ -8,15 +8,6 @@ require_once 'App.php';
  */
 class Page_Test_Ua_Inject extends App_Page
 {
-    public function onInject()
-    {
-        parent::onInject();
-    }
-
-    public function onInit(array $args)
-    {
-    }
-
     public function onOutput()
     {
         $this->display();

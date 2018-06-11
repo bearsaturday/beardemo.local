@@ -17,10 +17,6 @@ class Page_Test_Page_Layout extends App_Page
         parent::onInject();
     }
 
-    public function onInit(array $args)
-    {
-    }
-
     public function onOutput()
     {
         if ($this->_hasLayoutOption === false) {

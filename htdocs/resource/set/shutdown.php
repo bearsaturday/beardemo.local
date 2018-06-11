@@ -7,11 +7,6 @@ require_once 'App.php';
  */
 class Page_Resource_Set_Shutdown extends App_Page
 {
-    public function onInject()
-    {
-        parent::onInject();
-    }
-
     /**
      * @requied id
      */

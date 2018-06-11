@@ -9,15 +9,16 @@ require_once 'App.php';
  */
 class Page_Resource_Xml extends App_Page
 {
-    public function onInject()
-    {
-        parent::onInject();
-    }
-
     public function onInit(array $config)
     {
-        $options = ['pager' => 25, 'template' => 'list/xml'];
-        $params = ['uri' => 'file:///Users/kooriyama/www/bear.demo/data/entries.xml', 'values' => [], 'options' => $options];
+        $params = [
+            'uri' => 'file:///Users/kooriyama/www/bear.demo/data/entries.xml',
+            'values' => [],
+            'options' => [
+                'pager' => 25,
+                'template' => 'list/xml'
+            ]
+        ];
         $this->_resource->read($params)->set('entry');
     }
 }

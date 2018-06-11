@@ -9,11 +9,6 @@ require_once 'App.php';
  */
 class Page_Resource_Set_Index extends App_Page
 {
-    public function onInject()
-    {
-        parent::onInject();
-    }
-
     /**
      * @requied id
      */

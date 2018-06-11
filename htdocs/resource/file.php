@@ -9,11 +9,6 @@ require_once 'App.php';
  */
 class Page_Resource_File extends App_Page
 {
-    public function onInject()
-    {
-        parent::onInject();
-    }
-
     public function onInit(array $config)
     {
         $params1 = ['uri' => 'file:///var/www/bear.demo/data/data.txt'];

@@ -11,8 +11,8 @@ class Page_Test_Resource_Link_Collection extends App_Page
 {
     public function onInject()
     {
-        parent::onInject();
         $this->injectGet('id', 'id', 1);
+        parent::onInject();
     }
 
     /**

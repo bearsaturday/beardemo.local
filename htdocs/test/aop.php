@@ -7,11 +7,6 @@ require_once 'App.php';
  */
 class Page_Test_Aop extends App_Page
 {
-    public function onInject()
-    {
-        parent::onInject();
-    }
-
     public function onInit(array $args)
     {
         $values = ['id' => 1];

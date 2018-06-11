@@ -12,9 +12,9 @@ class Page_Test_Emoji_Dynamic extends App_Page
 {
     public function onInject()
     {
-        parent::onInject();
         $this->injectGet('ua', 'ua', 'Docomo');
         $this->injectGet('pager', 'pager', 10);
+        parent::onInject();
     }
 
     public function onInit(array $args)

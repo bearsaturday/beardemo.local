@@ -7,11 +7,6 @@ require_once 'App.php';
  */
 class Page_Resource_Page extends App_Page
 {
-    public function onInject()
-    {
-        parent::onInject();
-    }
-
     public function onInit(array $config)
     {
         $uri = 'page://self/db/select/item';
