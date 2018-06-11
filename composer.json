@@ -20,10 +20,6 @@
     "config": {
         "secure-http": false
     },
-    "autoload": {
-        "classmap": ["vendor/bearsaturday/bearsaturday/BEAR", "vendor/openpsa/quickform/lib"],
-        "files": ["vendor/bearsaturday/bearsaturday/BEAR.php"]
-    },
     "repositories": [
         {
             "type": "pear",
@@ -35,6 +31,14 @@
     "include-path": [
         "./"
     ],
+    "autoload": {
+        "classmap": [
+            "App"
+        ],
+        "files": [
+            "App.php"
+        ]
+    },
     "scripts": {
         "setup": "mysql -u root bear_demo < data/entries.sql",
         "serve": "php -dzend_extension=xdebug.so -d include_path=`pwd` -S 127.0.0.1:8080 -t htdocs/",
