@@ -38,7 +38,7 @@
         <li><a href="/resource/link.php?id=1">リソース +リンク +テンプレート</a>(<a href="/resource/link.php?id=2">?id=2</a>)</li>
         <li><a href="/resource/link/pager.php?id=1">リソース +リンク +テンプレート + ページング</a>(<a href="/resource/link.php?id=2">?id=2</a>)</li>
         <li><a href="/resource/set/">セットオプション</li>
-        <li><a href="/resource/page.php">pageリソース</a>(<a href="/resource/page/page.php">1</a>)</li>
+        <li><a href="/resource/page.php">pageリソース</a></li>
         <li><a href="/resource/csv.php">CSVリソース</a></li>
     </ul>
     <h2>AJAX</h2>
@@ -55,8 +55,8 @@
     </ul>
     <h2>画像</h2>
     <ul>
-        <li><a href="/image/resize/"}>ローカルGDリサイズ</a></li>
-        <li><a href="/image/resize/?m"}>リモートiMagickリサイズ</a></li>
+        <li><a href="/image/resize/?x=2000&y=2000"}>ローカルGDリサイズ</a></li>
+        <li><a href="/image/resize/?m&x=2000&y=2000"}>リモートiMagickリサイズ</a></li>
     </ul>
     <h2>モバイル</h2>
     <ul>
@@ -68,5 +68,12 @@
         <li>UserAgentを切り替えると、デフォルトのレイアウトが切り替えされます。</li>
         <li><a href="/form/simple/">シンプルフォーム</a>のテンプレートが切り替えされます。</li>
     </ul>
+    <h2>その他</h2>
+        <li>例外発生 (<a href="/test/error/exception.php">1</a>, <a href="/test/error/exception2.php">2</a>)</li>
+        <li><a href="/test/error/panda.php">開発用エラー画面</a></li>
+        <li><a href="/test/error/resource.php">リソースでエラー発生</a></li>
+        <li><a href="http://127.0.0.1:8080/test/aop.php">AOP</a></li>
+        <li>テンプレート <a href="http://127.0.0.1:8080/test/page/display.php">display</a>, <a href="http://127.0.0.1:8080/test/page/header.php">header</a>, <a href="http://127.0.0.1:8080/test/page/layout.php">layout</a></li>
+        <li>キャッシュ <a href="http://127.0.0.1:8080/test/page/cache/init.php">init</a>, <a href="http://127.0.0.1:8080/test/page/cache/page.php">page</a></li>
     </body>
 </html>
