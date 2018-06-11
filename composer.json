@@ -34,9 +34,6 @@
     "autoload": {
         "classmap": [
             "App"
-        ],
-        "files": [
-            "App.php"
         ]
     },
     "scripts": {
