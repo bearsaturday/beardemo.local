@@ -35,8 +35,7 @@ class App_Form_Wizard_One extends BEAR_Base
     protected $_attr = [
         'name' => 'size="30" maxlength="30"',
         'email' => 'size="30" maxlength="30"',
-        'comment' => 'rows="20" cols="40"']
-    ;
+        'comment' => 'rows="20" cols="40"'];
 
     /**
      * フォームテンプレート

@@ -52,9 +52,7 @@ class Page_Db_Insert_Index extends App_Page
 
     public function onException(Exception $e)
     {
-        echo $e;exit;
-        $options = ['click' => 'error', 'val' => []];
-        $this->_header->redirect('.', $options);
+        throw $e;
     }
 
     /**

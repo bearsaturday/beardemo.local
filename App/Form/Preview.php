@@ -20,7 +20,7 @@ class App_Form_Preview extends BEAR_Base
      *
      * @var HTML_QuickForm
      */
-    private $_form ;
+    private $_form;
 
     /**
      * アトリビュート
@@ -94,8 +94,8 @@ class App_Form_Preview extends BEAR_Base
         );
         // ラジオボタン
         $radio = [];
-        $radio[] =  (new HTML_QuickForm)->createElement('bradio', null, null, 'Yes', 'y');
-        $radio[] =  (new HTML_QuickForm)->createElement('bradio', null, null, 'No', 'n');
+        $radio[] = (new HTML_QuickForm)->createElement('bradio', null, null, 'Yes', 'y');
+        $radio[] = (new HTML_QuickForm)->createElement('bradio', null, null, 'No', 'n');
         $this->_form->addGroup($radio, 'yesorno', 'Yes/No:');
         // フィルタと検証ルール
         $this->_form->applyFilter('__ALL__', 'trim');

@@ -14,7 +14,7 @@ class Page_Form_Poe_Index extends App_Page
 
     public function onInject()
     {
-        $this->_form =  BEAR::dependency('App_Form_Simple');
+        $this->_form = BEAR::dependency('App_Form_Simple');
         parent::onInject();
     }
 

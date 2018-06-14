@@ -22,7 +22,7 @@ class Page_Test_Form_Mobile_Index extends App_Page
 
     public function onInit(array $args)
     {
-         /** @var App_Form_Simple $form */
+        /** @var App_Form_Simple $form */
         $form = BEAR::dependency('App_Form_Simple');
         $this->_form = $form->build();
         // 太陽　($submitで得られる10進数エンティティ)

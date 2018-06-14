@@ -36,6 +36,7 @@ class App_Ro_Entry extends App_Ro
      * @aspect around App_Aspect_Transaction
      * @required title
      * @required body
+     *
      * @throws Exception
      */
     public function onCreate($values)
