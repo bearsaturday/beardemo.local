@@ -18,12 +18,12 @@ class App_Ro_User_Blog_Entry_Trackback extends App_Ro
     {
         $id = 50 + $values['entry_id'];
         $title = "記事ID({$values['entry_id']})のトラックバック";
-        $result = array();
-        $result[] = array('id' => $id, 'title' => "{$title}$id");
+        $result = [];
+        $result[] = ['id' => $id, 'title' => "{$title}$id"];
         $id++;
-        $result[] = array('id' => $id, 'title' => "{$title}$id");
+        $result[] = ['id' => $id, 'title' => "{$title}$id"];
         $id++;
-        $result[] = array('id' => $id, 'title' => "{$title}$id");
+        $result[] = ['id' => $id, 'title' => "{$title}$id"];
         $id++;
 
         return $result;

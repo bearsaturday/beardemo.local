@@ -7,16 +7,9 @@ require_once 'App.php';
  *
  * ユーザー -> （写真、ブログ ）-> 記事　->　（トラックバック、コメント）->　コメント評価リソースとリンクされています。
  * 括弧内は並列でリンクされているリソースですが以降のリンクは最後のリソースからリンクされます。
- *
- * @license    @license@ http://@license_url@
- *
- * @link       http://@link_url@
  */
 class Page_Resource_Link_Collection extends App_Page
 {
-    /**
-     * Inject
-     */
     public function onInject()
     {
         parent::onInject();
@@ -24,19 +17,14 @@ class Page_Resource_Link_Collection extends App_Page
     }
 
     /**
-     * Init
-     *
      * @requied id
      */
     public function onInit(array $args)
     {
-        $params = array('uri' => 'User', 'values' => array('id' => $args['id']));
-        $this->_resource->read($params)->link(array('photo', 'blog'))->link('entry')->link(array('trackback', 'comment'))->link('thumb')->p()->set();
+        $params = ['uri' => 'User', 'values' => ['id' => $args['id']]];
+        $this->_resource->read($params)->link(['photo', 'blog'])->link('entry')->link(['trackback', 'comment'])->link('thumb')->p()->set();
     }
 
-    /**
-     * Output
-     */
     public function onOutput()
     {
         $this->display('collection.tpl');

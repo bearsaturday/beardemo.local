@@ -12,15 +12,17 @@ class Page_Db_Select_Index extends App_Page
 {
     public function onInit(array $args)
     {
-        $params = array('uri' => 'Entry',
-                        'values' => array(),
-                        'options' => array(
-                            'template' => 'list/entry',
-                            'cache' => array('life' => 10,
-                                             'link' => true
-                             )
-                  )
-        );
+        $params = [
+            'uri' => 'Entry',
+            'values' => [],
+            'options' => [
+                'template' => 'list/entry',
+                'cache' => [
+                    'life' => 10,
+                    'link' => true
+                 ]
+              ]
+        ];
         $this->_resource->read($params)->set('entry');
     }
 

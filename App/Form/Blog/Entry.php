@@ -1,30 +1,30 @@
 <?php
 
-
 /**
  * エントリーフォーム
  */
 class App_Form_Blog_Entry extends BEAR_Base
 {
     /**
-     * Form config
+     * 設定（デフォルト）
      *
      * @var array
      */
-    private $_form = array('formName' => 'form');
+    private $_form = ['formName' => 'form'];
 
     /**
-     * Form attribute
+     * アトリビュート
      *
      * @var array
      */
-    private $_attr = array('title' => 'size="30" maxlength="30"', 'body' => 'rows="8" cols="40"');
+    private $_attr = [
+        'title' => 'size="30" maxlength="30"',
+        'body' => 'rows="8" cols="40"'
+    ];
 
-    /**
-     * Build form
-     */
     public function build()
     {
+        /** @var HTML_QuickForm $form */
         $form = BEAR::factory('BEAR_Form', $this->_form);
         // ヘッダー
         $form->addElement('header', 'main', $this->_config['label']['main']);

@@ -27,87 +27,74 @@ class Page_Ajax_Link_Ajax extends App_Page
 
     /**
      * Run 1 - HTML
-     *
-     * @param array $args
      */
     public function onClickHtml(array $args)
     {
         $this->_ajax->addAjax(
             'html',
-            array('msg' => 'AJAXリクエスト成功!'),
-            array('effect' => 'show')
+            ['msg' => 'AJAXリクエスト成功!'],
+            ['effect' => 'show']
         );
     }
 
     /**
      * Run 3 - Val
-     *
-     * @param array $args
      */
     public function onClickVal(array $args)
     {
         $this->_ajax->addAjax(
             'val',
-            array('name' => 'チャーリー・チャップリン',
+            ['name' => 'チャーリー・チャップリン',
                 'gender' => 'male',
                 'blood' => 'O',
                 'comment' => '人生はクローズアップで見れば悲劇。ロングショットで見れば喜劇。'
-            )
+            ]
         );
     }
 
     /**
      * Run 4 - 値を読む
-     *
-     * @param array $args
      */
     public function onClickRead(array $args)
     {
         $this->_ajax->addAjax(
             'html',
-            array('msg' => 'クライアントのデータは常に送られます'),
-            array('effect' => 'show')
+            ['msg' => 'クライアントのデータは常に送られます'],
+            ['effect' => 'show']
         );
         /** @param $ajax BEAR_Page_Ajax */
         $ajaxReq = $this->_ajax->getAjaxRequest();
         $args = '<pre>' . print_r($ajaxReq, true) . '</pre>';
         $this->_ajax->addAjax(
             'html',
-            array('args' => $args),
-            array('effect' => 'show')
+            ['args' => $args],
+            ['effect' => 'show']
         );
     }
 
     /**
      * Run 5 - JSをコール
-     *
-     * @param array $args
      */
     public function onClickJs(array $args)
     {
         $this->_ajax->addAjax(
             'js',
-            array('demo' => '#bearlogo')
+            ['demo' => '#bearlogo']
         );
     }
 
     /**
-     * Aタグ意外にはりつけ
-     *
-     * @param array $args
+     * imgタグをAJAXリンクに
      */
     public function onClickImg(array $args)
     {
         $this->_ajax->addAjax(
              'html',
-             array('img_msg' => 'AJAX OK!'),
-             array('effect' => 'show')
+             ['img_msg' => 'AJAX OK!'],
+             ['effect' => 'show']
          );
     }
 
-    /**
-     * Output
-     */
     public function onOutput()
     {
         $this->output('ajax');

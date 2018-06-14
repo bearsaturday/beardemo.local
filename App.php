@@ -1,24 +1,15 @@
 <?php
 /**
- * bear.demo for BEAR v0.9(saturday)
- *
- * @category  BEAR
- * @package   bear.emo
- * @author    $Author:$ <username@example.com>
- * @license   @license@ http://@license_url@
- * @version   Release: @package_version@ $Id:$
- * @link      http://@link_url@
+ * beardemo.local for BEAR.Satuday 0.10.x (PHP7+)
  */
 
+error_reporting(E_ALL ^ E_DEPRECATED);
 if (!defined('_BEAR_APP_HOME')) {
     define('_BEAR_APP_HOME', realpath(dirname(__FILE__)));
 }
-require_once 'vendor/autoload.php';
-require_once 'BEAR.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
-$bearMode = isset($_SERVER['bearmode']) ? $_SERVER['bearmode'] : 0;
-// profile
-//include 'BEAR/Dev/Profile/script/startxh.php'; //xhprof
+$bearMode = isset($_SERVER['bearmode']) ? $_SERVER['bearmode'] : 1;
 App::init($bearMode);
 
 class App
@@ -43,14 +34,7 @@ class App
                 $app['App_Db']['dsn']['default'] = $app['App_Db']['dsn']['slave'] = $app['App_Db']['dsn']['test'];
                 $app['BEAR_Ro_Prototype']['__class'] = 'BEAR_Ro_Prototype_Debug';
                 break;
-            case 100:
-                // for HTTP access UNIT test
-                $app['core']['debug'] = false;
-                $app['BEAR_Log']['__class'] = 'BEAR_Log_Test';
-                $app['BEAR_Resource_Request']['__class'] = 'BEAR_Resource_Request_Test';
-                break;
             case 3 :
-                echo 'dbセッションテスト';
                 // dbセッションテスト
                 $app['BEAR_Session']['adapter'] = 2;
                 $app['BEAR_Session']['path'] = 'mysql://bear_demo:bear@localhost/bear_demo';

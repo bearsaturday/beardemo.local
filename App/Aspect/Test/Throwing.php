@@ -1,9 +1,5 @@
 <?php
 
-
-/**
- * Advice
- */
 class App_Aspect_Test_Throwing implements BEAR_Aspect_Throwing_Interface
 {
     /**
@@ -18,7 +14,7 @@ class App_Aspect_Test_Throwing implements BEAR_Aspect_Throwing_Interface
      */
     public function throwing($result, BEAR_Aspect_JoinPoint $joinPoint)
     {
-        $result = array('is_error' => true);
+        $result = ['is_error' => true];
 
         return $result;
     }

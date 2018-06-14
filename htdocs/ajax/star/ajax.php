@@ -9,11 +9,16 @@ require_once 'App.php';
  */
 class Page_Ajax_Link_Ajax extends App_Page
 {
+    /**
+     * @var BEAR_Page_Ajax
+     */
+    private $_ajax;
+
     public function onInject()
     {
-        parent::onInject();
         $this->_ajax = BEAR::dependency('BEAR_Page_Ajax');
         $this->injectAjaxRequest();
+        parent::onInject();
     }
 
     public function onInit(array $args)
@@ -30,8 +35,8 @@ class Page_Ajax_Link_Ajax extends App_Page
         $rate = $args['click'];
         $this->_ajax->addAjax(
             'html',
-            array('hover-tip' => "<b>星[{$rate}]の評価を受け付けました!</b>"),
-            array('effect' => 'show')
+            ['hover-tip' => "<b>星[{$rate}]の評価を受け付けました!</b>"],
+            ['effect' => 'show']
         );
     }
 

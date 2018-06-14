@@ -1,5 +1,13 @@
 # beardemo.local
 
+# Run
+
+```bash
+composer install
+composer setup
+composer run serve --timeout=0
+```
+
 フォーム
  * [シンプルフォーム](/docs/simpleform.md)
  * [認画面つきフォーム](/docs/preview.md)

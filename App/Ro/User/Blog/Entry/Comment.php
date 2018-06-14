@@ -19,10 +19,10 @@ class App_Ro_User_Blog_Entry_Comment extends App_Ro
         static $id = 110;
 
         $title = "記事ID({$values['entry_id']})のコメント";
-        $result = array();
-        $result[] = array('id' => $id, 'title' => "{$title}1(ID={$id})");
+        $result = [];
+        $result[] = ['id' => $id, 'title' => "{$title}1(ID={$id})"];
         $id++;
-        $result[] = array('id' => $id, 'title' => "{$title}2(ID={$id})");
+        $result[] = ['id' => $id, 'title' => "{$title}2(ID={$id})"];
         $id++;
 
         return $result;
@@ -39,8 +39,8 @@ class App_Ro_User_Blog_Entry_Comment extends App_Ro
      */
     public function onLink($values)
     {
-        $links = array();
-        $links['thumb'] = array('uri' => 'User/Blog/Entry/Comment/Thumb', 'values' => array('comment_id' => $values['id']));
+        $links = [];
+        $links['thumb'] = ['uri' => 'User/Blog/Entry/Comment/Thumb', 'values' => ['comment_id' => $values['id']]];
 
         return $links;
     }

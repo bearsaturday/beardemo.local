@@ -2,16 +2,14 @@
 
 
 /**
- * Multi form
- *
- * 確認画面つきフォーム
+ * Previewフォーム
  *
  * 表示、確認、修正の３つの状態のある確認画面つきフォームです。
  */
 class App_Form_Preview extends BEAR_Base
 {
     /**
-     * テンプレート
+     * フォームテンプレート
      *
      * @var string
      */
@@ -20,25 +18,27 @@ class App_Form_Preview extends BEAR_Base
     /**
      * フォーム
      *
-     * @var array
+     * @var HTML_QuickForm
      */
-    private $_form = array('formName' => 'form');
+    private $_form;
 
     /**
      * アトリビュート
      *
      * @var array
      */
-    private $_attr = array('name' => 'size="30" maxlength="30"',
-        'email' => 'size="30" maxlength="30"', 'body' => 'rows="8" cols="40"'
-    );
+    private $_attr = [
+        'name' => 'size="30" maxlength="30"',
+        'email' => 'size="30" maxlength="30"',
+        'body' => 'rows="8" cols="40"'
+    ];
 
     /**
-     * セレクトボックスセパレータ （フリーズしたときに変更
+     * フリーズしたときに変更するセレクトボックスセパレータ
      *
-     * @var mixed
+     * @var array
      */
-    private $_separator = array('&nbsp;', '<br />');
+    private $_separator = ['&nbsp;', '<br />'];
 
     /*
      * デフォルト
@@ -48,33 +48,28 @@ class App_Form_Preview extends BEAR_Base
     private $_defaults = null;
 
     /**
-     * Inject（最初の表示）
+     * Inject（PC）
      */
     public function onInject()
     {
     }
 
     /**
-     * Inject（最初の表示）
+     * Inject（携帯）
      */
     public function onInjectMobile()
     {
-        $this->_attr = array(
+        $this->_attr = [
             'name' => 'size="12" maxlength="30"',
             'email' => 'size="12" maxlength="30"',
             'body' => 'rows="8" cols="20"'
-        );
+        ];
     }
 
-    /**
-     * build form
-     *
-     * @param string $formMode
-     */
-    public function build($formMode)
+    public function build(string $formMode)
     {
         $this->_injectFormMode($formMode);
-        $this->_form = BEAR::factory('BEAR_Form', $this->_form);
+        $this->_form = BEAR::factory('BEAR_Form');
         // デフォルト
         if ($this->_defaults) {
             $this->_form->setDefaults($this->_defaults);
@@ -86,19 +81,21 @@ class App_Form_Preview extends BEAR_Base
         $this->_form->addElement('text', 'email', 'メールアドレス', $this->_attr['email']);
         $this->_form->addElement('textarea', 'body', '本文', $this->_attr['body']);
         // Creates a checkboxes group using an array of separators
-        $checkbox[] = HTML_QuickForm::createElement('bcheckbox', 'travel', null, '旅行');
-        $checkbox[] = HTML_QuickForm::createElement('bcheckbox', 'photo', null, '写真');
-        $checkbox[] = HTML_QuickForm::createElement('bcheckbox', 'music', null, '音楽');
-        $checkbox[] = HTML_QuickForm::createElement('bcheckbox', 'movie', null, '映画');
+        $checkbox = [];
+        $checkbox[] = (new HTML_QuickForm)->createElement('bcheckbox', 'travel', null, '旅行');
+        $checkbox[] = (new HTML_QuickForm)->createElement('bcheckbox', 'photo', null, '写真');
+        $checkbox[] = (new HTML_QuickForm)->createElement('bcheckbox', 'music', null, '音楽');
+        $checkbox[] = (new HTML_QuickForm)->createElement('bcheckbox', 'movie', null, '映画');
         $this->_form->addGroup(
             $checkbox,
             'hobby',
-            array('趣味:', '最低２つ入力してください'),
+            ['趣味:', '最低２つ入力してください'],
             $this->_separator
         );
         // ラジオボタン
-        $radio[] = HTML_QuickForm::createElement('bradio', null, null, 'Yes', 'y');
-        $radio[] = HTML_QuickForm::createElement('bradio', null, null, 'No', 'n');
+        $radio = [];
+        $radio[] = (new HTML_QuickForm)->createElement('bradio', null, null, 'Yes', 'y');
+        $radio[] = (new HTML_QuickForm)->createElement('bradio', null, null, 'No', 'n');
         $this->_form->addGroup($radio, 'yesorno', 'Yes/No:');
         // フィルタと検証ルール
         $this->_form->applyFilter('__ALL__', 'trim');
@@ -106,7 +103,7 @@ class App_Form_Preview extends BEAR_Base
         $this->_form->addRule('name', '名前を入力してください', 'required', null);
         $this->_form->addRule('email', 'emailを入力してください', 'required', null);
         $this->_form->addRule('email', 'emailの形式で入力してください', 'email', null);
-        //         グループルール
+        // グループルール
         $this->_form->addGroupRule('hobby', '趣味を最低２つ入力してください', 'required', null, 2);
     }
 
@@ -123,7 +120,7 @@ class App_Form_Preview extends BEAR_Base
      */
     public function buildSendButton()
     {
-        $buttons = array();
+        $buttons = [];
         $buttons[] = $this->_form->createElement('submit', '_action', '送信', '');
         $buttons[] = $this->_form->createElement('submit', '_modify', '修正', '');
         $this->_form->addGroup($buttons);
@@ -132,8 +129,6 @@ class App_Form_Preview extends BEAR_Base
 
     /**
      * カスタムテンプレート
-     *
-     * @param HTML_QuickForm_Renderer_Tableless $render
      */
     public static function onRenderFreeze(HTML_QuickForm_Renderer_Tableless $render)
     {
@@ -145,7 +140,7 @@ class App_Form_Preview extends BEAR_Base
      */
     private function _injectPreview()
     {
-        $this->_form = array('formName' => 'form', 'callback' => array(__CLASS__, 'onRenderFreeze'));
+        $this->_form = ['formName' => 'form', 'callback' => [__CLASS__, 'onRenderFreeze']];
         $this->_separator = '&nbsp;';
     }
 

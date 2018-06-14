@@ -12,8 +12,8 @@ class Page_Resource_Link extends App_Page
 {
     public function onInject()
     {
-        parent::onInject();
         $this->injectGet('id', 'id', 1);
+        parent::onInject();
     }
 
     /**
@@ -21,15 +21,15 @@ class Page_Resource_Link extends App_Page
      */
     public function onInit(array $args)
     {
-        $params = array(
+        $params = [
             'uri' => 'User',
-            'values' => array('id' => $args['id']),
-            'options' => array(
+            'values' => ['id' => $args['id']],
+            'options' => [
                 'template' => 'link/blog',
-                'cache' => array('life' => 10, 'link' => true)
-            )
-        );
-        $this->_resource->read($params)->link(array('photo', 'blog'))->link('entry')->link(array('trackback', 'comment'))->link('thumb')->set('blog', 'object');
+                'cache' => ['life' => 10, 'link' => true]
+            ]
+        ];
+        $this->_resource->read($params)->link(['photo', 'blog'])->link('entry')->link(['trackback', 'comment'])->link('thumb')->set('blog', 'object');
     }
 
     public function onOutput()

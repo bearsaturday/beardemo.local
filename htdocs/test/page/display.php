@@ -11,15 +11,6 @@ require_once 'App.php';
  */
 class Page_Test_Page_Display extends App_Page
 {
-    public function onInject()
-    {
-        parent::onInject();
-    }
-
-    public function onInit(array $args)
-    {
-    }
-
     public function onOutput()
     {
         $this->display('/hello.tpl');

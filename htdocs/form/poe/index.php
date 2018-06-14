@@ -4,52 +4,43 @@ require_once 'App.php';
 
 /**
  * シンプルフォーム
- *
- * @license    @license@ http://@license_url@
- *
- * @link       http://@link_url@
  */
 class Page_Form_Poe_Index extends App_Page
 {
     /**
-     * Inject
+     * @var App_Form_Simple
      */
+    private $_form;
+
     public function onInject()
     {
+        $this->_form = BEAR::dependency('App_Form_Simple');
         parent::onInject();
     }
 
-    /**
-     * Init
-     */
     public function onInit(array $args)
     {
-        BEAR::dependency('App_Form_Simple')->build();
+        $this->_form->build();
     }
 
-    /**
-     * Output
-     */
     public function onOutput()
     {
         $this->display('/form/simple/index.tpl');
     }
 
-    /**
-     * Action
-     */
     public function onAction(array $submit)
     {
-        $params = array('uri' => 'Test/Poe',
-                        'values' => array(),
-                        'options' => array(BEAR_Resource::OPTION_POE => true,
-                                           BEAR_Resource::OPTION_CSRF => true
-                         )
-        );
+        $params = [
+            'uri' => 'Test/Poe',
+            'values' => [],
+            'options' => [
+                BEAR_Resource::OPTION_POE => true,
+                BEAR_Resource::OPTION_CSRF => true
+            ]
+        ];
         $this->_resource->create($params)->request();
         $this->set('submit', print_r($submit, true));
-        // テスト用でここで表示してますが通常はredirectさせて画面出力します。
-        $this->display('/form/simple/action.tpl');
+        $this->display('/form/simple/action.tpl');  // 通常はredirectさせて画面出力します。
     }
 }
 

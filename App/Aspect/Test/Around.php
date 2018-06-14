@@ -1,9 +1,5 @@
 <?php
 
-
-/**
- * Advice
- */
 class App_Aspect_Test_Around implements BEAR_Aspect_Around_Interface
 {
     /**

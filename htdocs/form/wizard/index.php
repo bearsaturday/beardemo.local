@@ -22,12 +22,12 @@ class Page_Form_Wizard_Index extends App_Page
 
     /**
      * 最初のフォーム
-     *
-     * @param array $args
      */
     public function onClickNone(array $args)
     {
-        BEAR::dependency('App_Form_Wizard_One')->buildOne()->button();
+        /** @var App_Form_Wizard_One $form */
+        $form = BEAR::dependency('App_Form_Wizard_One');
+        $form->buildOne()->button();
     }
 
     /**
@@ -37,7 +37,9 @@ class Page_Form_Wizard_Index extends App_Page
      */
     public function onClickTwo(array $args)
     {
-        BEAR::dependency('App_Form_Wizard_Two')->buildTwo()->button();
+        /** @var App_Form_Wizard_Two $form */
+        $form = BEAR::dependency('App_Form_Wizard_Two');
+        $form->buildTwo()->button();
     }
 
     /**
@@ -47,7 +49,9 @@ class Page_Form_Wizard_Index extends App_Page
      */
     public function onClickThree(array $args)
     {
-        BEAR::dependency('App_Form_Wizard_Three')->buildThree()->button();
+        /** @var App_Form_Wizard_Three $form */
+        $form = BEAR::dependency('App_Form_Wizard_Three');
+        $form->buildThree()->button();
     }
 
     /**
@@ -57,7 +61,9 @@ class Page_Form_Wizard_Index extends App_Page
      */
     public function onClickPreview(array $args)
     {
-        BEAR::dependency('App_Form_Wizard_Preview')->buildOne()->buildTwo()->buildThree()->button();
+        /** @var App_Form_Wizard_Preview $form */
+        $form = BEAR::dependency('App_Form_Wizard_Preview');
+        $form->buildOne()->buildTwo()->buildThree()->button();
     }
 
     /**
@@ -69,7 +75,9 @@ class Page_Form_Wizard_Index extends App_Page
      */
     public function onClickAction(array $args)
     {
-        BEAR::dependency('App_Form_Wizard_Preview')->buildOne()->buildTwo()->buildThree()->button();
+        /** @var App_Form_Wizard_Preview $form */
+        $form = BEAR::dependency('App_Form_Wizard_Preview');
+        $form->buildOne()->buildTwo()->buildThree()->button();
     }
 
     /**
@@ -80,14 +88,6 @@ class Page_Form_Wizard_Index extends App_Page
         parent::onInject();
         $this->_header = BEAR::dependency('BEAR_Page_Header');
         $this->_defaults = $this->_session->get('wizard_submit');
-    }
-
-    /**
-     * Init
-     */
-    public function onInit(array $args)
-    {
-        $wizardSubmit = $this->_session->get('wizard_submit');
     }
 
     /**
@@ -106,9 +106,7 @@ class Page_Form_Wizard_Index extends App_Page
      */
     public function onAction(array $submit)
     {
-        //$submitValues = BEAR::dependency('BEAR_Form_Service')->getSubmitValues(); // for BEAR 0.9.0
         $submitValues = BEAR_Form::$submitValue; // for BEAR 0.8.0 -
-
         $click = isset($submitValues['_click']) ? $submitValues['_click'] : '';
         if ($click === 'action') {
             //確認画面から送信ボタンでアクション実行
@@ -116,14 +114,15 @@ class Page_Form_Wizard_Index extends App_Page
             $this->display('action.tpl');
 
             return;
-            //$this->end();
         }
         // 次のフォームへ
         $wizardSubmit = $this->_session->get('wizard_submit');
-        $wizardSubmit = is_array($wizardSubmit) ? $wizardSubmit : array();
+        $wizardSubmit = is_array($wizardSubmit) ? $wizardSubmit : [];
         $this->_session->set('wizard_submit', array_merge($wizardSubmit, $submit));
-        $options['click'] = $click;
-        $options['value'] = $submit;
+        $options = [
+            'click' => $click,
+            'value' => $submit
+        ];
         $this->_header->redirect('.', $options);
     }
 }

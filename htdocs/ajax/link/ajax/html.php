@@ -22,10 +22,10 @@ class Page_Ajax_Basic_Ajax_Html extends App_Page
     {
         $this->_ajax->addAjax(
             'html',
-            array(
+            [
             'msg' => 'AJAXリクエスト成功!',
-            'time' => date('r')),
-            array('effect' => 'show')
+            'time' => date('r')],
+            ['effect' => 'show']
         );
         $this->output('ajax');
     }

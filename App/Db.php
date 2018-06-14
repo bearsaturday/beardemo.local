@@ -22,7 +22,7 @@ class App_Db extends BEAR_Factory
     {
         $options['default_table_type'] = 'INNODB';
         $options['use_transactions'] = true;
-        $config = array('dsn' => $this->_config['dsn']);
+        $config = ['dsn' => $this->_config['dsn']];
         $config['options'] = $options;
         $db = BEAR::factory('BEAR_Mdb2', $config);
         /* @var $db BEAR_Mdb2 */

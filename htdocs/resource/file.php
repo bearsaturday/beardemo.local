@@ -9,23 +9,18 @@ require_once 'App.php';
  */
 class Page_Resource_File extends App_Page
 {
-    public function onInject()
-    {
-        parent::onInject();
-    }
-
     public function onInit(array $config)
     {
-        $params1 = array('uri' => 'file:///var/www/bear.demo/data/data.txt');
+        $params1 = ['uri' => 'file:///var/www/bear.demo/data/data.txt'];
         $body = $this->_resource->read($params1)->set('hello')->getBody();
-        $options = array('template' => 'list/entrys');
-        $values = array('header' => true);
-        $params2 = array(
+        $options = ['template' => 'list/entrys'];
+        $values = ['header' => true];
+        $params2 = [
             'uri' => 'file:///var/www/bear.demo/data/entries.csv',
             'values' => $values,
             'options' => $options
-        );
-        $body = $this->_resource->read($params2)->set('cat');
+        ];
+        $this->_resource->read($params2)->set('cat');
     }
 }
 

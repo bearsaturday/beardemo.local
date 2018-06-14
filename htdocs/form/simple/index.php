@@ -7,14 +7,20 @@ require_once 'App.php';
  */
 class Page_Form_Simple_Index extends App_Page
 {
+    /**
+     * @var App_Form_Simple
+     */
+    private $_form;
+
     public function onInject()
     {
+        $this->_form = BEAR::dependency('App_Form_Simple');
         parent::onInject();
     }
 
     public function onInit(array $args)
     {
-        BEAR::dependency('App_Form_Simple')->build();
+        $this->_form->build();
     }
 
     public function onOutput()

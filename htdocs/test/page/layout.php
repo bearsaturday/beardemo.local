@@ -17,17 +17,13 @@ class Page_Test_Page_Layout extends App_Page
         parent::onInject();
     }
 
-    public function onInit(array $args)
-    {
-    }
-
     public function onOutput()
     {
         if ($this->_hasLayoutOption === false) {
             $this->display('layout.tpl');
         } else {
             p('layoutオプションを使用中');
-            $this->display('layout.tpl', array('layout' => 'test.tpl'));
+            $this->display('layout.tpl', ['layout' => 'test.tpl']);
         }
     }
 }

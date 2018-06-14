@@ -1,11 +1,4 @@
-    <?php
-/**
- * App
- *
- * @license    @license@ http://@license_url@
- *
- * @link       http://@link_url@
- */
+<?php
 
 /**
  * Wizardフォーム 3
@@ -14,22 +7,19 @@
  */
 class App_Form_Wizard_Three extends App_Form_Wizard_Two
 {
-    /**
-     * Inject
-     */
     public function onInject()
     {
-        $this->_form = BEAR::factory('BEAR_Form', $this->_form);
-        $this->_form->addElement('header', 'main', 'Wizard Three');
-        $this->_form->addElement('hidden', '_click', 'preview');
+        /** @var HTML_QuickForm $form */
+        $form = BEAR::factory('BEAR_Form', $this->_formConfig);
+        $form->addElement('header', 'main', 'Wizard Three');
+        $form->addElement('hidden', '_click', 'preview');
+        $this->_form = $form;
     }
 
     /**
      * フォーム
-     *
-     * @return App_Form_Wizard_Three
      */
-    public function buildThree()
+    public function buildThree() : self
     {
         // フィールド
         $this->_form->addElement('textarea', 'comment', 'コメント', $this->_attr['comment']);
@@ -38,12 +28,8 @@ class App_Form_Wizard_Three extends App_Form_Wizard_Two
         return $this;
     }
 
-    /**
-     * ボタン
-     */
     public function button()
     {
-        //ボタン
         $this->_form->addElement('submit', '_submit', '確認画面へ...', '');
     }
 }

@@ -10,13 +10,8 @@ require_once 'App.php';
  */
 class Page_Test_Session_File extends App_Page
 {
-    public function onInject()
-    {
-        parent::onInject();
-    }
-
     /**
-     * クリック
+     * クリックなし
      */
     public function onClickNone()
     {

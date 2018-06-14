@@ -15,11 +15,11 @@ class Page_Test_Page_Db_Rw extends App_Page
 
     public function onInit(array $args)
     {
-        $params = array('uri' => 'Test/Db/Entry');
+        $params = ['uri' => 'Test/Db/Entry'];
         $req1 = $this->_resource->read($params)->getBody();
         p($req1);
         $createParams = $params;
-        $createParams['values'] = array('title' => time(), 'body' => '');
+        $createParams['values'] = ['title' => time(), 'body' => ''];
         $this->_resource->create($createParams)->request();
         $req2 = $this->_resource->read($params)->getBody();
         p($req2);
@@ -31,4 +31,4 @@ class Page_Test_Page_Db_Rw extends App_Page
     }
 }
 
-App_Main::run('Page_Test_Page_Db_Rw', $config);
+App_Main::run('Page_Test_Page_Db_Rw', []);

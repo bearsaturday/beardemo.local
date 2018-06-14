@@ -22,19 +22,19 @@ class App_Ro_Emoji_Softbank extends App_Ro
         // E401-E44C
         // E501-E537
         for ($i = BEAR_Emoji::SOFTBANK_MIN; $i <= 0xE05A; $i++) {
-            $result[] = array('key' => $i, 'value' => "&#{$i};");
+            $result[] = ['key' => $i, 'value' => "&#{$i};"];
         }
         for ($i = 0xE201; $i <= 0xE253; $i++) {
-            $result[] = array('key' => $i, 'value' => "&#{$i};");
+            $result[] = ['key' => $i, 'value' => "&#{$i};"];
         }
         for ($i = 0xE301; $i <= 0xE34D; $i++) {
-            $result[] = array('key' => $i, 'value' => "&#{$i};");
+            $result[] = ['key' => $i, 'value' => "&#{$i};"];
         }
         for ($i = 0xE401; $i <= 0xE44C; $i++) {
-            $result[] = array('key' => $i, 'value' => "&#{$i};");
+            $result[] = ['key' => $i, 'value' => "&#{$i};"];
         }
         for ($i = 0xE501; $i <= BEAR_Emoji::SOFTBANK_MAX; $i++) {
-            $result[] = array('key' => $i, 'value' => "&#{$i};");
+            $result[] = ['key' => $i, 'value' => "&#{$i};"];
         }
 
         return $result;

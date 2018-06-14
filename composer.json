@@ -14,18 +14,11 @@
         }
     ],
     "require": {
+        "php": ">=7.1.0",
         "bearsaturday/bearsaturday": "0.10.x-dev"
     },
     "config": {
         "secure-http": false
-    },
-    "autoload": {
-        "classmap": [
-            "App"
-        ],
-        "files": [
-            "App.php"
-        ]
     },
     "repositories": [
         {
@@ -38,7 +31,14 @@
     "include-path": [
         "./"
     ],
+    "autoload": {
+        "classmap": [
+            "App"
+        ]
+    },
     "scripts": {
+        "setup": "mysql -u root < data/entries.sql",
+        "serve": "php -dzend_extension=xdebug.so -d include_path=`pwd` -S 127.0.0.1:8080 -t htdocs/",
         "cs": [
             "php-cs-fixer fix -v --dry-run",
             "phpcs --standard=phpcs.xml src;"

@@ -2,10 +2,9 @@
 
 
 /**
- * Multi form
+ * Multiフォーム
  *
- * ID/Passwordが必要なログインフォームとパスワード通知用のメールアドレスを
- * 入力する２つのフォームを作成します。
+ * ID/Passwordが必要なログインフォームとパスワード通知用のメールアドレスを入力する２つのフォームを作成します。
  */
 class App_Form_Multi extends BEAR_Base
 {
@@ -14,31 +13,23 @@ class App_Form_Multi extends BEAR_Base
      *
      * @var array
      */
-    private $_login = array();
+    private $_login = ['formName' => 'login'];
 
     /**
      * リマインダーフォーム
      *
      * @var array
      */
-    private $_reminder = array();
-
-    /**
-     * Inject
-     */
-    public function onInject()
-    {
-        $this->_login = array('formName' => 'login');
-        $this->_reminder = array('formName' => 'reminder');
-    }
+    private $_reminder = ['formName' => 'reminder'];
 
     /**
      * build form
      */
     public function build()
     {
-        $login = BEAR::dependency('BEAR_Form', $this->_login, false);
         //ログインフォーム
+        /** @var HTML_QuickForm $login */
+        $login = BEAR::dependency('BEAR_Form', $this->_login, false);
         $login->addElement('header', 'main', 'ログイン');
         $login->addElement('text', 'id', 'ID', 'size=15');
         $login->addElement('text', 'password', 'パスワード', 'size=15');
@@ -46,7 +37,9 @@ class App_Form_Multi extends BEAR_Base
         $login->addRule('id', 'IDを入力してください', 'required', null, '');
         $login->addRule('password', 'passwordを入力してください', 'required', null, '');
         $login->applyFilter('__ALL__', 'trim');
+
         // 確認フォーム
+        /** @var HTML_QuickForm $reminder */
         $reminder = BEAR::dependency('BEAR_Form', $this->_reminder, false);
         $reminder->addElement('header', 'main', 'パスワードを指定のアドレスに送信します');
         $reminder->addElement('text', 'email', 'メールアドレス', 'size=30');

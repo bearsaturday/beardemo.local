@@ -9,6 +9,11 @@ require_once 'App.php';
  */
 class Page_Test_Page_Header extends App_Page
 {
+    /**
+     * @var BEAR_Page_Header
+     */
+    private $_header;
+
     public function onInject()
     {
         $this->_header = BEAR::dependency('BEAR_Page_Header');

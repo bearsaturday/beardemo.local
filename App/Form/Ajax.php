@@ -1,8 +1,7 @@
 <?php
 
-
 /**
- * Ajax Forms
+ * Ajaxフォーム
  */
 class App_Form_Ajax extends BEAR_Base
 {
@@ -11,22 +10,21 @@ class App_Form_Ajax extends BEAR_Base
      *
      * @var array
      */
-    private $_attr = array(
+    private $_attr = [
         'name' => 'size="30" maxlength="30"',
            'email' => 'size="30" maxlength="30"',
            'body' => 'rows="8" cols="40"'
-    );
+    ];
 
     /**
-     * Inject
+     * フォーム設定
+     *
+     * @var array
      */
-    public function onInject()
-    {
-        $this->_form = array(
-            'formName' => 'form',
-            'attributes' => array('rel' => 'ajax')
-        );
-    }
+    private $_form = [
+        'formName' => 'form',
+        'attributes' => ['rel' => 'ajax']
+    ];
 
     /**
      * Build form
@@ -35,9 +33,10 @@ class App_Form_Ajax extends BEAR_Base
      */
     public function build()
     {
+        /** @var HTML_QuickForm $form */
         $form = BEAR::factory('BEAR_Form', $this->_form);
         // デフォルト
-        $form->setDefaults(array('name' => 'Kuma', 'email' => 'kuma@example.com'));
+        $form->setDefaults(['name' => 'Kuma', 'email' => 'kuma@example.com']);
         // ヘッダー
         $form->addElement('header', 'main', 'Simple Form');
         // フィールド
@@ -48,8 +47,8 @@ class App_Form_Ajax extends BEAR_Base
         $form->addElement(
                    'static',
             '_ajax',
-            array('リンクサブミット',
-                   'このリンクはサブミットボタンと同じように機能します'),
+            ['リンクサブミット',
+                   'このリンクはサブミットボタンと同じように機能します'],
                    '<a href="#" title="サブミット" rel="form">AJAX送信</a>'
         );
         // フィルタと検証ルール
@@ -58,15 +57,5 @@ class App_Form_Ajax extends BEAR_Base
         $form->addRule('name', '名前を入力してください', 'required');
         $form->addRule('email', 'emailを入力してください', 'required');
         $form->addRule('email', 'emailの形式で入力してください', 'email');
-    }
-
-    /**
-     * カスタムテンプレート
-     *
-     * @param HTML_QuickForm_Renderer_Tableless $render
-     */
-    public static function onRender(HTML_QuickForm_Renderer_Tableless $render)
-    {
-        $render->setElementTemplate(self::$_elementTemplate);
     }
 }
